@@ -18,6 +18,7 @@
 		20D0A6402BFF3FFF000417CC /* JournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A63F2BFF3FFF000417CC /* JournalViewController.swift */; };
 		20D0A6442BFF40DB000417CC /* JournalCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6432BFF40DB000417CC /* JournalCanvasView.swift */; };
 		20D0A6462BFF44B0000417CC /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6452BFF44B0000417CC /* JournalView.swift */; };
+		20D0A6482BFF6FA2000417CC /* MoodSelectionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6472BFF6FA2000417CC /* MoodSelectionModalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		20D0A63F2BFF3FFF000417CC /* JournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewController.swift; sourceTree = "<group>"; };
 		20D0A6432BFF40DB000417CC /* JournalCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCanvasView.swift; sourceTree = "<group>"; };
 		20D0A6452BFF44B0000417CC /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
+		20D0A6472BFF6FA2000417CC /* MoodSelectionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSelectionModalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				20D0A63F2BFF3FFF000417CC /* JournalViewController.swift */,
 				20D0A6432BFF40DB000417CC /* JournalCanvasView.swift */,
 				20D0A6452BFF44B0000417CC /* JournalView.swift */,
+				20D0A6472BFF6FA2000417CC /* MoodSelectionModalView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			files = (
 				20D0A6342BFEE40F000417CC /* moodsicJournal.xcdatamodeld in Sources */,
 				20D0A6312BFEE40F000417CC /* Persistence.swift in Sources */,
+				20D0A6482BFF6FA2000417CC /* MoodSelectionModalView.swift in Sources */,
 				20D0A63B2BFEE73D000417CC /* DashboardView.swift in Sources */,
 				20D0A6442BFF40DB000417CC /* JournalCanvasView.swift in Sources */,
 				20D0A63D2BFEF9FB000417CC /* AddNewJournalModalView.swift in Sources */,
