@@ -14,6 +14,10 @@
 		20D0A6312BFEE40F000417CC /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6302BFEE40F000417CC /* Persistence.swift */; };
 		20D0A6342BFEE40F000417CC /* moodsicJournal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6322BFEE40F000417CC /* moodsicJournal.xcdatamodeld */; };
 		20D0A63B2BFEE73D000417CC /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A63A2BFEE73D000417CC /* DashboardView.swift */; };
+		20D0A63D2BFEF9FB000417CC /* AddNewJournalModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A63C2BFEF9FB000417CC /* AddNewJournalModalView.swift */; };
+		20D0A6402BFF3FFF000417CC /* JournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A63F2BFF3FFF000417CC /* JournalViewController.swift */; };
+		20D0A6442BFF40DB000417CC /* JournalCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6432BFF40DB000417CC /* JournalCanvasView.swift */; };
+		20D0A6462BFF44B0000417CC /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6452BFF44B0000417CC /* JournalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +29,10 @@
 		20D0A6302BFEE40F000417CC /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		20D0A6332BFEE40F000417CC /* moodsicJournal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = moodsicJournal.xcdatamodel; sourceTree = "<group>"; };
 		20D0A63A2BFEE73D000417CC /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		20D0A63C2BFEF9FB000417CC /* AddNewJournalModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewJournalModalView.swift; sourceTree = "<group>"; };
+		20D0A63F2BFF3FFF000417CC /* JournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewController.swift; sourceTree = "<group>"; };
+		20D0A6432BFF40DB000417CC /* JournalCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCanvasView.swift; sourceTree = "<group>"; };
+		20D0A6452BFF44B0000417CC /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,13 +65,12 @@
 		20D0A6262BFEE40E000417CC /* moodsicJournal */ = {
 			isa = PBXGroup;
 			children = (
+				20D0A63E2BFEFA02000417CC /* View */,
 				20D0A6272BFEE40E000417CC /* moodsicJournalApp.swift */,
-				20D0A6292BFEE40E000417CC /* ContentView.swift */,
 				20D0A62B2BFEE40F000417CC /* Assets.xcassets */,
 				20D0A6302BFEE40F000417CC /* Persistence.swift */,
 				20D0A6322BFEE40F000417CC /* moodsicJournal.xcdatamodeld */,
 				20D0A62D2BFEE40F000417CC /* Preview Content */,
-				20D0A63A2BFEE73D000417CC /* DashboardView.swift */,
 			);
 			path = moodsicJournal;
 			sourceTree = "<group>";
@@ -74,6 +81,19 @@
 				20D0A62E2BFEE40F000417CC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		20D0A63E2BFEFA02000417CC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20D0A6292BFEE40E000417CC /* ContentView.swift */,
+				20D0A63A2BFEE73D000417CC /* DashboardView.swift */,
+				20D0A63C2BFEF9FB000417CC /* AddNewJournalModalView.swift */,
+				20D0A63F2BFF3FFF000417CC /* JournalViewController.swift */,
+				20D0A6432BFF40DB000417CC /* JournalCanvasView.swift */,
+				20D0A6452BFF44B0000417CC /* JournalView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,8 +169,12 @@
 				20D0A6342BFEE40F000417CC /* moodsicJournal.xcdatamodeld in Sources */,
 				20D0A6312BFEE40F000417CC /* Persistence.swift in Sources */,
 				20D0A63B2BFEE73D000417CC /* DashboardView.swift in Sources */,
+				20D0A6442BFF40DB000417CC /* JournalCanvasView.swift in Sources */,
+				20D0A63D2BFEF9FB000417CC /* AddNewJournalModalView.swift in Sources */,
 				20D0A62A2BFEE40E000417CC /* ContentView.swift in Sources */,
+				20D0A6462BFF44B0000417CC /* JournalView.swift in Sources */,
 				20D0A6282BFEE40E000417CC /* moodsicJournalApp.swift in Sources */,
+				20D0A6402BFF3FFF000417CC /* JournalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +311,7 @@
 				DEVELOPMENT_TEAM = 2RQ6LB993C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Moodsic Journal";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -316,6 +341,7 @@
 				DEVELOPMENT_TEAM = 2RQ6LB993C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Moodsic Journal";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
