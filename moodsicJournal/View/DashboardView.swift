@@ -12,7 +12,7 @@ struct DashboardView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(entity: Journal.entity(), sortDescriptors: [])
-    private var items: FetchedResults<Journal>
+    private var journals: FetchedResults<Journal>
 
     @State private var isAddJournalOpen = false
 
@@ -45,12 +45,10 @@ struct DashboardView: View {
                         .padding(.bottom, 20)
 
                         List {
-                            ForEach(items) { item in
-                                NavigationLink {
-                                    Text("Item at \(item.title ?? "aaaaa")")
-                                } label: {
-                                    Text(item.title ?? "...")
-                                }
+                            ForEach(journals){journal in
+                                NavigationLink(destination: JournalView(id: journal.id, data: journal.canvasData, title: journal.title), label: {
+                                    Text(journal.title ?? "Untitled")
+                                })
                             }
                         }
                     }
