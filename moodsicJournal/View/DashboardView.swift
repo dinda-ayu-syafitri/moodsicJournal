@@ -46,9 +46,10 @@ struct DashboardView: View {
 
                         List {
                             ForEach(journals){journal in
-                                NavigationLink(destination: JournalView(id: journal.id, data: journal.canvasData, title: journal.title), label: {
+                                NavigationLink(destination: JournalView(id: journal.id, data: journal.canvasData, title: journal.title, objectId: journal.objectID), label: {
                                     Text(journal.title ?? "Untitled")
                                 })
+
                             }
                         }
                     }
