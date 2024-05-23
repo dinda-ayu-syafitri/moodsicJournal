@@ -6,16 +6,27 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct DashboardView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
+    @FetchRequest(entity: Journal.entity(), sortDescriptors: []) var journals:FetchedResults<Journal>
 
     var body: some View {
         NavigationSplitView(
             sidebar: {},
             detail: {
-                Text("Dashboard")
+                VStack(alignment: .leading) {
+                    Text("Dashboard")
+                    List {
+                        ForEach(journals) {
+                            journal in
+                            Text("Test")
+                        }
+                    }
+                }
+
             })
     }
 }
