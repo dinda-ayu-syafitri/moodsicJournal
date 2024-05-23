@@ -35,6 +35,7 @@ struct DashboardView: View {
                                     Image(systemName: "plus.circle")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
+                                        .foregroundStyle(Color.blue)
                                         .frame(maxWidth: 70)
                                 }
                         })
