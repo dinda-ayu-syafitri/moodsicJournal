@@ -13,6 +13,7 @@
 		20D0A62F2BFEE40F000417CC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20D0A62E2BFEE40F000417CC /* Preview Assets.xcassets */; };
 		20D0A6312BFEE40F000417CC /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6302BFEE40F000417CC /* Persistence.swift */; };
 		20D0A6342BFEE40F000417CC /* moodsicJournal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6322BFEE40F000417CC /* moodsicJournal.xcdatamodeld */; };
+		20D0A63B2BFEE73D000417CC /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A63A2BFEE73D000417CC /* DashboardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		20D0A62E2BFEE40F000417CC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		20D0A6302BFEE40F000417CC /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		20D0A6332BFEE40F000417CC /* moodsicJournal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = moodsicJournal.xcdatamodel; sourceTree = "<group>"; };
+		20D0A63A2BFEE73D000417CC /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				20D0A6302BFEE40F000417CC /* Persistence.swift */,
 				20D0A6322BFEE40F000417CC /* moodsicJournal.xcdatamodeld */,
 				20D0A62D2BFEE40F000417CC /* Preview Content */,
+				20D0A63A2BFEE73D000417CC /* DashboardView.swift */,
 			);
 			path = moodsicJournal;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			files = (
 				20D0A6342BFEE40F000417CC /* moodsicJournal.xcdatamodeld in Sources */,
 				20D0A6312BFEE40F000417CC /* Persistence.swift in Sources */,
+				20D0A63B2BFEE73D000417CC /* DashboardView.swift in Sources */,
 				20D0A62A2BFEE40E000417CC /* ContentView.swift in Sources */,
 				20D0A6282BFEE40E000417CC /* moodsicJournalApp.swift in Sources */,
 			);
