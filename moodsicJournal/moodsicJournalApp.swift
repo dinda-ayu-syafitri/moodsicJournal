@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MusicKit
 
 @main
 struct moodsicJournalApp: App {
@@ -13,7 +14,8 @@ struct moodsicJournalApp: App {
 
     var body: some Scene {
         WindowGroup {
-            DashboardView()
+            DashboardView(musicAuthorizationStatus: MusicAuthorization.currentStatus,
+                          isAuthViewShowed: MusicAuthorization.currentStatus != .authorized)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import MusicKit
 
 struct DashboardView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -15,6 +16,9 @@ struct DashboardView: View {
     private var journals: FetchedResults<Journal>
 
     @State private var isAddJournalOpen = false
+
+    @State  var musicAuthorizationStatus: MusicAuthorization.Status
+    @State  var isAuthViewShowed: Bool
 
     var body: some View {
         GeometryReader {
@@ -54,6 +58,9 @@ struct DashboardView: View {
                             }
                         }
                     }
+                    .sheet(isPresented: $isAuthViewShowed, content: {
+                        MusicKitAuthorizationView(musicAuthorizationStatus: $musicAuthorizationStatus, isAuthViewShowed: $isAuthViewShowed)
+                    })
                     .padding(.horizontal, geometry.size.width * 0.05)
                 })
         }
@@ -62,7 +69,7 @@ struct DashboardView: View {
     }
 }
 
-#Preview {
-    DashboardView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-}
+//#Preview {
+//    DashboardView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+//}
 
