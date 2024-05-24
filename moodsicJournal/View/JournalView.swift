@@ -93,11 +93,11 @@ struct JournalView: View {
 
 
                 }
-//                .onAppear {
-//                    Task {
-//                        await getSongs()
-//                    }
-//                }
+                .onAppear {
+                    Task {
+                        await getSongs()
+                    }
+                }
             }
         }
     }
@@ -123,7 +123,7 @@ struct JournalView: View {
 
     private func getSongs() async {
            do {
-               var searchRequest = MusicCatalogResourceRequest<Song>(matching: \.id, equalTo: "1440713319")
+               var searchRequest = MusicCatalogResourceRequest<Song>(matching: \.id, equalTo: MusicItemID(rawValue: SongId!))
 //               searchRequest.limit = 3
                let searchResponse = try await searchRequest.response()
 

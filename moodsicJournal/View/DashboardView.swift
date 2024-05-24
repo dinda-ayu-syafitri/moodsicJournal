@@ -20,6 +20,9 @@ struct DashboardView: View {
     @State  var musicAuthorizationStatus: MusicAuthorization.Status
     @State  var isAuthViewShowed: Bool
 
+    private let player = ApplicationMusicPlayer.shared
+
+
     var body: some View {
         GeometryReader {
             geometry in
@@ -57,13 +60,20 @@ struct DashboardView: View {
 
                             }
                         }
+                        .onAppear {
+                            Task {
+                                player.stop()
+                                print("song should be stopped")
+                            }
                     }
                     .sheet(isPresented: $isAuthViewShowed, content: {
                         MusicKitAuthorizationView(musicAuthorizationStatus: $musicAuthorizationStatus, isAuthViewShowed: $isAuthViewShowed)
                     })
                     .padding(.horizontal, geometry.size.width * 0.05)
+                }
                 })
         }
+
 
 
     }
