@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct MoodSelectionModalView: View {
+    @Binding var selectedMood: String
+
     var body: some View {
         VStack(spacing: 50) {
             Text("How are you feeling today?")
             HStack (alignment: .center) {
-                Button(action: {}, label: {
+                Button(action: {selectedMood = "Excited"}, label: {
                     VStack {
                         Image("dummy-excited")
                             .resizable()
@@ -23,7 +25,7 @@ struct MoodSelectionModalView: View {
                 })
                 .buttonStyle(PlainButtonStyle())
 
-                Button(action: {}, label: {
+                Button(action: {selectedMood = "Happy"}, label: {
                     VStack {
                         Image("dummy-happy")
                             .resizable()
@@ -34,7 +36,7 @@ struct MoodSelectionModalView: View {
                 })
                 .buttonStyle(PlainButtonStyle())
 
-                Button(action: {}, label: {
+                Button(action: {selectedMood = "Neutral"}, label: {
                     VStack {
                         Image("dummy-neutral")
                             .resizable()
@@ -45,7 +47,7 @@ struct MoodSelectionModalView: View {
                 })
                 .buttonStyle(PlainButtonStyle())
 
-                Button(action: {}, label: {
+                Button(action: {selectedMood = "Sad"}, label: {
                     VStack {
                         Image("dummy-sad")
                             .resizable()
@@ -56,7 +58,7 @@ struct MoodSelectionModalView: View {
                 })
                 .buttonStyle(PlainButtonStyle())
 
-                Button(action: {}, label: {
+                Button(action: {selectedMood = "Angry"}, label: {
                     VStack {
                         Image("dummy-angry")
                             .resizable()
@@ -73,6 +75,6 @@ struct MoodSelectionModalView: View {
     }
 }
 
-#Preview {
-    MoodSelectionModalView()
-}
+//#Preview {
+//    MoodSelectionModalView(selectedMood: )
+//}

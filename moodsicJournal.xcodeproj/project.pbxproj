@@ -14,11 +14,12 @@
 		20D0A6312BFEE40F000417CC /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6302BFEE40F000417CC /* Persistence.swift */; };
 		20D0A6342BFEE40F000417CC /* moodsicJournal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6322BFEE40F000417CC /* moodsicJournal.xcdatamodeld */; };
 		20D0A63B2BFEE73D000417CC /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A63A2BFEE73D000417CC /* DashboardView.swift */; };
-		20D0A63D2BFEF9FB000417CC /* AddNewJournalModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A63C2BFEF9FB000417CC /* AddNewJournalModalView.swift */; };
 		20D0A6402BFF3FFF000417CC /* JournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A63F2BFF3FFF000417CC /* JournalViewController.swift */; };
 		20D0A6442BFF40DB000417CC /* JournalCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6432BFF40DB000417CC /* JournalCanvasView.swift */; };
 		20D0A6462BFF44B0000417CC /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6452BFF44B0000417CC /* JournalView.swift */; };
 		20D0A6482BFF6FA2000417CC /* MoodSelectionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6472BFF6FA2000417CC /* MoodSelectionModalView.swift */; };
+		20D0A64A2C00AF87000417CC /* CustomModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6492C00AF87000417CC /* CustomModalView.swift */; };
+		20D0A64C2C00AFD8000417CC /* AddTitleModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A64B2C00AFD8000417CC /* AddTitleModalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,11 +31,12 @@
 		20D0A6302BFEE40F000417CC /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		20D0A6332BFEE40F000417CC /* moodsicJournal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = moodsicJournal.xcdatamodel; sourceTree = "<group>"; };
 		20D0A63A2BFEE73D000417CC /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
-		20D0A63C2BFEF9FB000417CC /* AddNewJournalModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewJournalModalView.swift; sourceTree = "<group>"; };
 		20D0A63F2BFF3FFF000417CC /* JournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewController.swift; sourceTree = "<group>"; };
 		20D0A6432BFF40DB000417CC /* JournalCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCanvasView.swift; sourceTree = "<group>"; };
 		20D0A6452BFF44B0000417CC /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
 		20D0A6472BFF6FA2000417CC /* MoodSelectionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSelectionModalView.swift; sourceTree = "<group>"; };
+		20D0A6492C00AF87000417CC /* CustomModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModalView.swift; sourceTree = "<group>"; };
+		20D0A64B2C00AFD8000417CC /* AddTitleModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTitleModalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,11 +92,12 @@
 			children = (
 				20D0A6292BFEE40E000417CC /* ContentView.swift */,
 				20D0A63A2BFEE73D000417CC /* DashboardView.swift */,
-				20D0A63C2BFEF9FB000417CC /* AddNewJournalModalView.swift */,
 				20D0A63F2BFF3FFF000417CC /* JournalViewController.swift */,
 				20D0A6432BFF40DB000417CC /* JournalCanvasView.swift */,
 				20D0A6452BFF44B0000417CC /* JournalView.swift */,
 				20D0A6472BFF6FA2000417CC /* MoodSelectionModalView.swift */,
+				20D0A6492C00AF87000417CC /* CustomModalView.swift */,
+				20D0A64B2C00AFD8000417CC /* AddTitleModalView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -173,10 +176,11 @@
 				20D0A6312BFEE40F000417CC /* Persistence.swift in Sources */,
 				20D0A6482BFF6FA2000417CC /* MoodSelectionModalView.swift in Sources */,
 				20D0A63B2BFEE73D000417CC /* DashboardView.swift in Sources */,
+				20D0A64A2C00AF87000417CC /* CustomModalView.swift in Sources */,
 				20D0A6442BFF40DB000417CC /* JournalCanvasView.swift in Sources */,
-				20D0A63D2BFEF9FB000417CC /* AddNewJournalModalView.swift in Sources */,
 				20D0A62A2BFEE40E000417CC /* ContentView.swift in Sources */,
 				20D0A6462BFF44B0000417CC /* JournalView.swift in Sources */,
+				20D0A64C2C00AFD8000417CC /* AddTitleModalView.swift in Sources */,
 				20D0A6282BFEE40E000417CC /* moodsicJournalApp.swift in Sources */,
 				20D0A6402BFF3FFF000417CC /* JournalViewController.swift in Sources */,
 			);

@@ -16,8 +16,9 @@ struct JournalView: View {
     @State var data:Data?
     @State var title:String?
     @State var objectId:NSManagedObjectID?
+    @State var mood:String?
 
-    @State var isMoodSelected = false
+    @State var isMoodSelected:Bool
 
     var body: some View {
         GeometryReader {
@@ -34,6 +35,7 @@ struct JournalView: View {
                                     .buttonStyle(PlainButtonStyle())
 
                                     Text(title ?? "Untitled")
+                                    Text(mood ?? "No Mood")
                                 }
                                 Spacer()
 
@@ -54,29 +56,29 @@ struct JournalView: View {
                         }
 
                    } else {
-                       Rectangle()
-                           .frame(width: geometry.size.width, height: geometry.size.height)
-                           .ignoresSafeArea()
-                           .opacity(0.5)
-                           .overlay {
-                               RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/) 
-                                   .fill(.white)
-                                   .overlay
-                               {
-                                   VStack {
-                                       MoodSelectionModalView()
-                                           .clipShape(.rect(cornerRadius: 25))
-                                           .padding(.horizontal, 50)
-                                           .padding(.bottom, 20)
-                                       Button(action: {isMoodSelected.toggle()}, label: {
-                                           Text("Next")
-                                       })
-                                   }
-
-                               }
-                                .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.35)
-
-                           }
+//                       Rectangle()
+//                           .frame(width: geometry.size.width, height: geometry.size.height)
+//                           .ignoresSafeArea()
+//                           .opacity(0.5)
+//                           .overlay {
+//                               RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/) 
+//                                   .fill(.white)
+//                                   .overlay
+//                               {
+//                                   VStack {
+//                                       MoodSelectionModalView()
+//                                           .clipShape(.rect(cornerRadius: 25))
+//                                           .padding(.horizontal, 50)
+//                                           .padding(.bottom, 20)
+//                                       Button(action: {isMoodSelected.toggle()}, label: {
+//                                           Text("Next")
+//                                       })
+//                                   }
+//
+//                               }
+//                                .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.35)
+//
+//                           }
                    }
 
 
@@ -106,5 +108,5 @@ struct JournalView: View {
 }
 
 #Preview {
-    JournalView(id: UUID(), data: Data())
+    JournalView(id: UUID(), data: Data(), isMoodSelected: false)
 }
