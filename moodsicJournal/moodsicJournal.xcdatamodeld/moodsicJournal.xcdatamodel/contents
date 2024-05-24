@@ -7,6 +7,7 @@
         <attribute name="canvasData" optional="YES" attributeType="Binary"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="mood" optional="YES" attributeType="String"/>
+        <attribute name="songId" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
 </model>

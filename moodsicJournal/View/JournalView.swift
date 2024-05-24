@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import MusicKit
 
 struct JournalView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -17,8 +18,12 @@ struct JournalView: View {
     @State var title:String?
     @State var objectId:NSManagedObjectID?
     @State var mood:String?
+    @State var SongId:String?
 
     @State var isMoodSelected:Bool
+    private let player = ApplicationMusicPlayer.shared
+    @State var songs = [Song]()
+
 
     var body: some View {
         GeometryReader {
@@ -36,6 +41,11 @@ struct JournalView: View {
 
                                     Text(title ?? "Untitled")
                                     Text(mood ?? "No Mood")
+                                    Text(SongId ?? "No Selected Song")
+
+                                    HStack {
+                                    Text("Music")
+                                    }
                                 }
                                 Spacer()
 
@@ -83,6 +93,11 @@ struct JournalView: View {
 
 
                 }
+//                .onAppear {
+//                    Task {
+//                        await getSongs()
+//                    }
+//                }
             }
         }
     }
@@ -103,6 +118,49 @@ struct JournalView: View {
             print("Object deleted successfully")
         } catch {
             print("Failed to delete object with ID \(objectId): \(error)")
+        }
+    }
+
+    private func getSongs() async {
+           do {
+               var searchRequest = MusicCatalogResourceRequest<Song>(matching: \.id, equalTo: "1440713319")
+//               searchRequest.limit = 3
+               let searchResponse = try await searchRequest.response()
+
+               guard let songPlayed = searchResponse.items.first else { return }
+
+
+               await play(song: songPlayed)
+//               // Map the search results to your SongItem model
+//                          let fetchedSongs = searchResponse.songs.compactMap { song in
+//                              SongItem(id: song.id.rawValue, title: song.title, artist: song.artistName, imageURL: song.artwork?.url(width: 100, height: 100))
+//                          }
+//
+//                          // Update the state on the main thread
+//                          DispatchQueue.main.async {
+//                              self.songs = fetchedSongs
+//                          }
+               print("This is the fetched song by ID: \(searchResponse)")
+           } catch {
+               print("Error fetching songs: \(error)")
+           }
+       }
+
+    func play(song: Song) async {
+      let player = ApplicationMusicPlayer.shared
+      player.queue = [song]
+        do {try await player.prepareToPlay()}
+        catch {
+            print(error)
+        }
+        do {
+            try await player.play()
+            print("should be played")
+
+        }
+        catch {
+            print(error)
+
         }
     }
 }

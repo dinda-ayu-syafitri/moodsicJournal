@@ -10,6 +10,7 @@ import SwiftUI
 struct MoodSelectionModalView: View {
     @Binding var selectedMood: String
 
+
     var body: some View {
         VStack(spacing: 50) {
             Text("How are you feeling today?")

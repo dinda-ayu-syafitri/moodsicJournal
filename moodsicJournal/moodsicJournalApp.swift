@@ -16,6 +16,7 @@ struct moodsicJournalApp: App {
         WindowGroup {
             DashboardView(musicAuthorizationStatus: MusicAuthorization.currentStatus,
                           isAuthViewShowed: MusicAuthorization.currentStatus != .authorized)
+//            MusicRecommendationModalView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
