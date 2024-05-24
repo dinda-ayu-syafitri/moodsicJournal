@@ -16,37 +16,72 @@ struct JournalView: View {
     @State var data:Data?
     @State var title:String?
     @State var objectId:NSManagedObjectID?
+    @State var mood:String?
+
+    @State var isMoodSelected:Bool
 
     var body: some View {
         GeometryReader {
             geometry in
             NavigationStack {
-                VStack(alignment: .leading) {
-                    HStack {
-                        HStack {
-                            Button(action: {dismiss()}, label: {
-                                Image(systemName: "chevron.left")
-                            })
-                            .buttonStyle(PlainButtonStyle())
+                ZStack {
+                   if isMoodSelected {
+                        VStack(alignment: .leading) {
+                            HStack {
+                                HStack {
+                                    Button(action: {dismiss()}, label: {
+                                        Image(systemName: "chevron.left")
+                                    })
+                                    .buttonStyle(PlainButtonStyle())
 
-                            Text(title ?? "Untitled")
+                                    Text(title ?? "Untitled")
+                                    Text(mood ?? "No Mood")
+                                }
+                                Spacer()
+
+
+                                Menu {
+                                    Button("Delete Journal", action: {deleteJournal()})
+                                } label: {
+                                    Image(systemName: "ellipsis.circle")
+                                }
+
+                            }
+                            .padding(.horizontal, geometry.size.width * 0.05)
+                            .padding(.vertical, geometry.size.height * 0.02)
+
+                            JournalCanvasView(data: data ?? Data(), id: id ?? UUID())
+                                .environment(\.managedObjectContext, viewContext)
+                                                        //                    .navigationTitle(title ?? "Untitled")
                         }
-                        Spacer()
+
+                   } else {
+//                       Rectangle()
+//                           .frame(width: geometry.size.width, height: geometry.size.height)
+//                           .ignoresSafeArea()
+//                           .opacity(0.5)
+//                           .overlay {
+//                               RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/) 
+//                                   .fill(.white)
+//                                   .overlay
+//                               {
+//                                   VStack {
+//                                       MoodSelectionModalView()
+//                                           .clipShape(.rect(cornerRadius: 25))
+//                                           .padding(.horizontal, 50)
+//                                           .padding(.bottom, 20)
+//                                       Button(action: {isMoodSelected.toggle()}, label: {
+//                                           Text("Next")
+//                                       })
+//                                   }
+//
+//                               }
+//                                .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.35)
+//
+//                           }
+                   }
 
 
-                        Menu {
-                            Button("Delete Journal", action: {deleteJournal()})
-                        } label: {
-                            Image(systemName: "ellipsis.circle")
-                        }
-
-                    }
-                    .padding(.horizontal, geometry.size.width * 0.05)
-                    .padding(.vertical, geometry.size.height * 0.02)
-
-                    JournalCanvasView(data: data ?? Data(), id: id ?? UUID())
-                        .environment(\.managedObjectContext, viewContext)
-                    //                    .navigationTitle(title ?? "Untitled")
                 }
             }
         }
@@ -73,5 +108,5 @@ struct JournalView: View {
 }
 
 #Preview {
-    JournalView(id: UUID(), data: Data())
+    JournalView(id: UUID(), data: Data(), isMoodSelected: false)
 }

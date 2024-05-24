@@ -41,13 +41,13 @@ struct DashboardView: View {
                         })
                         .buttonStyle(PlainButtonStyle())
                         .sheet(isPresented: $isAddJournalOpen, content: {
-                            AddNewJournalModalView().environment(\.managedObjectContext, viewContext)
+                            CustomModalView().environment(\.managedObjectContext, viewContext)
                         })
                         .padding(.bottom, 20)
 
                         List {
                             ForEach(journals){journal in
-                                NavigationLink(destination: JournalView(id: journal.id, data: journal.canvasData, title: journal.title, objectId: journal.objectID), label: {
+                                NavigationLink(destination: JournalView(id: journal.id, data: journal.canvasData, title: journal.title, objectId: journal.objectID, mood: journal.mood, isMoodSelected: true), label: {
                                     Text(journal.title ?? "Untitled")
                                 })
 
