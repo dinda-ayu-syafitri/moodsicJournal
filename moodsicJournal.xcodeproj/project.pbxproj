@@ -25,6 +25,7 @@
 		20D0A6552C00F750000417CC /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6542C00F750000417CC /* Music.swift */; };
 		20D0A6582C01FE5B000417CC /* MusicPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6572C01FE5B000417CC /* MusicPlayerManager.swift */; };
 		20D0A65B2C01FE8F000417CC /* JournalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A65A2C01FE8F000417CC /* JournalViewModel.swift */; };
+		20D0A65D2C02532D000417CC /* JournalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A65C2C02532D000417CC /* JournalCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		20D0A6542C00F750000417CC /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
 		20D0A6572C01FE5B000417CC /* MusicPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerManager.swift; sourceTree = "<group>"; };
 		20D0A65A2C01FE8F000417CC /* JournalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewModel.swift; sourceTree = "<group>"; };
+		20D0A65C2C02532D000417CC /* JournalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				20D0A64B2C00AFD8000417CC /* AddTitleModalView.swift */,
 				20D0A64F2C00DFE8000417CC /* MusicKitAuthorizationView.swift */,
 				20D0A6512C00F574000417CC /* MusicRecommendationModalView.swift */,
+				20D0A65C2C02532D000417CC /* JournalCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				20D0A64C2C00AFD8000417CC /* AddTitleModalView.swift in Sources */,
 				20D0A6552C00F750000417CC /* Music.swift in Sources */,
 				20D0A6282BFEE40E000417CC /* moodsicJournalApp.swift in Sources */,
+				20D0A65D2C02532D000417CC /* JournalCardView.swift in Sources */,
 				20D0A6582C01FE5B000417CC /* MusicPlayerManager.swift in Sources */,
 				20D0A6402BFF3FFF000417CC /* JournalViewController.swift in Sources */,
 			);
