@@ -74,16 +74,55 @@ struct CustomModalView: View {
             searchRequest.limit = 3
             let searchResponse = try await searchRequest.response()
 
-            // Map the search results to your SongItem model
-            let fetchedSongs = searchResponse.songs.compactMap { song in
-                SongItem(id: song.id.rawValue, title: song.title, artist: song.artistName, imageURL: song.artwork?.url(width: 100, height: 100))
+
+
+            var playlistRequest = MusicCatalogResourceRequest<Playlist>(matching: \.id, equalTo: "pl.aa6824f258604a76ba475a4649acabf0")
+            playlistRequest.properties = [.tracks]
+
+
+            let playlistResponse = try await playlistRequest.response()
+            if let playlist = playlistResponse.items.first {
+                if let tracksCollection = playlist.tracks {
+                    // Convert MusicItemCollection<Track> to an array
+                    let tracksArray = Array(tracksCollection)
+
+                    // Shuffle the array
+                    let shuffledTracks = tracksArray.shuffled()
+
+                    // Take the first 3 tracks from the shuffled array
+                    let randomTracks = shuffledTracks.prefix(3)
+                    print(randomTracks)
+
+                    let fetchedSongs = randomTracks.compactMap { track in
+                        SongItem(id: track.id.rawValue, title: track.title, artist: track.artistName, imageURL: track.artwork?.url(width: 100, height: 100))
+                    }
+
+                    // Update the state on the main thread
+                    DispatchQueue.main.async {
+                        self.songs = fetchedSongs
+                    }
+                } else {
+                    print("No tracks found in the playlist.")
+                }
+            } else {
+                print("Couldn't find playlist.")
             }
 
-            // Update the state on the main thread
-            DispatchQueue.main.async {
-                self.songs = fetchedSongs
-            }
-            print(searchResponse)
+
+            //            let playlists = searchResponse.playlists
+
+
+            //             Map the search results to your SongItem model
+            //            let fetchedSongs = randomTracks.songs.compactMap { song in
+            //                SongItem(id: song.id.rawValue, title: song.title, artist: song.artistName, imageURL: song.artwork?.url(width: 100, height: 100))
+            //            }
+            //
+            //            // Update the state on the main thread
+            //            DispatchQueue.main.async {
+            //                self.songs = fetchedSongs
+            //            }
+            //            print(playlistRequest)
+            //            print(searchPlaylistResponse)
         } catch {
             print("Error fetching songs: \(error)")
         }
