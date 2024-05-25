@@ -19,6 +19,7 @@ struct CustomModalView: View {
     @State private var moodSelected = false
     @State var songs = [SongItem]()
     @State var selectedSongId = ""
+    @State var playlistId = ""
 
     var body: some View {
         NavigationStack{
@@ -26,7 +27,7 @@ struct CustomModalView: View {
                 AddTitleModalView(journalTitle: $journalTitle, addTitleDone: $addTitleDone)
             } else if !moodSelected{
                 VStack {
-                    MoodSelectionModalView(selectedMood: $mood)
+                    MoodSelectionModalView(selectedMood: $mood, playlistId: $playlistId)
                     Button(action: {moodSelected = true}, label: {
                         Text("Save")
                     })
@@ -70,26 +71,18 @@ struct CustomModalView: View {
 
     func getSongs() async {
         do {
-            var searchRequest = MusicCatalogSearchRequest(term: "Sad", types: [Song.self])
-            searchRequest.limit = 3
-            let searchResponse = try await searchRequest.response()
-
-
-
-            var playlistRequest = MusicCatalogResourceRequest<Playlist>(matching: \.id, equalTo: "pl.aa6824f258604a76ba475a4649acabf0")
+            var playlistRequest = MusicCatalogResourceRequest<Playlist>(matching: \.id, equalTo: MusicItemID(rawValue: playlistId))
             playlistRequest.properties = [.tracks]
 
 
             let playlistResponse = try await playlistRequest.response()
+            print(playlistResponse)
             if let playlist = playlistResponse.items.first {
                 if let tracksCollection = playlist.tracks {
-                    // Convert MusicItemCollection<Track> to an array
                     let tracksArray = Array(tracksCollection)
 
-                    // Shuffle the array
                     let shuffledTracks = tracksArray.shuffled()
 
-                    // Take the first 3 tracks from the shuffled array
                     let randomTracks = shuffledTracks.prefix(3)
                     print(randomTracks)
 
@@ -97,7 +90,6 @@ struct CustomModalView: View {
                         SongItem(id: track.id.rawValue, title: track.title, artist: track.artistName, imageURL: track.artwork?.url(width: 100, height: 100))
                     }
 
-                    // Update the state on the main thread
                     DispatchQueue.main.async {
                         self.songs = fetchedSongs
                     }
@@ -107,22 +99,6 @@ struct CustomModalView: View {
             } else {
                 print("Couldn't find playlist.")
             }
-
-
-            //            let playlists = searchResponse.playlists
-
-
-            //             Map the search results to your SongItem model
-            //            let fetchedSongs = randomTracks.songs.compactMap { song in
-            //                SongItem(id: song.id.rawValue, title: song.title, artist: song.artistName, imageURL: song.artwork?.url(width: 100, height: 100))
-            //            }
-            //
-            //            // Update the state on the main thread
-            //            DispatchQueue.main.async {
-            //                self.songs = fetchedSongs
-            //            }
-            //            print(playlistRequest)
-            //            print(searchPlaylistResponse)
         } catch {
             print("Error fetching songs: \(error)")
         }
