@@ -9,12 +9,16 @@ import SwiftUI
 
 struct MoodSelectionModalView: View {
     @Binding var selectedMood: String
+    @Binding var playlistId: String
 
     var body: some View {
         VStack(spacing: 50) {
             Text("How are you feeling today?")
             HStack (alignment: .center) {
-                Button(action: {selectedMood = "Excited"}, label: {
+                Button(action: {
+                    selectedMood = "Excited"
+                    playlistId = "pl.f9733e33c0c64b1fb1b0a7bff787d566"
+                }, label: {
                     VStack {
                         Image("dummy-excited")
                             .resizable()
@@ -25,7 +29,10 @@ struct MoodSelectionModalView: View {
                 })
                 .buttonStyle(PlainButtonStyle())
 
-                Button(action: {selectedMood = "Happy"}, label: {
+                Button(action: {
+                    selectedMood = "Happy"
+                    playlistId = "pl.0d4aee5424c74d29ad15252eeb43d3b1"
+                }, label: {
                     VStack {
                         Image("dummy-happy")
                             .resizable()
@@ -36,7 +43,10 @@ struct MoodSelectionModalView: View {
                 })
                 .buttonStyle(PlainButtonStyle())
 
-                Button(action: {selectedMood = "Neutral"}, label: {
+                Button(action: {
+                    selectedMood = "Neutral"
+                    playlistId = "pl.3aaf0879038242d1a5d2dc95986e6ba2"
+                }, label: {
                     VStack {
                         Image("dummy-neutral")
                             .resizable()
@@ -47,7 +57,10 @@ struct MoodSelectionModalView: View {
                 })
                 .buttonStyle(PlainButtonStyle())
 
-                Button(action: {selectedMood = "Sad"}, label: {
+                Button(action: {
+                    selectedMood = "Sad"
+                    playlistId = "pl.aa6824f258604a76ba475a4649acabf0"
+                }, label: {
                     VStack {
                         Image("dummy-sad")
                             .resizable()
@@ -58,7 +71,10 @@ struct MoodSelectionModalView: View {
                 })
                 .buttonStyle(PlainButtonStyle())
 
-                Button(action: {selectedMood = "Angry"}, label: {
+                Button(action: {
+                    selectedMood = "Angry"
+                    playlistId = "pl.99aab7ddb4034503bef6278112843dba"
+                }, label: {
                     VStack {
                         Image("dummy-angry")
                             .resizable()
