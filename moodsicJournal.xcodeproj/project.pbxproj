@@ -23,6 +23,8 @@
 		20D0A6502C00DFE8000417CC /* MusicKitAuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A64F2C00DFE8000417CC /* MusicKitAuthorizationView.swift */; };
 		20D0A6522C00F574000417CC /* MusicRecommendationModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6512C00F574000417CC /* MusicRecommendationModalView.swift */; };
 		20D0A6552C00F750000417CC /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6542C00F750000417CC /* Music.swift */; };
+		20D0A6582C01FE5B000417CC /* MusicPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6572C01FE5B000417CC /* MusicPlayerManager.swift */; };
+		20D0A65B2C01FE8F000417CC /* JournalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A65A2C01FE8F000417CC /* JournalViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		20D0A64F2C00DFE8000417CC /* MusicKitAuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicKitAuthorizationView.swift; sourceTree = "<group>"; };
 		20D0A6512C00F574000417CC /* MusicRecommendationModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicRecommendationModalView.swift; sourceTree = "<group>"; };
 		20D0A6542C00F750000417CC /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
+		20D0A6572C01FE5B000417CC /* MusicPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerManager.swift; sourceTree = "<group>"; };
+		20D0A65A2C01FE8F000417CC /* JournalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 		20D0A6262BFEE40E000417CC /* moodsicJournal */ = {
 			isa = PBXGroup;
 			children = (
+				20D0A6592C01FE7A000417CC /* ViewModel */,
 				20D0A6532C00F690000417CC /* Model */,
 				20D0A63E2BFEFA02000417CC /* View */,
 				20D0A6272BFEE40E000417CC /* moodsicJournalApp.swift */,
@@ -115,8 +120,17 @@
 			isa = PBXGroup;
 			children = (
 				20D0A6542C00F750000417CC /* Music.swift */,
+				20D0A6572C01FE5B000417CC /* MusicPlayerManager.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		20D0A6592C01FE7A000417CC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				20D0A65A2C01FE8F000417CC /* JournalViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,11 +211,13 @@
 				20D0A6502C00DFE8000417CC /* MusicKitAuthorizationView.swift in Sources */,
 				20D0A6522C00F574000417CC /* MusicRecommendationModalView.swift in Sources */,
 				20D0A6442BFF40DB000417CC /* JournalCanvasView.swift in Sources */,
+				20D0A65B2C01FE8F000417CC /* JournalViewModel.swift in Sources */,
 				20D0A62A2BFEE40E000417CC /* ContentView.swift in Sources */,
 				20D0A6462BFF44B0000417CC /* JournalView.swift in Sources */,
 				20D0A64C2C00AFD8000417CC /* AddTitleModalView.swift in Sources */,
 				20D0A6552C00F750000417CC /* Music.swift in Sources */,
 				20D0A6282BFEE40E000417CC /* moodsicJournalApp.swift in Sources */,
+				20D0A6582C01FE5B000417CC /* MusicPlayerManager.swift in Sources */,
 				20D0A6402BFF3FFF000417CC /* JournalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
