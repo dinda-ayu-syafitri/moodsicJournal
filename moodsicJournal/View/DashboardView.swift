@@ -24,11 +24,21 @@ struct DashboardView: View {
         GeometryReader { geometry in
             NavigationStack {
                 ZStack {
+                    VStack {
+                        Image("bg-dashboard")
+                            .resizable()
+                            .scaledToFit()
+                        Spacer()
+                    }
+                    .edgesIgnoringSafeArea(.bottom)
+                    .frame(maxHeight: .infinity)
+                    .background(.lightBlue)
+
                     ScrollView {
                         VStack(alignment: .leading, spacing: 30) {
                             Text("Journal Dashboard")
                                 .font(.system(size: 36))
-                                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                .fontWeight(.bold)
                                 .foregroundStyle(.mainBlue)
                             VStack(spacing: 25) {
                                 Text("Create New Journal")
@@ -87,19 +97,25 @@ struct DashboardView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.horizontal, geometry.size.width * 0.05)
                         .padding(.vertical, geometry.size.height * 0.03)
+                        .padding(.bottom, 250)
+
                     }
 
 
                     if isAddJournalOpen {
                         Rectangle()
-                            .fill(Color.black.opacity(0.8))
+                            .fill(Color.black.opacity(0.5))
                             .edgesIgnoringSafeArea(.all)
+                            .onTapGesture {
+                                isAddJournalOpen = false
+                            }
                             .overlay(
                                 CustomModalView(isAddJournalOpen: $isAddJournalOpen)
                                     .environment(\.managedObjectContext, viewContext)
-                                    .frame(height: 300)
-                                    .padding(.horizontal, 50)
-                                    .clipShape(RoundedRectangle(cornerRadius: 25.0))
+                                    .frame(height: 400, alignment: .center)
+                                    .frame(width: geometry.size.width * 0.60, alignment: .center)
+                                    .background(.white)
+                                    .clipShape(RoundedRectangle(cornerRadius: 15.0))
                             )
                     }
                 }

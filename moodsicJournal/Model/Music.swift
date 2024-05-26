@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import MusicKit
 
 struct SongItem: Identifiable, Hashable {
     var id: String
     let title: String
     let artist: String
-    let imageURL: URL?
+    let imageURL: Artwork?
 }

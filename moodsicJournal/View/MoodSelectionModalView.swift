@@ -12,9 +12,11 @@ struct MoodSelectionModalView: View {
     @Binding var playlistId: String
 
     var body: some View {
-        VStack(spacing: 50) {
+        VStack(spacing: 35) {
             Text("How are you feeling today?")
-            HStack (alignment: .center) {
+                .font(.system(size: 20, weight: .bold))
+                .foregroundStyle(Color.mainBlue)
+            HStack (alignment: .center, spacing: 15) {
                 Button(action: {
                     selectedMood = "Excited"
                     playlistId = "pl.f9733e33c0c64b1fb1b0a7bff787d566"
@@ -23,6 +25,7 @@ struct MoodSelectionModalView: View {
                         Image("dummy-excited")
                             .resizable()
                             .scaledToFit()
+                            .padding(.bottom, 10)
                         Text("Excited")
                     }
 
@@ -37,6 +40,8 @@ struct MoodSelectionModalView: View {
                         Image("dummy-happy")
                             .resizable()
                             .scaledToFit()
+                            .padding(.bottom, 10)
+
                         Text("Happy")
                     }
 
@@ -51,6 +56,8 @@ struct MoodSelectionModalView: View {
                         Image("dummy-neutral")
                             .resizable()
                             .scaledToFit()
+                            .padding(.bottom, 10)
+
                         Text("Neutral")
                     }
 
@@ -65,6 +72,8 @@ struct MoodSelectionModalView: View {
                         Image("dummy-sad")
                             .resizable()
                             .scaledToFit()
+                            .padding(.bottom, 10)
+
                         Text("Sad")
                     }
 
@@ -79,18 +88,18 @@ struct MoodSelectionModalView: View {
                         Image("dummy-angry")
                             .resizable()
                             .scaledToFit()
+                            .padding(.bottom, 10)
+
                         Text("Angry")
                     }
 
                 })
                 .buttonStyle(PlainButtonStyle())
             }
-
-            
         }
     }
 }
 
-//#Preview {
-//    MoodSelectionModalView(selectedMood: )
-//}
+#Preview {
+    MoodSelectionModalView(selectedMood: .constant("Sad"), playlistId: .constant("..."))
+}

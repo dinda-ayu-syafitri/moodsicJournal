@@ -19,16 +19,29 @@ struct JournalCardView: View {
                     .frame(width: 215, height: 215)
                     .overlay(content: {
                         VStack(alignment: .trailing) {
+                            if let mood = viewModel.mood?.lowercased() {
+                                Image("dummy-\(mood)")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 35)
+                                    .frame(maxWidth:  .infinity, alignment: .leading)
+                            }
                             Spacer()
                             Text(viewModel.title ?? "Untitled")
+                                .font(.system(size: 15, weight: .bold))
                                 .multilineTextAlignment(.trailing)
                                 .frame(maxWidth: .infinity, alignment: .trailing)
+                                .padding(.bottom, 5)
                             Text(viewModel.createdDate?.formatted(date: .long, time: .omitted) ?? "21 May 2024")
+                                .font(.system(size: 12))
                                 .multilineTextAlignment(.trailing)
                                 .frame(maxWidth: .infinity, alignment: .trailing)
                         }
-                        .padding(geometry.size.width * 0.03)
+                        .foregroundStyle(Color.mainBlue)
+                        .padding(20)
                     })
+                    .background(.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 25.0))
                     .shadow(radius: 10)
             }
 
