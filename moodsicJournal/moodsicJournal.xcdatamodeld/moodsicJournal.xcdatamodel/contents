@@ -5,6 +5,7 @@
     </entity>
     <entity name="Journal" representedClassName="Journal" syncable="YES" codeGenerationType="class">
         <attribute name="canvasData" optional="YES" attributeType="Binary"/>
+        <attribute name="createdDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="mood" optional="YES" attributeType="String"/>
         <attribute name="songId" optional="YES" attributeType="String"/>

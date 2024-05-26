@@ -23,75 +23,95 @@ struct DashboardView: View {
     var body: some View {
         GeometryReader { geometry in
             NavigationStack {
-                VStack(alignment: .leading) {
-                                        Text("Dashboard")
-                                        Button(action: {
-                                            isAddJournalOpen.toggle()
-                                        }, label: {
-                                            RoundedRectangle(cornerRadius: 25.0)
-                                                .fill(.white)
-                                                .frame(width: 200, height: 200)
-                                                .shadow(radius: 10)
-                                                .overlay {
-                                                    Image(systemName: "plus.circle")
-                                                        .resizable()
-                                                        .aspectRatio(contentMode: .fit)
-                                                        .foregroundStyle(Color.blue)
-                                                        .frame(maxWidth: 70)
-                                                }
-                                        })
-                                        .buttonStyle(PlainButtonStyle())
-                                        .sheet(isPresented: $isAddJournalOpen, content: {
-                                            CustomModalView().environment(\.managedObjectContext, viewContext)
-                                        })
-                                        .padding(.bottom, 20)
-
-                                        VStack {
-                                            ForEach(journals) { journal in
-                                                NavigationLink(destination: JournalView(viewModel: {
-                                                    {
-                                                        let viewModel = JournalViewModel()
-                                                        viewModel.id = journal.id
-                                                        viewModel.data = journal.canvasData
-                                                        viewModel.title = journal.title
-                                                        viewModel.objectId = journal.objectID
-                                                        viewModel.mood = journal.mood
-                                                        viewModel.songId = journal.songId
-                                                        return viewModel
-                                                    }()
-                                                }()), label: {Text(journal.title ?? "Untitled")})
-                                                //                                NavigationLink(
-                                                //                                    destination: JournalView(viewModel: {
-                                                //                                        let viewModel = JournalViewModel()
-                                                //                                        viewModel.id = journal.id
-                                                //                                        viewModel.data = journal.canvasData
-                                                //                                        viewModel.title = journal.title
-                                                //                                        viewModel.objectId = journal.objectID
-                                                //                                        viewModel.mood = journal.mood
-                                                //                                        viewModel.songId = journal.songId
-                                                //                                        return viewModel
-                                                //                                    }()),
-                                                //                                    tag: journal,
-                                                //                                    selection: $selectedJournal
-                                                //                                ) {
-                                                //                                    Text(journal.title ?? "Untitled")
-                                                //                                }
-                                            }
+                ZStack {
+                    ScrollView {
+                        VStack(alignment: .leading, spacing: 30) {
+                            Text("Journal Dashboard")
+                                .font(.system(size: 36))
+                                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                .foregroundStyle(.mainBlue)
+                            VStack(spacing: 25) {
+                                Text("Create New Journal")
+                                    .font(.system(size: 20))
+                                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                    .foregroundStyle(.mainBlue)
+                                Button(action: {
+                                    isAddJournalOpen.toggle()
+                                }, label: {
+                                    RoundedRectangle(cornerRadius: 25.0)
+                                        .fill(.white)
+                                        .frame(width: 200, height: 200)
+                                        .shadow(radius: 10)
+                                        .overlay {
+                                            Image(systemName: "plus.circle")
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                                .foregroundStyle(.mainBlue)
+                                                .frame(maxWidth: 70)
                                         }
-                                        .sheet(isPresented: $isAuthViewShowed, content: {
-                                            MusicKitAuthorizationView(musicAuthorizationStatus: $musicAuthorizationStatus, isAuthViewShowed: $isAuthViewShowed)
-                                        })
-                                        .padding(.horizontal, geometry.size.width * 0.05)
-                                    }
+                                })
+                                .buttonStyle(PlainButtonStyle())
+                                .padding(.bottom, 20)
+                            }
 
+                            VStack(alignment: .leading, spacing: 25) {
+                                Text("May 2024")
+                                    .font(.system(size: 20))
+                                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                    .foregroundStyle(.mainBlue)
+
+                                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()),GridItem(.flexible())], alignment: .leading, spacing: 250) {
+                                    ForEach(journals) { journal in
+                                        JournalCardView(viewModel: {
+                                            {
+                                                let viewModel = JournalViewModel()
+                                                viewModel.id = journal.id
+                                                viewModel.data = journal.canvasData
+                                                viewModel.title = journal.title
+                                                viewModel.objectId = journal.objectID
+                                                viewModel.mood = journal.mood
+                                                viewModel.songId = journal.songId
+                                                viewModel.createdDate = journal.createdDate
+                                                return viewModel
+                                            }()
+                                        }())
+                                    }
+                                }
+                                .sheet(isPresented: $isAuthViewShowed, content: {
+                                    MusicKitAuthorizationView(musicAuthorizationStatus: $musicAuthorizationStatus, isAuthViewShowed: $isAuthViewShowed)
+                                })
+
+                            }
+
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal, geometry.size.width * 0.05)
+                        .padding(.vertical, geometry.size.height * 0.03)
+                    }
+
+
+                    if isAddJournalOpen {
+                        Rectangle()
+                            .fill(Color.black.opacity(0.8))
+                            .edgesIgnoringSafeArea(.all)
+                            .overlay(
+                                CustomModalView(isAddJournalOpen: $isAddJournalOpen)
+                                    .environment(\.managedObjectContext, viewContext)
+                                    .frame(height: 300)
+                                    .padding(.horizontal, 50)
+                                    .clipShape(RoundedRectangle(cornerRadius: 25.0))
+                            )
+                    }
+                }
             }
+
         }
     }
 }
 
 
 
-//#Preview {
-//    DashboardView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-//}
+#Preview {
+    DashboardView(musicAuthorizationStatus: .authorized, isAuthViewShowed: false).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+}
 
