@@ -26,7 +26,6 @@
 		20D0A6582C01FE5B000417CC /* MusicPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6572C01FE5B000417CC /* MusicPlayerManager.swift */; };
 		20D0A65B2C01FE8F000417CC /* JournalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A65A2C01FE8F000417CC /* JournalViewModel.swift */; };
 		20D0A65D2C02532D000417CC /* JournalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A65C2C02532D000417CC /* JournalCardView.swift */; };
-		20D0A65F2C032A7B000417CC /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A65E2C032A7B000417CC /* DateFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,7 +49,6 @@
 		20D0A6572C01FE5B000417CC /* MusicPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerManager.swift; sourceTree = "<group>"; };
 		20D0A65A2C01FE8F000417CC /* JournalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewModel.swift; sourceTree = "<group>"; };
 		20D0A65C2C02532D000417CC /* JournalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCardView.swift; sourceTree = "<group>"; };
-		20D0A65E2C032A7B000417CC /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +81,6 @@
 		20D0A6262BFEE40E000417CC /* moodsicJournal */ = {
 			isa = PBXGroup;
 			children = (
-				20D0A6602C032A80000417CC /* Helper */,
 				20D0A6592C01FE7A000417CC /* ViewModel */,
 				20D0A6532C00F690000417CC /* Model */,
 				20D0A63E2BFEFA02000417CC /* View */,
@@ -137,14 +134,6 @@
 				20D0A65A2C01FE8F000417CC /* JournalViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		20D0A6602C032A80000417CC /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				20D0A65E2C032A7B000417CC /* DateFormatter.swift */,
-			);
-			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,7 +206,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20D0A65F2C032A7B000417CC /* DateFormatter.swift in Sources */,
 				20D0A6342BFEE40F000417CC /* moodsicJournal.xcdatamodeld in Sources */,
 				20D0A6312BFEE40F000417CC /* Persistence.swift in Sources */,
 				20D0A6482BFF6FA2000417CC /* MoodSelectionModalView.swift in Sources */,

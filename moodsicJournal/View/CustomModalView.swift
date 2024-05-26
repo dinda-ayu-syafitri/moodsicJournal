@@ -21,6 +21,8 @@ struct CustomModalView: View {
     @State var selectedSongId = ""
     @State var playlistId = ""
 
+    @Binding var isAddJournalOpen: Bool
+
     var body: some View {
         NavigationStack{
             if !addTitleDone  {
@@ -62,6 +64,7 @@ struct CustomModalView: View {
             do {
                 try viewContext.save()
                 dismiss()
+                isAddJournalOpen = false
                 isSaved = true
             } catch {
                 let nsError = error as NSError
@@ -106,6 +109,6 @@ struct CustomModalView: View {
     }
 }
 
-#Preview {
-    CustomModalView()
-}
+//#Preview {
+//    CustomModalView()
+//}
