@@ -14,6 +14,8 @@ struct MoodSelectionModalView: View {
     var body: some View {
         VStack(spacing: 35) {
             Text("How are you feeling today?")
+                .font(.system(size: 20, weight: .bold))
+                .foregroundStyle(Color.mainBlue)
             HStack (alignment: .center, spacing: 15) {
                 Button(action: {
                     selectedMood = "Excited"
@@ -98,6 +100,6 @@ struct MoodSelectionModalView: View {
     }
 }
 
-//#Preview {
-//    MoodSelectionModalView(selectedMood: )
-//}
+#Preview {
+    MoodSelectionModalView(selectedMood: .constant("Sad"), playlistId: .constant("..."))
+}

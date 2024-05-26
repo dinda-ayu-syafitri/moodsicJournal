@@ -13,29 +13,27 @@ struct AddTitleModalView: View {
 
     var body: some View {
         VStack(alignment: .center, spacing: 20) {
-                Text("Enter Canvas Title")
-                    .font(.headline)
-                    .padding(.top)
+            TextField("Journal Title", text: $journalTitle)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .font(.system(size: 20))
+                .padding(.horizontal, 20)
 
-                TextField("Canvas Title", text: $journalTitle)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding(.horizontal, 20)
-
-                Button(action: { addTitleDone = true }) {
-                    Text("Next")
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
-                .padding(20)
+            Button(action: { addTitleDone = true }) {
+                Text("Next")
+                    .font(.system(size: 20))
             }
-            .background(Color.white)
-            .padding()
+            .padding(.horizontal, 50)
+            .padding(.vertical, 15)
+            .background(.mainBlue)
+            .foregroundStyle(Color.white)
+            .clipShape(RoundedRectangle(cornerRadius: 25.0))
+            .shadow(radius: 5)
         }
+        .background(Color.white)
+        .padding()
+    }
 }
 
-//#Preview {
-//    AddTitleModalView(journalTitle: <#Binding<String>#>, addTitleDone: <#Binding<Bool>#>)
-//}
+#Preview {
+    AddTitleModalView(journalTitle: .constant("Test"), addTitleDone: .constant(false))
+}

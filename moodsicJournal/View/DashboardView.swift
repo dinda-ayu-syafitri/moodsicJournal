@@ -38,7 +38,7 @@ struct DashboardView: View {
                         VStack(alignment: .leading, spacing: 30) {
                             Text("Journal Dashboard")
                                 .font(.system(size: 36))
-                                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                .fontWeight(.bold)
                                 .foregroundStyle(.mainBlue)
                             VStack(spacing: 25) {
                                 Text("Create New Journal")
@@ -104,7 +104,7 @@ struct DashboardView: View {
 
                     if isAddJournalOpen {
                         Rectangle()
-                            .fill(Color.black.opacity(0.8))
+                            .fill(Color.black.opacity(0.5))
                             .edgesIgnoringSafeArea(.all)
                             .onTapGesture {
                                 isAddJournalOpen = false

@@ -48,7 +48,14 @@ struct CustomModalView: View {
                             MoodSelectionModalView(selectedMood: $mood, playlistId: $playlistId)
                             Button(action: {moodSelected = true}, label: {
                                 Text("Next")
+                                    .font(.system(size: 20))
                             })
+                            .padding(.horizontal, 50)
+                            .padding(.vertical, 15)
+                            .background(.mainBlue)
+                            .foregroundStyle(Color.white)
+                            .clipShape(RoundedRectangle(cornerRadius: 25.0))
+                            .shadow(radius: 5)
                         }
                         .frame(width: .infinity,height: .infinity, alignment: .center)
                         .frame(maxHeight: .infinity, alignment: .center)
@@ -70,7 +77,14 @@ struct CustomModalView: View {
                             MusicRecommendationModalView(songs: $songs, selectedSongId: $selectedSongId)
                             Button(action: {newJournal()}, label: {
                                 Text("Start Journaling !")
+                                    .font(.system(size: 20))
                             })
+                            .padding(.horizontal, 50)
+                            .padding(.vertical, 15)
+                            .background(.mainBlue)
+                            .foregroundStyle(Color.white)
+                            .clipShape(RoundedRectangle(cornerRadius: 25.0))
+                            .shadow(radius: 5)
                         }
                         .frame(width: .infinity,height: .infinity, alignment: .center)
                         .frame(maxHeight: .infinity, alignment: .center)
