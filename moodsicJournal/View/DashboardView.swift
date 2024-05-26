@@ -94,12 +94,16 @@ struct DashboardView: View {
                         Rectangle()
                             .fill(Color.black.opacity(0.8))
                             .edgesIgnoringSafeArea(.all)
+                            .onTapGesture {
+                                isAddJournalOpen = false
+                            }
                             .overlay(
                                 CustomModalView(isAddJournalOpen: $isAddJournalOpen)
                                     .environment(\.managedObjectContext, viewContext)
-                                    .frame(height: 300)
-                                    .padding(.horizontal, 50)
-                                    .clipShape(RoundedRectangle(cornerRadius: 25.0))
+                                    .frame(height: 400, alignment: .center)
+                                    .frame(width: geometry.size.width * 0.60, alignment: .center)
+                                    .background(.white)
+                                    .clipShape(RoundedRectangle(cornerRadius: 15.0))
                             )
                     }
                 }

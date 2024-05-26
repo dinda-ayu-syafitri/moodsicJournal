@@ -14,22 +14,30 @@ struct MusicRecommendationModalView: View {
     @Binding var selectedSongId:String
 
     var body: some View {
-        VStack {
+        VStack(alignment: .center) {
             Text("Some music recommendation for your today’s Soundtrack")
+                .multilineTextAlignment(.center)
+                .frame(maxWidth: .infinity, alignment: .center)
 
-            HStack {
-                ForEach(songs) { song in
-                    Button(action: {selectedSongId = song.id}, label: {
+            HStack(alignment: .top) {
+                ForEach($songs, id: \.self) { $song in
+                    Button(action: {
+                        selectedSongId = song.id
+                    }, label: {
                         VStack {
+                            ArtworkImage(song.imageURL!, width: 80)
+                                .cornerRadius(8)
                             Text(song.title)
                             Text(song.artist)
                         }
+                        .padding()
+                        .background(selectedSongId == song.id ? Color.gray : Color.clear)
+                        .cornerRadius(10)
                     })
                 }
             }
 
         }
-        
     }
 }
 

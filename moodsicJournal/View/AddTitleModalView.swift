@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct AddTitleModalView: View {
-    @Binding var journalTitle:String
-    @Binding var addTitleDone:Bool
+    @Binding var journalTitle: String
+    @Binding var addTitleDone: Bool
 
     var body: some View {
-            VStack(spacing: 20) {
+        VStack(alignment: .center, spacing: 20) {
                 Text("Enter Canvas Title")
                     .font(.headline)
                     .padding(.top)
 
                 TextField("Canvas Title", text: $journalTitle)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding([.leading, .trailing], 20)
+                    .padding(.horizontal, 20)
 
                 Button(action: { addTitleDone = true }) {
                     Text("Next")
@@ -29,7 +29,7 @@ struct AddTitleModalView: View {
                         .foregroundColor(.white)
                         .cornerRadius(10)
                 }
-                .padding([.leading, .trailing, .bottom], 20)
+                .padding(20)
             }
             .background(Color.white)
             .padding()
