@@ -4,14 +4,11 @@
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <entity name="Journal" representedClassName="Journal" syncable="YES" codeGenerationType="class">
-        <attribute name="artworkURL" optional="YES" attributeType="URI"/>
         <attribute name="canvasData" optional="YES" attributeType="Binary"/>
         <attribute name="createdDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="mood" optional="YES" attributeType="String"/>
-        <attribute name="songArtist" optional="YES" attributeType="String"/>
         <attribute name="songId" optional="YES" attributeType="String"/>
-        <attribute name="songTitle" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
 </model>

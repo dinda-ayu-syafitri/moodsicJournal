@@ -57,6 +57,7 @@ struct CustomModalView: View {
             newItem.mood = mood
             newItem.id = UUID()
             newItem.songId = selectedSongId
+            newItem.createdDate = Date()
 
             do {
                 try viewContext.save()

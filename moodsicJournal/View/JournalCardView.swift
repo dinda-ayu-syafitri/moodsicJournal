@@ -22,7 +22,7 @@ struct JournalCardView: View {
                         Text(viewModel.title ?? "Untitled")
                             .multilineTextAlignment(.trailing)
                             .frame(maxWidth: .infinity, alignment: .trailing)
-                        Text("21 May 2024")
+                        Text(viewModel.createdDate?.formatted(date: .long, time: .omitted) ?? "21 May 2024")
                             .multilineTextAlignment(.trailing)
                             .frame(maxWidth: .infinity, alignment: .trailing)
                     }

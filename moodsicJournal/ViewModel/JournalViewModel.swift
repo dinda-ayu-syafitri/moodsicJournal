@@ -19,6 +19,7 @@ class JournalViewModel: ObservableObject {
     @Published var songId: String?
     @Published var songs = [Song]()
     @Published var songData: Song?
+    @Published var createdDate: Date?
 
     private let musicPlayerManager = MusicPlayerManager.shared
 
