@@ -98,6 +98,7 @@ struct JournalView: View {
                     viewModel.stopMusic()
                 }
             }
+            .navigationBarBackButtonHidden()
         }
     }
 
