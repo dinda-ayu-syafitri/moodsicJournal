@@ -24,6 +24,16 @@ struct DashboardView: View {
         GeometryReader { geometry in
             NavigationStack {
                 ZStack {
+                    VStack {
+                        Image("bg-dashboard")
+                            .resizable()
+                            .scaledToFit()
+                        Spacer()
+                    }
+                    .edgesIgnoringSafeArea(.bottom)
+                    .frame(maxHeight: .infinity)
+                    .background(.lightBlue)
+
                     ScrollView {
                         VStack(alignment: .leading, spacing: 30) {
                             Text("Journal Dashboard")
@@ -87,6 +97,8 @@ struct DashboardView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.horizontal, geometry.size.width * 0.05)
                         .padding(.vertical, geometry.size.height * 0.03)
+                        .padding(.bottom, 250)
+
                     }
 
 
