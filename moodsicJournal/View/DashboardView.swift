@@ -71,9 +71,10 @@ struct DashboardView: View {
                                         viewModel.objectId = journal.objectID
                                         viewModel.mood = journal.mood
                                         viewModel.songId = journal.songId
+                                        viewModel.songData = nil
                                         return viewModel
                                     }()
-                                }()), label: {
+                                }(), songPlayed: nil), label: {
                                     JournalCardView(viewModel: {
                                         {
                                             let viewModel = JournalViewModel()

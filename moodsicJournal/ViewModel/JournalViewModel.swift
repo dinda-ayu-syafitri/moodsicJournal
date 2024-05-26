@@ -9,6 +9,7 @@ import SwiftUI
 import MusicKit
 import CoreData
 
+@MainActor
 class JournalViewModel: ObservableObject {
     @Published var id: UUID?
     @Published var data: Data?
@@ -17,21 +18,41 @@ class JournalViewModel: ObservableObject {
     @Published var mood: String?
     @Published var songId: String?
     @Published var songs = [Song]()
+    @Published var songData: Song?
 
     private let musicPlayerManager = MusicPlayerManager.shared
 
-    func fetchSongs() async {
-        guard let songId = songId else { return }
-        if !musicPlayerManager.isPlaying || musicPlayerManager.currentSongId != songId {
-            do {
-                let searchRequest = MusicCatalogResourceRequest<Song>(matching: \.id, equalTo: MusicItemID(rawValue: songId))
-                let searchResponse = try await searchRequest.response()
-                guard let songPlayed = searchResponse.items.first else { return }
-                await musicPlayerManager.play(song: songPlayed)
-            } catch {
-                print("Error fetching songs: \(error)")
-            }
+    func fetchSongs() async -> Song? {
+        guard let songId = songId else {
+            print("songId is nil")
+            return nil
         }
+        do {
+            print("Fetching song with ID: \(songId)")
+            let searchRequest = MusicCatalogResourceRequest<Song>(matching: \.id, equalTo: MusicItemID(rawValue: songId))
+            let searchResponse = try await searchRequest.response()
+            guard let fetchedSongData = searchResponse.items.first else {
+                print("No song data found")
+                return nil
+            }
+            self.songData = fetchedSongData
+            print("Song data updated: \(String(describing: self.songData))")
+            return fetchedSongData
+        } catch {
+            print("Error fetching songs: \(error)")
+            return nil
+        }
+    }
+
+    func fetchSongData() async {
+        self.songData = await fetchSongs() // Assuming fetchSongs is an async function
+        print(songData!)
+    }
+
+
+
+    func playMusic() async {
+        await musicPlayerManager.play(song: await fetchSongs()!)
     }
 
     func stopMusic() {

@@ -29,6 +29,7 @@ class JournalViewController:UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(canvas)
+
         NSLayoutConstraint.activate([
             canvas.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             canvas.trailingAnchor.constraint(equalTo: view.trailingAnchor),
