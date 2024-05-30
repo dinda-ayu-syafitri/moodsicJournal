@@ -46,8 +46,3 @@ struct JournalCanvasView: UIViewControllerRepresentable {
     }
 
 }
-
-//#Preview {
-//    JournalCanvasView(data: data ?? Data(), id: id ?? UUID())
-//        .environment(\.managedObjectContext, viewContext)
-//}

@@ -88,7 +88,7 @@ struct DashboardView: View {
                                     }
                                 }
                                 .sheet(isPresented: $isAuthViewShowed, content: {
-                                    MusicKitAuthorizationView(musicAuthorizationStatus: $musicAuthorizationStatus, isAuthViewShowed: $isAuthViewShowed)
+                                    MusicKitAuthorizationView(musicAuthorizationStatus: musicAuthorizationStatus, isAuthViewShowed: isAuthViewShowed)
                                 })
 
                             }

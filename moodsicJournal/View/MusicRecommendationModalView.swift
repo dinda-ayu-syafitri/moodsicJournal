@@ -28,10 +28,12 @@ struct MusicRecommendationModalView: View {
                             ArtworkImage(song.imageURL!, width: 80)
                                 .cornerRadius(8)
                             Text(song.title)
+                                .padding(.bottom, 5)
                             Text(song.artist)
                         }
                         .padding()
-                        .background(selectedSongId == song.id ? Color.gray : Color.clear)
+                        .background(selectedSongId == song.id ? Color.lightBlue : Color.clear)
+                        .foregroundStyle(Color.mainBlue)
                         .cornerRadius(10)
                     })
                 }

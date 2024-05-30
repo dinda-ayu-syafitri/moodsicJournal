@@ -25,13 +25,12 @@ struct JournalView: View {
                             Button(action: { dismiss() }) {
                                 Image(systemName: "chevron.left")
                                     .font(.system(size: 32))
-//                                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                             }
                             .buttonStyle(PlainButtonStyle())
 
                             Text(viewModel.title ?? "Untitled")
                                 .font(.system(size: 24))
-                                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                .fontWeight(.bold)
 
                             Spacer()
 
@@ -47,7 +46,7 @@ struct JournalView: View {
                                 if let artwork = songPlayed?.artwork {
                                     ArtworkImage(artwork, width: 50)
                                         .cornerRadius(8)
-                                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                                        .clipShape(Circle())
                                 }
 
                                 VStack {
