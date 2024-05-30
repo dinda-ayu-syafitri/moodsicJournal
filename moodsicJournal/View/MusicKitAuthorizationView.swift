@@ -10,11 +10,9 @@ import MusicKit
 
 struct MusicKitAuthorizationView: View {
     @Environment(\.dismiss) var dismiss
-    @StateObject private var viewModel: MusicKitAuthorizationViewModel
+    @Binding var musicAuthorizationStatus: MusicAuthorization.Status
+    @Binding var isAuthViewShowed:Bool
 
-      init(musicAuthorizationStatus: MusicAuthorization.Status, isAuthViewShowed: Bool) {
-          _viewModel = StateObject(wrappedValue: MusicKitAuthorizationViewModel(musicAuthorizationStatus: musicAuthorizationStatus, isAuthViewShowed: isAuthViewShowed))
-      }
 
 
     var body: some View {
@@ -37,8 +35,8 @@ struct MusicKitAuthorizationView: View {
                 .padding(.bottom, 50)
                 .foregroundStyle(Color.mainOrange)
 
-            if viewModel.musicAuthorizationStatus == .notDetermined || viewModel.musicAuthorizationStatus == .denied {
-                Button(action: {viewModel.askForAuthorization()}, label: {
+            if musicAuthorizationStatus == .notDetermined || musicAuthorizationStatus == .denied {
+                Button(action: {askForAuthorization()}, label: {
                     Text("Start")
                         .font(.system(size: 20))
                 })
@@ -63,8 +61,35 @@ struct MusicKitAuthorizationView: View {
 
         }
     }
+
+    private func askForAuthorization() {
+        switch musicAuthorizationStatus {
+        case .notDetermined:
+            Task {
+                let musicAuthorizationStatus = await MusicAuthorization.request()
+                await update(with: musicAuthorizationStatus)
+            }
+        default:
+            isAuthViewShowed = false
+        }
+    }
+
+    @MainActor
+    private func update(with musicAuthorizationStatus: MusicAuthorization.Status) {
+        withAnimation {
+            self.musicAuthorizationStatus = musicAuthorizationStatus
+            switch musicAuthorizationStatus {
+            case .authorized:
+                Task {
+                    isAuthViewShowed = false
+                }
+            default:
+                isAuthViewShowed = true
+            }
+        }
+    }
 }
 
 #Preview {
-    MusicKitAuthorizationView(musicAuthorizationStatus: .notDetermined, isAuthViewShowed: true)
+    MusicKitAuthorizationView(musicAuthorizationStatus: .constant(.notDetermined), isAuthViewShowed: .constant(true))
 }

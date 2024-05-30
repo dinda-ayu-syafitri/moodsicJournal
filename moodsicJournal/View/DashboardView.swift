@@ -20,6 +20,8 @@ struct DashboardView: View {
     @State var isAuthViewShowed: Bool
     @State private var selectedJournal: Journal?
 
+    @State var journal: JournalViewModel?
+
     var body: some View {
         GeometryReader { geometry in
             NavigationStack {
@@ -72,23 +74,19 @@ struct DashboardView: View {
 
                                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()),GridItem(.flexible())], alignment: .leading, spacing: 250) {
                                     ForEach(journals) { journal in
-                                        JournalCardView(viewModel: {
-                                            {
-                                                let viewModel = JournalViewModel()
-                                                viewModel.id = journal.id
-                                                viewModel.data = journal.canvasData
-                                                viewModel.title = journal.title
-                                                viewModel.objectId = journal.objectID
-                                                viewModel.mood = journal.mood
-                                                viewModel.songId = journal.songId
-                                                viewModel.createdDate = journal.createdDate
-                                                return viewModel
-                                            }()
-                                        }())
+                                        JournalCardView(viewModel: JournalViewModel(id: journal.id,
+                                                                                    data: journal.canvasData,
+                                                                                    title: journal.title,
+                                                                                    objectId: journal.objectID,
+                                                                                    mood: journal.mood,
+                                                                                    songId: journal.songId,
+                                                                                    createdDate: journal.createdDate
+                                                                                   ))
+                                        .environmentObject(journal)
                                     }
                                 }
                                 .sheet(isPresented: $isAuthViewShowed, content: {
-                                    MusicKitAuthorizationView(musicAuthorizationStatus: musicAuthorizationStatus, isAuthViewShowed: isAuthViewShowed)
+                                    MusicKitAuthorizationView(musicAuthorizationStatus: $musicAuthorizationStatus, isAuthViewShowed: $isAuthViewShowed)
                                 })
 
                             }
@@ -125,7 +123,17 @@ struct DashboardView: View {
     }
 }
 
-
+//@MainActor func getViewModel(journal: Journal) -> JournalViewModel {
+//    let viewModel = JournalViewModel()
+//    viewModel.id = journal.id ?? UUID()
+//    viewModel.data = journal.canvasData ?? Data()
+//    viewModel.title = journal.title
+//    viewModel.objectId = journal.objectID
+//    viewModel.mood = journal.mood
+//    viewModel.songId = journal.songId
+//    viewModel.createdDate = journal.createdDate
+//    return viewModel
+//}
 
 #Preview {
     DashboardView(musicAuthorizationStatus: .authorized, isAuthViewShowed: false).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct JournalCardView: View {
-    @ObservedObject var viewModel: JournalViewModel
+    @StateObject var viewModel: JournalViewModel
 
     var body: some View {
         GeometryReader {
@@ -52,15 +52,15 @@ struct JournalCardView: View {
     }
 }
 
-#Preview {
-    JournalCardView(viewModel: {
-        {
-            let viewModel = JournalViewModel()
-            viewModel.id = UUID()
-            viewModel.title = "Journal Title"
-            viewModel.mood = "Happy"
-            viewModel.songId = "12123"
-            return viewModel
-        }()
-    }())
-}
+//#Preview {
+//    JournalCardView(viewModel: {
+//        {
+//            let viewModel = JournalViewModel()
+//            viewModel.id = UUID()
+//            viewModel.title = "Journal Title"
+//            viewModel.mood = "Happy"
+//            viewModel.songId = "12123"
+//            return viewModel
+//        }()
+//    }())
+//}
