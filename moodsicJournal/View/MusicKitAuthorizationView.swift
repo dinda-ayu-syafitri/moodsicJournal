@@ -5,15 +5,13 @@
 //  Created by Dinda Ayu Syafitri on 24/05/24.
 //
 
-import SwiftUI
 import MusicKit
+import SwiftUI
 
 struct MusicKitAuthorizationView: View {
     @Environment(\.dismiss) var dismiss
     @Binding var musicAuthorizationStatus: MusicAuthorization.Status
-    @Binding var isAuthViewShowed:Bool
-
-
+    @Binding var isAuthViewShowed: Bool
 
     var body: some View {
         VStack {
@@ -36,7 +34,7 @@ struct MusicKitAuthorizationView: View {
                 .foregroundStyle(Color.mainOrange)
 
             if musicAuthorizationStatus == .notDetermined || musicAuthorizationStatus == .denied {
-                Button(action: {askForAuthorization()}, label: {
+                Button(action: { askForAuthorization() }, label: {
                     Text("Start")
                         .font(.system(size: 20))
                 })
@@ -47,7 +45,7 @@ struct MusicKitAuthorizationView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 25.0))
                 .shadow(radius: 5)
             } else {
-                Button(action: {dismiss()}, label: {
+                Button(action: { dismiss() }, label: {
                     Text("Continue")
                         .font(.system(size: 20))
                 })
@@ -58,7 +56,6 @@ struct MusicKitAuthorizationView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 25.0))
                 .shadow(radius: 5)
             }
-
         }
     }
 

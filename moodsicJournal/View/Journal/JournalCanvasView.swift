@@ -10,7 +10,7 @@ import SwiftUI
 import CoreData
 
 struct JournalCanvasView: UIViewControllerRepresentable {
-    @Environment (\.managedObjectContext) private var viewContext
+    @Environment(\.managedObjectContext) private var viewContext
 
     func updateUIViewController(_ uiViewController: JournalViewController, context: Context) {
         uiViewController.journalData = data

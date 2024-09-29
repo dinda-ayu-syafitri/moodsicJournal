@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2005EFF82CA84FBD00C992EF /* JournalThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2005EFF72CA84FBD00C992EF /* JournalThumbnailView.swift */; };
 		20D0A6282BFEE40E000417CC /* moodsicJournalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6272BFEE40E000417CC /* moodsicJournalApp.swift */; };
-		20D0A62A2BFEE40E000417CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6292BFEE40E000417CC /* ContentView.swift */; };
 		20D0A62C2BFEE40F000417CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20D0A62B2BFEE40F000417CC /* Assets.xcassets */; };
 		20D0A62F2BFEE40F000417CC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20D0A62E2BFEE40F000417CC /* Preview Assets.xcassets */; };
 		20D0A6312BFEE40F000417CC /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6302BFEE40F000417CC /* Persistence.swift */; };
@@ -29,9 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2005EFF72CA84FBD00C992EF /* JournalThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalThumbnailView.swift; sourceTree = "<group>"; };
 		20D0A6242BFEE40E000417CC /* moodsicJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moodsicJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20D0A6272BFEE40E000417CC /* moodsicJournalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moodsicJournalApp.swift; sourceTree = "<group>"; };
-		20D0A6292BFEE40E000417CC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		20D0A62B2BFEE40F000417CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20D0A62E2BFEE40F000417CC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		20D0A6302BFEE40F000417CC /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -62,6 +62,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20A6D26B2CA319AC00BD57C3 /* Journal */ = {
+			isa = PBXGroup;
+			children = (
+				20D0A63F2BFF3FFF000417CC /* JournalViewController.swift */,
+				20D0A6432BFF40DB000417CC /* JournalCanvasView.swift */,
+				20D0A6452BFF44B0000417CC /* JournalView.swift */,
+			);
+			path = Journal;
+			sourceTree = "<group>";
+		};
+		20A6D26C2CA319CF00BD57C3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				20D0A65C2C02532D000417CC /* JournalCardView.swift */,
+				20D0A6492C00AF87000417CC /* CustomModalView.swift */,
+				2005EFF72CA84FBD00C992EF /* JournalThumbnailView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		20D0A61B2BFEE40E000417CC = {
 			isa = PBXGroup;
 			children = (
@@ -104,17 +124,13 @@
 		20D0A63E2BFEFA02000417CC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				20D0A6292BFEE40E000417CC /* ContentView.swift */,
+				20A6D26C2CA319CF00BD57C3 /* Components */,
+				20A6D26B2CA319AC00BD57C3 /* Journal */,
 				20D0A63A2BFEE73D000417CC /* DashboardView.swift */,
-				20D0A63F2BFF3FFF000417CC /* JournalViewController.swift */,
-				20D0A6432BFF40DB000417CC /* JournalCanvasView.swift */,
-				20D0A6452BFF44B0000417CC /* JournalView.swift */,
 				20D0A6472BFF6FA2000417CC /* MoodSelectionModalView.swift */,
-				20D0A6492C00AF87000417CC /* CustomModalView.swift */,
 				20D0A64B2C00AFD8000417CC /* AddTitleModalView.swift */,
 				20D0A64F2C00DFE8000417CC /* MusicKitAuthorizationView.swift */,
 				20D0A6512C00F574000417CC /* MusicRecommendationModalView.swift */,
-				20D0A65C2C02532D000417CC /* JournalCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -215,11 +231,11 @@
 				20D0A6522C00F574000417CC /* MusicRecommendationModalView.swift in Sources */,
 				20D0A6442BFF40DB000417CC /* JournalCanvasView.swift in Sources */,
 				20D0A65B2C01FE8F000417CC /* JournalViewModel.swift in Sources */,
-				20D0A62A2BFEE40E000417CC /* ContentView.swift in Sources */,
 				20D0A6462BFF44B0000417CC /* JournalView.swift in Sources */,
 				20D0A64C2C00AFD8000417CC /* AddTitleModalView.swift in Sources */,
 				20D0A6552C00F750000417CC /* Music.swift in Sources */,
 				20D0A6282BFEE40E000417CC /* moodsicJournalApp.swift in Sources */,
+				2005EFF82CA84FBD00C992EF /* JournalThumbnailView.swift in Sources */,
 				20D0A65D2C02532D000417CC /* JournalCardView.swift in Sources */,
 				20D0A6582C01FE5B000417CC /* MusicPlayerManager.swift in Sources */,
 				20D0A6402BFF3FFF000417CC /* JournalViewController.swift in Sources */,
