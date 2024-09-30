@@ -24,7 +24,6 @@ struct JournalThumbnailView: View {
                                 Image(uiImage: drawing.toImage(size: CGSize(width: 1000, height: 1000)))
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
-
                             } else {
                                 Color.gray
                             }
@@ -34,15 +33,13 @@ struct JournalThumbnailView: View {
                     .frame(minWidth: 200, minHeight: 200)
                     .background(Color.white)
                     .clipShape(RoundedRectangle(cornerRadius: 20.0))
-//                    .overlay(content: {
-//                        RoundedRectangle(cornerRadius: 20)
-//                            .frame(maxWidth: .infinity, maxHeight: .infinity)
-//                            .frame(minWidth: 200, minHeight: 200)
-//                            .background(.clear)
-//                            .border(.gray, width: 1)
-//
-//                    })
-                    .padding(10)
+                    .overlay(content: {
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.gray, lineWidth: 1)
+
+                    })
+                    .padding(.horizontal, 10)
+                    .padding(.top, 10)
 
                 VStack(alignment: .trailing) {
                     if let mood = viewModel.mood?.lowercased() {
@@ -52,7 +49,6 @@ struct JournalThumbnailView: View {
                             .frame(width: 35)
                             .frame(maxWidth: .infinity, alignment: .leading)
                     }
-                    Spacer()
                     Text(viewModel.title ?? "Untitled")
                         .font(.system(size: 15, weight: .bold))
                         .multilineTextAlignment(.trailing)
@@ -64,7 +60,8 @@ struct JournalThumbnailView: View {
                         .frame(maxWidth: .infinity, alignment: .trailing)
                 }
                 .foregroundColor(Color.mainBlue)
-                .padding(20)
+                .padding(.horizontal, 20)
+                .padding(.bottom, 20)
             }
             .background(.white)
             .clipShape(RoundedRectangle(cornerRadius: 25.0))
