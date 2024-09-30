@@ -5,9 +5,9 @@
 //  Created by Dinda Ayu Syafitri on 23/05/24.
 //
 
-import SwiftUI
 import CoreData
 import MusicKit
+import SwiftUI
 
 struct DashboardView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -45,7 +45,7 @@ struct DashboardView: View {
                             VStack(spacing: 25) {
                                 Text("Create New Journal")
                                     .font(.system(size: 20))
-                                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                    .fontWeight(/*@START_MENU_TOKEN@*/ .bold/*@END_MENU_TOKEN@*/)
                                     .foregroundStyle(.mainBlue)
                                 Button(action: {
                                     isAddJournalOpen.toggle()
@@ -53,7 +53,7 @@ struct DashboardView: View {
                                     RoundedRectangle(cornerRadius: 25.0)
                                         .fill(.white)
                                         .frame(width: 200, height: 200)
-                                        .shadow(radius: 10)
+                                        .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.1), radius: 5)
                                         .overlay {
                                             Image(systemName: "plus.circle")
                                                 .resizable()
@@ -69,36 +69,34 @@ struct DashboardView: View {
                             VStack(alignment: .leading, spacing: 25) {
                                 Text("May 2024")
                                     .font(.system(size: 20))
-                                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                    .fontWeight(/*@START_MENU_TOKEN@*/ .bold/*@END_MENU_TOKEN@*/)
                                     .foregroundStyle(.mainBlue)
 
-                                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()),GridItem(.flexible())], alignment: .leading, spacing: 250) {
+                                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], alignment: .leading, spacing: 30) {
                                     ForEach(journals) { journal in
-                                        JournalCardView(viewModel: JournalViewModel(id: journal.id,
-                                                                                    data: journal.canvasData,
-                                                                                    title: journal.title,
-                                                                                    objectId: journal.objectID,
-                                                                                    mood: journal.mood,
-                                                                                    songId: journal.songId,
-                                                                                    createdDate: journal.createdDate
-                                                                                   ))
-                                        .environmentObject(journal)
+                                        JournalThumbnailView(viewModel: {
+                                            let viewModel = JournalViewModel()
+                                            viewModel.id = journal.id
+                                            viewModel.data = journal.canvasData
+                                            viewModel.title = journal.title
+                                            viewModel.objectId = journal.objectID
+                                            viewModel.mood = journal.mood
+                                            viewModel.songId = journal.songId
+                                            viewModel.createdDate = journal.createdDate
+                                            return viewModel
+                                        }())
                                     }
                                 }
                                 .sheet(isPresented: $isAuthViewShowed, content: {
                                     MusicKitAuthorizationView(musicAuthorizationStatus: $musicAuthorizationStatus, isAuthViewShowed: $isAuthViewShowed)
                                 })
-
                             }
-
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.horizontal, geometry.size.width * 0.05)
                         .padding(.vertical, geometry.size.height * 0.03)
-                        .padding(.bottom, 250)
-
+//                        .padding(.bottom, 150)
                     }
-
 
                     if isAddJournalOpen {
                         Rectangle()
@@ -118,24 +116,10 @@ struct DashboardView: View {
                     }
                 }
             }
-
         }
     }
 }
 
-//@MainActor func getViewModel(journal: Journal) -> JournalViewModel {
-//    let viewModel = JournalViewModel()
-//    viewModel.id = journal.id ?? UUID()
-//    viewModel.data = journal.canvasData ?? Data()
-//    viewModel.title = journal.title
-//    viewModel.objectId = journal.objectID
-//    viewModel.mood = journal.mood
-//    viewModel.songId = journal.songId
-//    viewModel.createdDate = journal.createdDate
-//    return viewModel
-//}
-
 #Preview {
     DashboardView(musicAuthorizationStatus: .authorized, isAuthViewShowed: false).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
 }
-

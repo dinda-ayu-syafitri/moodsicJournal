@@ -5,12 +5,12 @@
 //  Created by Dinda Ayu Syafitri on 24/05/24.
 //
 
-import SwiftUI
 import MusicKit
+import SwiftUI
 
 struct CustomModalView: View {
-    @Environment (\.managedObjectContext) var viewContext
-    @Environment (\.dismiss) var dismiss
+    @Environment(\.managedObjectContext) var viewContext
+    @Environment(\.dismiss) var dismiss
 
     @State private var journalTitle = ""
     @State private var mood = ""
@@ -25,18 +25,18 @@ struct CustomModalView: View {
 
     var body: some View {
         GeometryReader {
-            geometry in
+            _ in
 
-            NavigationStack{
-                if !addTitleDone  {
+            NavigationStack {
+                if !addTitleDone {
                     AddTitleModalView(journalTitle: $journalTitle, addTitleDone: $addTitleDone)
-                        .frame(width: .infinity,height: .infinity, alignment: .center)
+//                        .frame(width: .infinity, height: .infinity, alignment: .center)
                         .frame(maxHeight: .infinity, alignment: .center)
                         .padding(.horizontal, 50)
 
-                } else if !moodSelected{
+                } else if !moodSelected {
                     VStack {
-                        Button(action: {addTitleDone.toggle()}, label: {
+                        Button(action: { addTitleDone.toggle() }, label: {
                             Image(systemName: "arrow.left")
 
                         })
@@ -46,7 +46,7 @@ struct CustomModalView: View {
                         .padding()
                         VStack(alignment: .center, spacing: 20) {
                             MoodSelectionModalView(selectedMood: $mood, playlistId: $playlistId)
-                            Button(action: {moodSelected = true}, label: {
+                            Button(action: { moodSelected = true }, label: {
                                 Text("Next")
                                     .font(.system(size: 20))
                             })
@@ -57,7 +57,7 @@ struct CustomModalView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 25.0))
                             .shadow(radius: 5)
                         }
-                        .frame(width: .infinity,height: .infinity, alignment: .center)
+//                        .frame(width: .infinity, height: .infinity, alignment: .center)
                         .frame(maxHeight: .infinity, alignment: .center)
                         .padding(.vertical, 20)
                         .padding(.horizontal, 50)
@@ -65,7 +65,7 @@ struct CustomModalView: View {
 
                 } else {
                     VStack {
-                        Button(action: {moodSelected.toggle()}, label: {
+                        Button(action: { moodSelected.toggle() }, label: {
                             Image(systemName: "arrow.left")
                         })
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -75,7 +75,7 @@ struct CustomModalView: View {
 
                         VStack(alignment: .center, spacing: 20) {
                             MusicRecommendationModalView(songs: $songs, selectedSongId: $selectedSongId)
-                            Button(action: {newJournal()}, label: {
+                            Button(action: { newJournal() }, label: {
                                 Text("Start Journaling !")
                                     .font(.system(size: 20))
                             })
@@ -86,7 +86,7 @@ struct CustomModalView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 25.0))
                             .shadow(radius: 5)
                         }
-                        .frame(width: .infinity,height: .infinity, alignment: .center)
+//                        .frame(width: .infinity, height: .infinity, alignment: .center)
                         .frame(maxHeight: .infinity, alignment: .center)
                         .padding(.vertical, 20)
                         .padding(.horizontal, 50)
@@ -97,14 +97,10 @@ struct CustomModalView: View {
                             }
                         }
                     }
-
                 }
-
             }
         }
-
     }
-
 
     private func newJournal() {
         withAnimation {
@@ -132,9 +128,8 @@ struct CustomModalView: View {
             var playlistRequest = MusicCatalogResourceRequest<Playlist>(matching: \.id, equalTo: MusicItemID(rawValue: playlistId))
             playlistRequest.properties = [.tracks]
 
-
             let playlistResponse = try await playlistRequest.response()
-            
+
             if let playlist = playlistResponse.items.first {
                 if let tracksCollection = playlist.tracks {
                     let tracksArray = Array(tracksCollection)
@@ -162,6 +157,6 @@ struct CustomModalView: View {
     }
 }
 
-//#Preview {
+// #Preview {
 //    CustomModalView()
-//}
+// }
