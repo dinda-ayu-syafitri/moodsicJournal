@@ -18,6 +18,7 @@ struct moodsicJournalApp: App {
                           isAuthViewShowed: MusicAuthorization.currentStatus != .authorized)
 //            MusicRecommendationModalView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            
         }
     }
 }

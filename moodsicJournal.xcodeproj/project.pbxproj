@@ -26,6 +26,7 @@
 		20D0A6582C01FE5B000417CC /* MusicPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6572C01FE5B000417CC /* MusicPlayerManager.swift */; };
 		20D0A65B2C01FE8F000417CC /* JournalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A65A2C01FE8F000417CC /* JournalViewModel.swift */; };
 		20D0A65D2C02532D000417CC /* JournalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A65C2C02532D000417CC /* JournalCardView.swift */; };
+		20D0A6622C041FC4000417CC /* MusicKitAuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6612C041FC4000417CC /* MusicKitAuthorizationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		20D0A6572C01FE5B000417CC /* MusicPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerManager.swift; sourceTree = "<group>"; };
 		20D0A65A2C01FE8F000417CC /* JournalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewModel.swift; sourceTree = "<group>"; };
 		20D0A65C2C02532D000417CC /* JournalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCardView.swift; sourceTree = "<group>"; };
+		20D0A6612C041FC4000417CC /* MusicKitAuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicKitAuthorizationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				20D0A65A2C01FE8F000417CC /* JournalViewModel.swift */,
+				20D0A6612C041FC4000417CC /* MusicKitAuthorizationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				20D0A6342BFEE40F000417CC /* moodsicJournal.xcdatamodeld in Sources */,
 				20D0A6312BFEE40F000417CC /* Persistence.swift in Sources */,
 				20D0A6482BFF6FA2000417CC /* MoodSelectionModalView.swift in Sources */,
+				20D0A6622C041FC4000417CC /* MusicKitAuthorizationViewModel.swift in Sources */,
 				20D0A63B2BFEE73D000417CC /* DashboardView.swift in Sources */,
 				20D0A64A2C00AF87000417CC /* CustomModalView.swift in Sources */,
 				20D0A6502C00DFE8000417CC /* MusicKitAuthorizationView.swift in Sources */,

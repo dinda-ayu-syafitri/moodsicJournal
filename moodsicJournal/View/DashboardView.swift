@@ -20,6 +20,8 @@ struct DashboardView: View {
     @State var isAuthViewShowed: Bool
     @State private var selectedJournal: Journal?
 
+    @State var journal: JournalViewModel?
+
     var body: some View {
         GeometryReader { geometry in
             NavigationStack {

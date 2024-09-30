@@ -21,17 +21,45 @@ class JournalViewModel: ObservableObject {
     @Published var songData: Song?
     @Published var createdDate: Date?
 
+    init(id: UUID? = nil, data: Data? = nil, title: String? = nil, objectId: NSManagedObjectID? = nil, mood: String? = nil, songId: String? = nil, songs: [Song] = [Song](), songData: Song? = nil, createdDate: Date? = nil) {
+        self.id = id
+        self.data = data
+        self.title = title
+        self.objectId = objectId
+        self.mood = mood
+        self.songId = songId
+        self.songs = songs
+        self.songData = songData
+        self.createdDate = createdDate
+    }
+
+    func getData() -> Data {
+//        return Data()
+        return data ?? Data()
+    }
+
+    func getId() -> UUID {
+//        return UUID()
+        return id ?? UUID()
+    }
+
     private let musicPlayerManager = MusicPlayerManager.shared
 
     func fetchSongs() async -> Song? {
+        if songData != nil {
+            return nil
+        }
+
         guard let songId = songId else {
             print("songId is nil")
             return nil
         }
+
         do {
             print("Fetching song with ID: \(songId)")
             let searchRequest = MusicCatalogResourceRequest<Song>(matching: \.id, equalTo: MusicItemID(rawValue: songId))
             let searchResponse = try await searchRequest.response()
+            
             guard let fetchedSongData = searchResponse.items.first else {
                 print("No song data found")
                 return nil
@@ -45,15 +73,10 @@ class JournalViewModel: ObservableObject {
         }
     }
 
-    func fetchSongData() async {
-        self.songData = await fetchSongs() // Assuming fetchSongs is an async function
-        print(songData!)
-    }
-
-
-
     func playMusic() async {
-        await musicPlayerManager.play(song: await fetchSongs()!)
+        if songData != nil {
+            await musicPlayerManager.play(song: songData!)
+        }
     }
 
     func stopMusic() {

@@ -18,12 +18,12 @@ struct JournalCanvasView: UIViewControllerRepresentable {
     typealias UIViewControllerType = JournalViewController
 
     var data: Data
-    var id:UUID
+    var id: UUID
 
     func makeUIViewController(context: Context) -> JournalViewController {
         let viewController = JournalViewController()
         viewController.journalData = data
-        viewController.journalChanged = {data in
+        viewController.journalChanged = { data in
             let request: NSFetchRequest<Journal> = Journal.fetchRequest()
             let predicate = NSPredicate(format: "id == %@", id as CVarArg)
             request.predicate = predicate
@@ -46,8 +46,3 @@ struct JournalCanvasView: UIViewControllerRepresentable {
     }
 
 }
-
-//#Preview {
-//    JournalCanvasView(data: data ?? Data(), id: id ?? UUID())
-//        .environment(\.managedObjectContext, viewContext)
-//}

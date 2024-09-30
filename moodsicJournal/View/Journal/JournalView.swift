@@ -10,13 +10,14 @@ import CoreData
 import MusicKit
 
 struct JournalView: View {
+    @ObservedObject var viewModel: JournalViewModel
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.dismiss) private var dismiss
 
-    @ObservedObject var viewModel: JournalViewModel
-    @State var songPlayed:Song?
+    @State var songPlayed: Song?
 
     var body: some View {
+
         GeometryReader { geometry in
             NavigationStack {
                 ZStack {
@@ -25,13 +26,12 @@ struct JournalView: View {
                             Button(action: { dismiss() }) {
                                 Image(systemName: "chevron.left")
                                     .font(.system(size: 32))
-//                                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                             }
                             .buttonStyle(PlainButtonStyle())
 
                             Text(viewModel.title ?? "Untitled")
                                 .font(.system(size: 24))
-                                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                .fontWeight(.bold)
 
                             Spacer()
 
@@ -44,10 +44,10 @@ struct JournalView: View {
                             }
                             HStack {
 
-                                if let artwork = songPlayed?.artwork {
+                                if let artwork = viewModel.songData?.artwork {
                                     ArtworkImage(artwork, width: 50)
                                         .cornerRadius(8)
-                                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                                        .clipShape(Circle())
                                 }
 
                                 VStack {
@@ -56,7 +56,7 @@ struct JournalView: View {
                                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                                         .multilineTextAlignment(.leading)
                                         .frame(maxWidth: .infinity, alignment: .leading)
-                                    Text(songPlayed?.artistName ?? "No Artist")
+                                    Text(viewModel.songData?.artistName ?? "No Artist")
                                         .font(.system(size: 12))
                                         .multilineTextAlignment(.leading)
                                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -83,15 +83,21 @@ struct JournalView: View {
                         .padding(.horizontal, geometry.size.width * 0.03)
                         .padding(.vertical, geometry.size.height * 0.02)
 
-                        JournalCanvasView(data: viewModel.data ?? Data(), id: viewModel.id ?? UUID())
-                            .environment(\.managedObjectContext, viewContext)
+                        JournalCanvasView(data: viewModel.getData(), id: viewModel.getId())
+//                            .environment(\.managedObjectContext, viewContext)
                     }
                 }
+//                .onReceive(viewModel.$songData) { song in
+//                    songPlayed = song
+//                }
                 .onAppear {
                     Task {
+//                        print(await viewModel.songData as Any)
+                        songPlayed = await viewModel.fetchSongs()
+                        print("songPlayed: \(songPlayed)")
                         await viewModel.playMusic()
-                        await viewModel.fetchSongData()
-                        await fetchSongs()
+
+//                        await fetchSongs()
                     }
                 }
                 .onDisappear {
@@ -103,39 +109,39 @@ struct JournalView: View {
     }
 
 
-    func fetchSongs() async {
-        guard let songId = viewModel.songId else {
-            print("songId is nil")
-            return
-        }
-        do {
-            let searchRequest = MusicCatalogResourceRequest<Song>(matching: \.id, equalTo: MusicItemID(rawValue: songId))
-            let searchResponse = try await searchRequest.response()
-            guard let fetchedSongData = searchResponse.items.first else {
-                print("No song data found")
-                return
-            }
-            self.songPlayed = fetchedSongData
-        } catch {
-            print("Error fetching songs: \(error)")
-            return         }
-    }
+//    func fetchSongs() async {
+//        guard let songId = viewModel.songId else {
+//            print("songId is nil")
+//            return
+//        }
+//        do {
+//            let searchRequest = MusicCatalogResourceRequest<Song>(matching: \.id, equalTo: MusicItemID(rawValue: songId))
+//            let searchResponse = try await searchRequest.response()
+//            guard let fetchedSongData = searchResponse.items.first else {
+//                print("No song data found")
+//                return
+//            }
+//            self.songPlayed = fetchedSongData
+//        } catch {
+//            print("Error fetching songs: \(error)")
+//            return         }
+//    }
 }
 
 
 
 
-
-#Preview {
-    JournalView(viewModel: {
-        {
-            let viewModel = JournalViewModel()
-            viewModel.id = UUID()
-            viewModel.title = "Test Journal"
-            viewModel.mood = "Happy"
-            viewModel.songId = "1719617464"
-            viewModel.songData = nil
-            return viewModel
-        }()
-    }(), songPlayed: nil)
-}
+//
+//#Preview {
+//    JournalView(viewModel: {
+//        {
+//            let viewModel = JournalViewModel()
+//            viewModel.id = UUID()
+//            viewModel.title = "Test Journal"
+//            viewModel.mood = "Happy"
+//            viewModel.songId = "1719617464"
+//            viewModel.songData = nil
+//            return viewModel
+//        }()
+//    }(), songPlayed: nil)
+//}
