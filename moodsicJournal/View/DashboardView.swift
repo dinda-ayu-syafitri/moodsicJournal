@@ -51,7 +51,7 @@ struct DashboardView: View {
                                     RoundedRectangle(cornerRadius: 25.0)
                                         .fill(.white)
                                         .frame(width: 200, height: 200)
-                                        .shadow(radius: 10)
+                                        .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.1), radius: 5)
                                         .overlay {
                                             Image(systemName: "plus.circle")
                                                 .resizable()
@@ -70,7 +70,7 @@ struct DashboardView: View {
                                     .fontWeight(/*@START_MENU_TOKEN@*/ .bold/*@END_MENU_TOKEN@*/)
                                     .foregroundStyle(.mainBlue)
 
-                                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], alignment: .leading, spacing: 250) {
+                                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], alignment: .leading, spacing: 30) {
                                     ForEach(journals) { journal in
                                         JournalThumbnailView(viewModel: {
                                             let viewModel = JournalViewModel()
@@ -93,7 +93,7 @@ struct DashboardView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.horizontal, geometry.size.width * 0.05)
                         .padding(.vertical, geometry.size.height * 0.03)
-                        .padding(.bottom, 250)
+//                        .padding(.bottom, 150)
                     }
 
                     if isAddJournalOpen {

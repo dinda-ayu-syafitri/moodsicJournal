@@ -30,12 +30,12 @@ struct JournalThumbnailView: View {
                         }
                     )
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .frame(minWidth: 200, minHeight: 200)
+                    .frame(minWidth: 150, minHeight: 200)
                     .background(Color.white)
                     .clipShape(RoundedRectangle(cornerRadius: 20.0))
                     .overlay(content: {
                         RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color.gray, lineWidth: 1)
+                            .stroke(Color(red: 0, green: 0, blue: 0, opacity: 0.1), lineWidth: 1)
 
                     })
                     .padding(.horizontal, 10)
@@ -65,7 +65,8 @@ struct JournalThumbnailView: View {
             }
             .background(.white)
             .clipShape(RoundedRectangle(cornerRadius: 25.0))
-            .shadow(radius: 10)
+            .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.1), radius: 5)
+            .padding(.horizontal, 10)
         }
     }
 }
