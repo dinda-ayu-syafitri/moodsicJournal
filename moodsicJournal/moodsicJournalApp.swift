@@ -5,8 +5,8 @@
 //  Created by Dinda Ayu Syafitri on 23/05/24.
 //
 
-import SwiftUI
 import MusicKit
+import SwiftUI
 
 @main
 struct moodsicJournalApp: App {
@@ -14,11 +14,11 @@ struct moodsicJournalApp: App {
 
     var body: some Scene {
         WindowGroup {
-            DashboardView(musicAuthorizationStatus: MusicAuthorization.currentStatus,
-                          isAuthViewShowed: MusicAuthorization.currentStatus != .authorized)
-//            MusicRecommendationModalView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-            
+            RouterView {
+                DashboardView(musicAuthorizationStatus: MusicAuthorization.currentStatus,
+                              isAuthViewShowed: MusicAuthorization.currentStatus != .authorized)
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            }
         }
     }
 }

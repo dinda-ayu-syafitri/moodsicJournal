@@ -27,6 +27,10 @@
 		20D0A65B2C01FE8F000417CC /* JournalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A65A2C01FE8F000417CC /* JournalViewModel.swift */; };
 		20D0A65D2C02532D000417CC /* JournalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A65C2C02532D000417CC /* JournalCardView.swift */; };
 		20D0A6622C041FC4000417CC /* MusicKitAuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6612C041FC4000417CC /* MusicKitAuthorizationViewModel.swift */; };
+		20F73C382CB1AC3F00973A14 /* MoodEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F73C372CB1AC3F00973A14 /* MoodEnum.swift */; };
+		20F73C3B2CB1B29E00973A14 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F73C3A2CB1B29E00973A14 /* Router.swift */; };
+		20F73C3D2CB1BBA600973A14 /* RouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F73C3C2CB1BBA600973A14 /* RouterView.swift */; };
+		20F73C3F2CB1BEBA00973A14 /* JournalInitModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F73C3E2CB1BEBA00973A14 /* JournalInitModalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +55,10 @@
 		20D0A65A2C01FE8F000417CC /* JournalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewModel.swift; sourceTree = "<group>"; };
 		20D0A65C2C02532D000417CC /* JournalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCardView.swift; sourceTree = "<group>"; };
 		20D0A6612C041FC4000417CC /* MusicKitAuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicKitAuthorizationViewModel.swift; sourceTree = "<group>"; };
+		20F73C372CB1AC3F00973A14 /* MoodEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEnum.swift; sourceTree = "<group>"; };
+		20F73C3A2CB1B29E00973A14 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		20F73C3C2CB1BBA600973A14 /* RouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterView.swift; sourceTree = "<group>"; };
+		20F73C3E2CB1BEBA00973A14 /* JournalInitModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalInitModalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +111,7 @@
 		20D0A6262BFEE40E000417CC /* moodsicJournal */ = {
 			isa = PBXGroup;
 			children = (
+				20F73C352CB1AC2300973A14 /* Shared */,
 				20D0A6592C01FE7A000417CC /* ViewModel */,
 				20D0A6532C00F690000417CC /* Model */,
 				20D0A63E2BFEFA02000417CC /* View */,
@@ -126,11 +135,11 @@
 		20D0A63E2BFEFA02000417CC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				20F73C392CB1B27900973A14 /* Router */,
+				20F73C342CB1A94400973A14 /* JournalInit */,
 				20A6D26C2CA319CF00BD57C3 /* Components */,
 				20A6D26B2CA319AC00BD57C3 /* Journal */,
 				20D0A63A2BFEE73D000417CC /* DashboardView.swift */,
-				20D0A6472BFF6FA2000417CC /* MoodSelectionModalView.swift */,
-				20D0A64B2C00AFD8000417CC /* AddTitleModalView.swift */,
 				20D0A64F2C00DFE8000417CC /* MusicKitAuthorizationView.swift */,
 				20D0A6512C00F574000417CC /* MusicRecommendationModalView.swift */,
 			);
@@ -153,6 +162,41 @@
 				20D0A6612C041FC4000417CC /* MusicKitAuthorizationViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		20F73C342CB1A94400973A14 /* JournalInit */ = {
+			isa = PBXGroup;
+			children = (
+				20F73C3E2CB1BEBA00973A14 /* JournalInitModalView.swift */,
+				20D0A64B2C00AFD8000417CC /* AddTitleModalView.swift */,
+				20D0A6472BFF6FA2000417CC /* MoodSelectionModalView.swift */,
+			);
+			path = JournalInit;
+			sourceTree = "<group>";
+		};
+		20F73C352CB1AC2300973A14 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				20F73C362CB1AC2900973A14 /* Enum */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		20F73C362CB1AC2900973A14 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				20F73C372CB1AC3F00973A14 /* MoodEnum.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		20F73C392CB1B27900973A14 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				20F73C3A2CB1B29E00973A14 /* Router.swift */,
+				20F73C3C2CB1BBA600973A14 /* RouterView.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,10 +276,14 @@
 				20D0A63B2BFEE73D000417CC /* DashboardView.swift in Sources */,
 				20D0A64A2C00AF87000417CC /* CustomModalView.swift in Sources */,
 				20D0A6502C00DFE8000417CC /* MusicKitAuthorizationView.swift in Sources */,
+				20F73C382CB1AC3F00973A14 /* MoodEnum.swift in Sources */,
+				20F73C3F2CB1BEBA00973A14 /* JournalInitModalView.swift in Sources */,
 				20D0A6522C00F574000417CC /* MusicRecommendationModalView.swift in Sources */,
+				20F73C3D2CB1BBA600973A14 /* RouterView.swift in Sources */,
 				20D0A6442BFF40DB000417CC /* JournalCanvasView.swift in Sources */,
 				20D0A65B2C01FE8F000417CC /* JournalViewModel.swift in Sources */,
 				20D0A6462BFF44B0000417CC /* JournalView.swift in Sources */,
+				20F73C3B2CB1B29E00973A14 /* Router.swift in Sources */,
 				20D0A64C2C00AFD8000417CC /* AddTitleModalView.swift in Sources */,
 				20D0A6552C00F750000417CC /* Music.swift in Sources */,
 				20D0A6282BFEE40E000417CC /* moodsicJournalApp.swift in Sources */,

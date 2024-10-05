@@ -29,7 +29,7 @@ struct CustomModalView: View {
 
             NavigationStack {
                 if !addTitleDone {
-                    AddTitleModalView(journalTitle: $journalTitle, addTitleDone: $addTitleDone)
+                    AddTitleModalView(journalTitle: $journalTitle)
 //                        .frame(width: .infinity, height: .infinity, alignment: .center)
                         .frame(maxHeight: .infinity, alignment: .center)
                         .padding(.horizontal, 50)
@@ -45,7 +45,7 @@ struct CustomModalView: View {
                         .foregroundStyle(Color.gray)
                         .padding()
                         VStack(alignment: .center, spacing: 20) {
-                            MoodSelectionModalView(selectedMood: $mood, playlistId: $playlistId)
+//                            MoodSelectionModalView(selectedMood: $mood, playlistId: $playlistId)
                             Button(action: { moodSelected = true }, label: {
                                 Text("Next")
                                     .font(.system(size: 20))

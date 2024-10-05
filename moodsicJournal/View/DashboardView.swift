@@ -11,6 +11,7 @@ import SwiftUI
 
 struct DashboardView: View {
     @Environment(\.managedObjectContext) private var viewContext
+    @StateObject var journalVM = JournalViewModel()
 
     @FetchRequest(entity: Journal.entity(), sortDescriptors: [])
     private var journals: FetchedResults<Journal>
@@ -21,6 +22,9 @@ struct DashboardView: View {
     @State private var selectedJournal: Journal?
 
     @State var journal: JournalViewModel?
+
+    @State private var showingSheet = false
+    @State private var journalTitle = ""
 
     var body: some View {
         GeometryReader { geometry in
@@ -64,6 +68,9 @@ struct DashboardView: View {
                                 })
                                 .buttonStyle(PlainButtonStyle())
                                 .padding(.bottom, 20)
+                                .sheet(isPresented: $isAddJournalOpen) {
+                                    AddTitleModalView(journalTitle: $journalTitle)
+                                }
                             }
 
                             VStack(alignment: .leading, spacing: 25) {
@@ -71,6 +78,14 @@ struct DashboardView: View {
                                     .font(.system(size: 20))
                                     .fontWeight(/*@START_MENU_TOKEN@*/ .bold/*@END_MENU_TOKEN@*/)
                                     .foregroundStyle(.mainBlue)
+
+//                                Button(action: {
+//                                    showingSheet.toggle()
+//                                }, label: {
+//                                    Text("Open Modal")
+//                                }).sheet(isPresented: $showingSheet) {
+//                                    Text("Testt")
+//                                }
 
                                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], alignment: .leading, spacing: 30) {
                                     ForEach(journals) { journal in
@@ -99,23 +114,24 @@ struct DashboardView: View {
                     }
 
                     if isAddJournalOpen {
-                        Rectangle()
-                            .fill(Color.black.opacity(0.5))
-                            .edgesIgnoringSafeArea(.all)
-                            .onTapGesture {
-                                isAddJournalOpen = false
-                            }
-                            .overlay(
-                                CustomModalView(isAddJournalOpen: $isAddJournalOpen)
-                                    .environment(\.managedObjectContext, viewContext)
-                                    .frame(height: 400, alignment: .center)
-                                    .frame(width: geometry.size.width * 0.60, alignment: .center)
-                                    .background(.white)
-                                    .clipShape(RoundedRectangle(cornerRadius: 15.0))
-                            )
+//                        Rectangle()
+//                            .fill(Color.black.opacity(0.5))Å
+//                            .edgesIgnoringSafeArea(.all)
+//                            .onTapGesture {
+//                                isAddJournalOpen = false
+//                            }
+//                            .overlay(
+//                                CustomModalView(isAddJournalOpen: $isAddJournalOpen)
+//                                    .environment(\.managedObjectContext, viewContext)
+//                                    .frame(height: 400, alignment: .center)
+//                                    .frame(width: geometry.size.width * 0.60, alignment: .center)
+//                                    .background(.white)
+//                                    .clipShape(RoundedRectangle(cornerRadius: 15.0))
+//                            )
                     }
                 }
             }
+            .environmentObject(journalVM)
         }
     }
 }

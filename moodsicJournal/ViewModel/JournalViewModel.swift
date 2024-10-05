@@ -5,12 +5,14 @@
 //  Created by Dinda Ayu Syafitri on 25/05/24.
 //
 
-import SwiftUI
-import MusicKit
 import CoreData
+import MusicKit
+import SwiftUI
 
 @MainActor
 class JournalViewModel: ObservableObject {
+    @Environment(\.managedObjectContext) private var viewContext
+
     @Published var id: UUID?
     @Published var data: Data?
     @Published var title: String?
@@ -59,13 +61,13 @@ class JournalViewModel: ObservableObject {
             print("Fetching song with ID: \(songId)")
             let searchRequest = MusicCatalogResourceRequest<Song>(matching: \.id, equalTo: MusicItemID(rawValue: songId))
             let searchResponse = try await searchRequest.response()
-            
+
             guard let fetchedSongData = searchResponse.items.first else {
                 print("No song data found")
                 return nil
             }
-            self.songData = fetchedSongData
-            print("Song data updated: \(String(describing: self.songData))")
+            songData = fetchedSongData
+            print("Song data updated: \(String(describing: songData))")
             return fetchedSongData
         } catch {
             print("Error fetching songs: \(error)")
@@ -81,6 +83,28 @@ class JournalViewModel: ObservableObject {
 
     func stopMusic() {
         musicPlayerManager.stop()
+    }
+
+    func newJournal(title: String, mood: MoodEnum, songId: String) {
+        withAnimation {
+            let newItem = Journal(context: viewContext)
+            newItem.id = UUID()
+            newItem.title = title
+            newItem.mood = String(describing: mood)
+            newItem.songId = songId
+            newItem.createdDate = Date()
+
+            do {
+                print(newItem)
+//                try viewContext.save()
+//                dismiss()
+//                isAddJournalOpen = false
+//                isSaved = true
+            } catch {
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
+        }
     }
 
     func deleteJournal(in context: NSManagedObjectContext) {
@@ -99,5 +123,3 @@ class JournalViewModel: ObservableObject {
         }
     }
 }
-
-
