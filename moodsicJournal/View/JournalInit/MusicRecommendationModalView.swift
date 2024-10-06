@@ -10,6 +10,8 @@ import SwiftUI
 
 struct MusicRecommendationModalView: View {
     @EnvironmentObject var journalInitVM: JournalInitViewModel
+    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.dismiss) private var dismiss
 //    @Binding var songs: [SongItem]
 //
 //    @State var selectedSongId: String
@@ -55,6 +57,20 @@ struct MusicRecommendationModalView: View {
                     })
                 }
             }
+            Button(action: {
+                journalInitVM.createJournal(viewContext: viewContext, dismiss: { dismiss() })
+
+            }) {
+                Text("Start Journaling")
+                    .font(.system(size: 20))
+            }
+            .padding(.horizontal, 40)
+            .padding(.vertical, 10)
+            .background(String(describing: journalInitVM.selectedSongID).isEmpty ? Color.gray : Color.mainBlue)
+            .foregroundStyle(Color.white)
+            .clipShape(RoundedRectangle(cornerRadius: 25.0))
+            .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.1), radius: 5)
+            .disabled(journalInitVM.selectedSongID.isEmpty)
             Spacer()
         }
         .padding(32)

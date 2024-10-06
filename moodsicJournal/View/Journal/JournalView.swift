@@ -5,9 +5,9 @@
 //  Created by Dinda Ayu Syafitri on 23/05/24.
 //
 
-import SwiftUI
 import CoreData
 import MusicKit
+import SwiftUI
 
 struct JournalView: View {
     @ObservedObject var viewModel: JournalViewModel
@@ -17,12 +17,11 @@ struct JournalView: View {
     @State var songPlayed: Song?
 
     var body: some View {
-
         GeometryReader { geometry in
             NavigationStack {
                 ZStack {
                     VStack(alignment: .leading) {
-                        HStack (alignment: .center, spacing: 30) {
+                        HStack(alignment: .center, spacing: 30) {
                             Button(action: { dismiss() }) {
                                 Image(systemName: "chevron.left")
                                     .font(.system(size: 32))
@@ -35,15 +34,13 @@ struct JournalView: View {
 
                             Spacer()
 
-
                             if let mood = viewModel.mood?.lowercased() {
                                 Image("dummy-\(mood)")
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(maxWidth:  70)
+                                    .frame(maxWidth: 70)
                             }
                             HStack {
-
                                 if let artwork = viewModel.songData?.artwork {
                                     ArtworkImage(artwork, width: 50)
                                         .cornerRadius(8)
@@ -53,7 +50,7 @@ struct JournalView: View {
                                 VStack {
                                     Text(songPlayed?.title ?? "Untitled")
                                         .font(.system(size: 12))
-                                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                        .fontWeight(/*@START_MENU_TOKEN@*/ .bold/*@END_MENU_TOKEN@*/)
                                         .multilineTextAlignment(.leading)
                                         .frame(maxWidth: .infinity, alignment: .leading)
                                     Text(viewModel.songData?.artistName ?? "No Artist")
@@ -64,7 +61,7 @@ struct JournalView: View {
 
                                 .padding(.horizontal, 5)
                             }
-                            .padding(.horizontal,15)
+                            .padding(.horizontal, 15)
                             .padding(.vertical, 10)
                             .frame(maxWidth: geometry.size.width * 0.3)
                             .background(.white)
@@ -84,7 +81,7 @@ struct JournalView: View {
                         .padding(.vertical, geometry.size.height * 0.02)
 
                         JournalCanvasView(data: viewModel.getData(), id: viewModel.getId())
-//                            .environment(\.managedObjectContext, viewContext)
+                            .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
                     }
                 }
 //                .onReceive(viewModel.$songData) { song in
@@ -108,7 +105,6 @@ struct JournalView: View {
         }
     }
 
-
 //    func fetchSongs() async {
 //        guard let songId = viewModel.songId else {
 //            print("songId is nil")
@@ -128,11 +124,8 @@ struct JournalView: View {
 //    }
 }
 
-
-
-
 //
-//#Preview {
+// #Preview {
 //    JournalView(viewModel: {
 //        {
 //            let viewModel = JournalViewModel()
@@ -144,4 +137,4 @@ struct JournalView: View {
 //            return viewModel
 //        }()
 //    }(), songPlayed: nil)
-//}
+// }

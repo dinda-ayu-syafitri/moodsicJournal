@@ -8,6 +8,7 @@
 import Foundation
 
 enum MoodEnum: Hashable {
+    case none
     case excited
     case happy
     case neutral

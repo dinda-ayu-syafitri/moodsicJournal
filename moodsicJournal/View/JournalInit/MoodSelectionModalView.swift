@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MoodSelectionModalView: View {
     @EnvironmentObject var journalInitVM: JournalInitViewModel
-    @State var selectedMood: String = ""
+//    @State var selectedMood: String = ""
 //    @Binding var playlistId: String
     @Binding var currentView: ModalView
 
@@ -31,7 +31,7 @@ struct MoodSelectionModalView: View {
 
             HStack(alignment: .center, spacing: 32) {
                 Button(action: {
-                    selectedMood = "Excited"
+                    journalInitVM.mood = .excited
                     journalInitVM.playlistID = "pl.f9733e33c0c64b1fb1b0a7bff787d566"
                 }, label: {
                     VStack(spacing: 8) {
@@ -39,7 +39,7 @@ struct MoodSelectionModalView: View {
                             .resizable()
                             .scaledToFit()
                             .overlay(content: {
-                                if selectedMood == "Excited" {
+                                if journalInitVM.mood == .excited {
                                     Circle()
                                         .stroke(.mainBlue, lineWidth: 7)
                                         .overlay(content: {
@@ -59,7 +59,7 @@ struct MoodSelectionModalView: View {
                 .buttonStyle(PlainButtonStyle())
 
                 Button(action: {
-                    selectedMood = "Happy"
+                    journalInitVM.mood = .happy
                     journalInitVM.playlistID = "pl.0d4aee5424c74d29ad15252eeb43d3b1"
                 }, label: {
                     VStack(spacing: 8) {
@@ -67,7 +67,7 @@ struct MoodSelectionModalView: View {
                             .resizable()
                             .scaledToFit()
                             .overlay(content: {
-                                if selectedMood == "Happy" {
+                                if journalInitVM.mood == .happy {
                                     Circle()
                                         .stroke(.mainBlue, lineWidth: 7)
                                         .overlay(content: {
@@ -87,7 +87,7 @@ struct MoodSelectionModalView: View {
                 .buttonStyle(PlainButtonStyle())
 
                 Button(action: {
-                    selectedMood = "Neutral"
+                    journalInitVM.mood = .neutral
                     journalInitVM.playlistID = "pl.3aaf0879038242d1a5d2dc95986e6ba2"
                 }, label: {
                     VStack(spacing: 8) {
@@ -95,7 +95,7 @@ struct MoodSelectionModalView: View {
                             .resizable()
                             .scaledToFit()
                             .overlay(content: {
-                                if selectedMood == "Neutral" {
+                                if journalInitVM.mood == .neutral {
                                     Circle()
                                         .stroke(.mainBlue, lineWidth: 7)
                                         .overlay(content: {
@@ -114,7 +114,7 @@ struct MoodSelectionModalView: View {
                 .buttonStyle(PlainButtonStyle())
 
                 Button(action: {
-                    selectedMood = "Sad"
+                    journalInitVM.mood = .sad
                     journalInitVM.playlistID = "pl.aa6824f258604a76ba475a4649acabf0"
                 }, label: {
                     VStack(spacing: 8) {
@@ -122,7 +122,7 @@ struct MoodSelectionModalView: View {
                             .resizable()
                             .scaledToFit()
                             .overlay(content: {
-                                if selectedMood == "Sad" {
+                                if journalInitVM.mood == .sad {
                                     Circle()
                                         .stroke(.mainBlue, lineWidth: 7)
                                         .overlay(content: {
@@ -141,7 +141,7 @@ struct MoodSelectionModalView: View {
                 .buttonStyle(PlainButtonStyle())
 
                 Button(action: {
-                    selectedMood = "Angry"
+                    journalInitVM.mood = .angry
                     journalInitVM.playlistID = "pl.99aab7ddb4034503bef6278112843dba"
                 }, label: {
                     VStack(spacing: 8) {
@@ -149,7 +149,7 @@ struct MoodSelectionModalView: View {
                             .resizable()
                             .scaledToFit()
                             .overlay(content: {
-                                if selectedMood == "Angry" {
+                                if journalInitVM.mood == .angry {
                                     Circle()
                                         .stroke(.mainBlue, lineWidth: 7)
                                         .overlay(content: {
@@ -177,11 +177,11 @@ struct MoodSelectionModalView: View {
             }
             .padding(.horizontal, 40)
             .padding(.vertical, 10)
-            .background(selectedMood.isEmpty ? Color.gray : Color.mainBlue)
+            .background(journalInitVM.mood == .none ? Color.gray : Color.mainBlue)
             .foregroundStyle(Color.white)
             .clipShape(RoundedRectangle(cornerRadius: 25.0))
             .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.1), radius: 5)
-            .disabled(selectedMood.isEmpty)
+            .disabled(journalInitVM.mood == .none)
             Spacer()
         }
         .padding(32)

@@ -12,7 +12,6 @@ import SwiftUI
 @MainActor
 class JournalViewModel: ObservableObject {
     @Environment(\.managedObjectContext) private var viewContext
-
     @Published var id: UUID?
     @Published var data: Data?
     @Published var title: String?
