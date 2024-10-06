@@ -14,11 +14,8 @@ class Router: ObservableObject {
     enum Route: Hashable {
         case Dashboard(musicAuthorizationStatus: MusicAuthorization.Status, isAuthViewShowed: Bool)
 //        case JournalInitTitle(JournalTitle: Binding<String>)
-        case JournalInitMood
-
-        enum Tab {
-            case sos, liveTrack, settings
-        }
+//        case JournalInitMood(currentView: ModalView)
+//        case JournalInitMusic(currentView: ModalView)
     }
 
     // Used to programatically control our navigation stack
@@ -31,8 +28,10 @@ class Router: ObservableObject {
             DashboardView(musicAuthorizationStatus: musicAuthorizationStatus, isAuthViewShowed: isAuthViewShowed)
 //        case .JournalInitTitle(let journalTitle):
 //            AddTitleModalView(journalTitle: journalTitle)
-        case .JournalInitMood:
-            MoodSelectionModalView()
+//        case .JournalInitMood(let currentView):
+//            MoodSelectionModalView(currentView: currentView)
+//        case .JournalInitMusic(let currentView):
+//            MusicRecommendationModalView(currentView: currentView)
         }
     }
 

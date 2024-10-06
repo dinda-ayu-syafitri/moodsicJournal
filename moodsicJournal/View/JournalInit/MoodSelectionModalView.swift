@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct MoodSelectionModalView: View {
+    @EnvironmentObject var journalInitVM: JournalInitViewModel
     @State var selectedMood: String = ""
-    @State var playlistId: String = ""
+//    @Binding var playlistId: String
+    @Binding var currentView: ModalView
 
     var body: some View {
         VStack(spacing: 32) {
             HStack {
-                Button(action: {  }, label: {
+                Button(action: {}, label: {
                     HStack {
                         Image(systemName: "chevron.left")
                         Text("Back")
@@ -25,148 +27,150 @@ struct MoodSelectionModalView: View {
             Text("How are you feeling today?")
                 .font(.title)
                 .fontWeight(.semibold)
-            HStack(alignment: .center, spacing: 15) {
+                .foregroundStyle(Color.mainBlue)
+
+            HStack(alignment: .center, spacing: 32) {
                 Button(action: {
                     selectedMood = "Excited"
-                    playlistId = "pl.f9733e33c0c64b1fb1b0a7bff787d566"
+                    journalInitVM.playlistID = "pl.f9733e33c0c64b1fb1b0a7bff787d566"
                 }, label: {
-                    VStack {
+                    VStack(spacing: 8) {
                         Image("dummy-excited")
                             .resizable()
                             .scaledToFit()
-                            .padding(.bottom, 10)
                             .overlay(content: {
                                 if selectedMood == "Excited" {
                                     Circle()
-                                        .fill(.black.opacity(0.2))
-                                        .padding(.bottom, 10)
+                                        .stroke(.mainBlue, lineWidth: 7)
                                         .overlay(content: {
-                                            Image(systemName: "checkmark")
+                                            Image(systemName: "checkmark.circle.fill")
                                                 .resizable()
-                                                .frame(width: 36, height: 36)
+                                                .frame(width: 30, height: 30)
                                         })
                                 }
 
                             })
                         Text("Excited")
+                            .fontWeight(.semibold)
                     }
+                    .foregroundStyle(.mainBlue)
 
                 })
                 .buttonStyle(PlainButtonStyle())
 
                 Button(action: {
                     selectedMood = "Happy"
-                    playlistId = "pl.0d4aee5424c74d29ad15252eeb43d3b1"
+                    journalInitVM.playlistID = "pl.0d4aee5424c74d29ad15252eeb43d3b1"
                 }, label: {
-                    VStack {
+                    VStack(spacing: 8) {
                         Image("dummy-happy")
                             .resizable()
                             .scaledToFit()
-                            .padding(.bottom, 10)
                             .overlay(content: {
                                 if selectedMood == "Happy" {
                                     Circle()
-                                        .fill(.black.opacity(0.2))
-                                        .padding(.bottom, 10)
+                                        .stroke(.mainBlue, lineWidth: 7)
                                         .overlay(content: {
-                                            Image(systemName: "checkmark")
+                                            Image(systemName: "checkmark.circle.fill")
                                                 .resizable()
-                                                .frame(width: 36, height: 36)
+                                                .frame(width: 30, height: 30)
                                         })
                                 }
 
                             })
                         Text("Happy")
+                            .fontWeight(.semibold)
                     }
+                    .foregroundStyle(.mainBlue)
 
                 })
                 .buttonStyle(PlainButtonStyle())
 
                 Button(action: {
                     selectedMood = "Neutral"
-                    playlistId = "pl.3aaf0879038242d1a5d2dc95986e6ba2"
+                    journalInitVM.playlistID = "pl.3aaf0879038242d1a5d2dc95986e6ba2"
                 }, label: {
-                    VStack {
+                    VStack(spacing: 8) {
                         Image("dummy-neutral")
                             .resizable()
                             .scaledToFit()
-                            .padding(.bottom, 10)
                             .overlay(content: {
                                 if selectedMood == "Neutral" {
                                     Circle()
-                                        .fill(.black.opacity(0.2))
-                                        .padding(.bottom, 10)
+                                        .stroke(.mainBlue, lineWidth: 7)
                                         .overlay(content: {
-                                            Image(systemName: "checkmark")
+                                            Image(systemName: "checkmark.circle.fill")
                                                 .resizable()
-                                                .frame(width: 36, height: 36)
+                                                .frame(width: 30, height: 30)
                                         })
                                 }
 
                             })
                         Text("Neutral")
+                            .fontWeight(.semibold)
                     }
-
+                    .foregroundStyle(.mainBlue)
                 })
                 .buttonStyle(PlainButtonStyle())
 
                 Button(action: {
                     selectedMood = "Sad"
-                    playlistId = "pl.aa6824f258604a76ba475a4649acabf0"
+                    journalInitVM.playlistID = "pl.aa6824f258604a76ba475a4649acabf0"
                 }, label: {
-                    VStack {
+                    VStack(spacing: 8) {
                         Image("dummy-sad")
                             .resizable()
                             .scaledToFit()
-                            .padding(.bottom, 10)
                             .overlay(content: {
                                 if selectedMood == "Sad" {
                                     Circle()
-                                        .fill(.black.opacity(0.2))
-                                        .padding(.bottom, 10)
+                                        .stroke(.mainBlue, lineWidth: 7)
                                         .overlay(content: {
-                                            Image(systemName: "checkmark")
+                                            Image(systemName: "checkmark.circle.fill")
                                                 .resizable()
-                                                .frame(width: 36, height: 36)
+                                                .frame(width: 30, height: 30)
                                         })
                                 }
 
                             })
                         Text("Sad")
+                            .fontWeight(.semibold)
                     }
-
+                    .foregroundStyle(.mainBlue)
                 })
                 .buttonStyle(PlainButtonStyle())
 
                 Button(action: {
                     selectedMood = "Angry"
-                    playlistId = "pl.99aab7ddb4034503bef6278112843dba"
+                    journalInitVM.playlistID = "pl.99aab7ddb4034503bef6278112843dba"
                 }, label: {
-                    VStack {
+                    VStack(spacing: 8) {
                         Image("dummy-angry")
                             .resizable()
                             .scaledToFit()
-                            .padding(.bottom, 10)
                             .overlay(content: {
                                 if selectedMood == "Angry" {
                                     Circle()
-                                        .fill(.black.opacity(0.2))
-                                        .padding(.bottom, 10)
+                                        .stroke(.mainBlue, lineWidth: 7)
                                         .overlay(content: {
-                                            Image(systemName: "checkmark")
+                                            Image(systemName: "checkmark.circle.fill")
                                                 .resizable()
-                                                .frame(width: 36, height: 36)
+                                                .frame(width: 30, height: 30)
+
                                         })
                                 }
 
                             })
                         Text("Angry")
+                            .fontWeight(.semibold)
                     }
+                    .foregroundStyle(.mainBlue)
 
                 })
                 .buttonStyle(PlainButtonStyle())
             }
             Button(action: {
+                currentView = .musicSelection
             }) {
                 Text("Next")
                     .font(.system(size: 20))
@@ -180,10 +184,12 @@ struct MoodSelectionModalView: View {
             .disabled(selectedMood.isEmpty)
             Spacer()
         }
+        .padding(32)
     }
 }
 
 #Preview {
-    MoodSelectionModalView()
+    MoodSelectionModalView(currentView: .constant(.moodSelection))
+        .environmentObject(JournalInitViewModel())
 //    MoodSelectionModalView(selectedMood: .constant("Sad"), playlistId: .constant("..."))
 }

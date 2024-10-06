@@ -29,10 +29,10 @@ struct CustomModalView: View {
 
             NavigationStack {
                 if !addTitleDone {
-                    AddTitleModalView(journalTitle: $journalTitle)
+//                    AddTitleModalView(journalTitle: journalTitle)
 //                        .frame(width: .infinity, height: .infinity, alignment: .center)
-                        .frame(maxHeight: .infinity, alignment: .center)
-                        .padding(.horizontal, 50)
+//                        .frame(maxHeight: .infinity, alignment: .center)
+//                        .padding(.horizontal, 50)
 
                 } else if !moodSelected {
                     VStack {
@@ -74,7 +74,7 @@ struct CustomModalView: View {
                         .padding()
 
                         VStack(alignment: .center, spacing: 20) {
-                            MusicRecommendationModalView(songs: $songs, selectedSongId: $selectedSongId)
+//                            MusicRecommendationModalView(songs: $songs, selectedSongId: $selectedSongId)
                             Button(action: { newJournal() }, label: {
                                 Text("Start Journaling !")
                                     .font(.system(size: 20))

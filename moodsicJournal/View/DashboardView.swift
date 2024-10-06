@@ -51,26 +51,27 @@ struct DashboardView: View {
                                     .font(.system(size: 20))
                                     .fontWeight(/*@START_MENU_TOKEN@*/ .bold/*@END_MENU_TOKEN@*/)
                                     .foregroundStyle(.mainBlue)
-                                Button(action: {
-                                    isAddJournalOpen.toggle()
-                                }, label: {
-                                    RoundedRectangle(cornerRadius: 25.0)
-                                        .fill(.white)
-                                        .frame(width: 200, height: 200)
-                                        .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.1), radius: 5)
-                                        .overlay {
-                                            Image(systemName: "plus.circle")
-                                                .resizable()
-                                                .aspectRatio(contentMode: .fit)
-                                                .foregroundStyle(.mainBlue)
-                                                .frame(maxWidth: 70)
-                                        }
-                                })
-                                .buttonStyle(PlainButtonStyle())
-                                .padding(.bottom, 20)
-                                .sheet(isPresented: $isAddJournalOpen) {
-                                    AddTitleModalView(journalTitle: $journalTitle)
-                                }
+                                JournalInitModalView()
+//                                Button(action: {
+//                                    isAddJournalOpen.toggle()
+//                                }, label: {
+//                                    RoundedRectangle(cornerRadius: 25.0)
+//                                        .fill(.white)
+//                                        .frame(width: 200, height: 200)
+//                                        .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.1), radius: 5)
+//                                        .overlay {
+//                                            Image(systemName: "plus.circle")
+//                                                .resizable()
+//                                                .aspectRatio(contentMode: .fit)
+//                                                .foregroundStyle(.mainBlue)
+//                                                .frame(maxWidth: 70)
+//                                        }
+//                                })
+//                                .buttonStyle(PlainButtonStyle())
+//                                .padding(.bottom, 20)
+//                                .sheet(isPresented: $isAddJournalOpen) {
+                                ////                                    AddTitleModalView(journalTitle: journalTitle)
+//                                }
                             }
 
                             VStack(alignment: .leading, spacing: 25) {

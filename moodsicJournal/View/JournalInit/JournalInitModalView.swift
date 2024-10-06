@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct JournalInitModalView: View {
+    @StateObject var journalInitVM = JournalInitViewModel()
     @State private var isAddJournalOpen = false
+    @State private var currentView: ModalView = .titleInput
+
     @State private var journalTitle = ""
+    @State private var MoodSelected = ""
+    @State private var playlistID = ""
 
     var body: some View {
         VStack {
@@ -31,12 +36,20 @@ struct JournalInitModalView: View {
             .buttonStyle(PlainButtonStyle())
             .padding(.bottom, 20)
             .sheet(isPresented: $isAddJournalOpen) {
-                AddTitleModalView(journalTitle: $journalTitle)
+                switch currentView {
+                    case .titleInput:
+                        AddTitleModalView(currentView: $currentView)
+                    case .moodSelection:
+                        MoodSelectionModalView(currentView: $currentView)
+                    case .musicSelection:
+                        MusicRecommendationModalView(currentView: $currentView)
+                }
             }
         }
+        .environmentObject(journalInitVM)
     }
 }
 
 #Preview {
-    JournalInitModalView()
+    JournalInitModalView(journalInitVM: JournalInitViewModel())
 }
