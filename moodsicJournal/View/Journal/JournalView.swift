@@ -91,7 +91,6 @@ struct JournalView: View {
                     Task {
 //                        print(await viewModel.songData as Any)
                         songPlayed = await viewModel.fetchSongs()
-                        print("songPlayed: \(songPlayed)")
                         await viewModel.playMusic()
 
 //                        await fetchSongs()

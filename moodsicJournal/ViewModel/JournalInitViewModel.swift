@@ -18,6 +18,7 @@ class JournalInitViewModel: ObservableObject {
     @Published var mood: MoodEnum = .none
     @Published var songs: [SongItem] = []
     @Published var selectedSongID: String = ""
+    @Published var isLoadingPlaylist: Bool = false
 
     func createJournal(viewContext: NSManagedObjectContext, dismiss: () -> Void) {
         let newItem = Journal(context: viewContext)
@@ -39,6 +40,7 @@ class JournalInitViewModel: ObservableObject {
 
     func fetchSongsFromPlaylist() async {
         do {
+            isLoadingPlaylist = true
             var playlistRequest = MusicCatalogResourceRequest<Playlist>(matching: \.id, equalTo: MusicItemID(rawValue: playlistID))
             playlistRequest.properties = [.tracks]
 
@@ -57,6 +59,7 @@ class JournalInitViewModel: ObservableObject {
 
                     DispatchQueue.main.async {
                         self.songs = fetchedSongs
+                        self.isLoadingPlaylist = false
                     }
                 } else {
                     print("No tracks found in the playlist.")
