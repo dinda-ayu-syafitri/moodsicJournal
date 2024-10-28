@@ -20,7 +20,7 @@ struct MusicRecommendationModalView: View {
             Text("Some music recommendation for your today’s Soundtrack")
                 .font(.title)
                 .fontWeight(.semibold)
-                .foregroundStyle(Color.mainBlue)
+                .foregroundStyle(Color(.mainBlue))
                 .multilineTextAlignment(.center)
             if journalInitVM.isLoadingPlaylist {
                 VStack {
@@ -43,7 +43,7 @@ struct MusicRecommendationModalView: View {
                                     .overlay(content: {
                                         if journalInitVM.selectedSongID == song.id {
                                             RoundedRectangle(cornerRadius: 10)
-                                                .stroke(.mainBlue, lineWidth: 5)
+                                                .stroke(Color(.mainBlue), lineWidth: 5)
                                                 .frame(width: 80, height: 80)
                                                 .overlay(content: {
                                                     Image(systemName: "checkmark.circle.fill")
@@ -59,13 +59,15 @@ struct MusicRecommendationModalView: View {
                                 }
                             }
                             .padding()
-                            .foregroundStyle(Color.mainBlue)
+                            .foregroundStyle(Color(.mainBlue))
                             .cornerRadius(10)
                         })
                     }
                 }
                 Button(action: {
-                    journalInitVM.createJournal(viewContext: viewContext, dismiss: { dismiss() })
+                    Task {
+                        await journalInitVM.createJournal(viewContext: viewContext, dismiss: { dismiss() })
+                    }
 
                 }) {
                     Text("Start Journaling")
@@ -73,7 +75,7 @@ struct MusicRecommendationModalView: View {
                 }
                 .padding(.horizontal, 40)
                 .padding(.vertical, 10)
-                .background(String(describing: journalInitVM.selectedSongID).isEmpty ? Color.gray : Color.mainBlue)
+                .background(String(describing: journalInitVM.selectedSongID).isEmpty ? Color.gray : Color(.mainBlue))
                 .foregroundStyle(Color.white)
                 .clipShape(RoundedRectangle(cornerRadius: 25.0))
                 .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.1), radius: 5)
@@ -92,5 +94,5 @@ struct MusicRecommendationModalView: View {
 
 #Preview {
     MusicRecommendationModalView(currentView: .constant(.musicSelection))
-        .environmentObject(JournalInitViewModel())
+        .environmentObject(JournalInitViewModel(dashboardVM: DependencyInjection.shared.dashboardViewModel()))
 }

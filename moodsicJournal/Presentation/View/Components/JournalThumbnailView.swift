@@ -59,7 +59,7 @@ struct JournalThumbnailView: View {
                         .multilineTextAlignment(.trailing)
                         .frame(maxWidth: .infinity, alignment: .trailing)
                 }
-                .foregroundColor(Color.mainBlue)
+                .foregroundColor(Color(.mainBlue))
                 .padding(.horizontal, 20)
                 .padding(.bottom, 20)
             }

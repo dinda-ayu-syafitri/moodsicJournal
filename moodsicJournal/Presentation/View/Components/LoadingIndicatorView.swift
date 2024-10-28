@@ -12,7 +12,7 @@ struct LoadingIndicatorView: View {
         VStack {
             HStack {
                 RoundedRectangle(cornerRadius: 50)
-                    .fill(.mainBlue)
+                    .fill(Color(.mainBlue))
                     .phaseAnimator([true, false]) {
                         content, phase in
                         content
@@ -23,7 +23,7 @@ struct LoadingIndicatorView: View {
                     }
 
                 RoundedRectangle(cornerRadius: 50)
-                    .fill(.mainOrange)
+                    .fill(Color(.mainOrange))
                     .phaseAnimator([true, false]) {
                         content, phase in
                         content
@@ -34,7 +34,7 @@ struct LoadingIndicatorView: View {
                     }
 
                 RoundedRectangle(cornerRadius: 50)
-                    .fill(.mainBlue)
+                    .fill(Color(.mainBlue))
                     .phaseAnimator([true, false]) {
                         content, phase in
                         content
@@ -45,7 +45,7 @@ struct LoadingIndicatorView: View {
                     }
 
                 RoundedRectangle(cornerRadius: 50)
-                    .fill(.mainBlue)
+                    .fill(Color(.mainBlue))
                     .phaseAnimator([true, false]) {
                         content, phase in
                         content
@@ -56,7 +56,7 @@ struct LoadingIndicatorView: View {
                     }
 
                 RoundedRectangle(cornerRadius: 50)
-                    .fill(.mainBlue)
+                    .fill(Color(.mainBlue))
                     .phaseAnimator([true, false]) {
                         content, phase in
                         content

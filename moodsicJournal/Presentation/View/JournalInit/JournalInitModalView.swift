@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct JournalInitModalView: View {
-    @StateObject var journalInitVM = JournalInitViewModel()
+    @StateObject var journalInitVM: JournalInitViewModel
     @State private var isAddJournalOpen = false
     @State private var currentView: ModalView = .titleInput
 
     @State private var journalTitle = ""
     @State private var MoodSelected = ""
     @State private var playlistID = ""
+
+    init(dashboardVM: DashboardViewModel) {
+        _journalInitVM = StateObject(wrappedValue: JournalInitViewModel(dashboardVM: dashboardVM))
+    }
 
     var body: some View {
         VStack {
@@ -29,7 +33,7 @@ struct JournalInitModalView: View {
                         Image(systemName: "plus.circle")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .foregroundStyle(.mainBlue)
+                            .foregroundStyle(Color(.mainBlue))
                             .frame(maxWidth: 70)
                     }
             })
@@ -51,5 +55,5 @@ struct JournalInitModalView: View {
 }
 
 #Preview {
-    JournalInitModalView(journalInitVM: JournalInitViewModel())
+    JournalInitModalView(dashboardVM: DependencyInjection.shared.dashboardViewModel())
 }

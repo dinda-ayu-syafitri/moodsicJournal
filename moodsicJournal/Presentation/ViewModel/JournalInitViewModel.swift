@@ -8,6 +8,7 @@
 import CoreData
 import Foundation
 import MusicKit
+import SwiftUICore
 
 class JournalInitViewModel: ObservableObject {
 //    @Environment(\.managedObjectContext) private var viewContext
@@ -20,7 +21,13 @@ class JournalInitViewModel: ObservableObject {
     @Published var selectedSongID: String = ""
     @Published var isLoadingPlaylist: Bool = false
 
-    func createJournal(viewContext: NSManagedObjectContext, dismiss: () -> Void) {
+    private let dashboardVM: DashboardViewModel
+
+    init(dashboardVM: DashboardViewModel) {
+        self.dashboardVM = dashboardVM
+    }
+
+    func createJournal(viewContext: NSManagedObjectContext, dismiss: () -> Void) async {
         let newItem = Journal(context: viewContext)
         newItem.id = UUID()
         newItem.title = title
@@ -32,12 +39,14 @@ class JournalInitViewModel: ObservableObject {
             try viewContext.save()
             dismiss()
             print(newItem)
+            await dashboardVM.getAllJournals()
         } catch {
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
     }
 
+    @MainActor
     func fetchSongsFromPlaylist() async {
         do {
             isLoadingPlaylist = true

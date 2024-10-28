@@ -55,7 +55,7 @@ struct JournalCardView: View {
                                     .multilineTextAlignment(.trailing)
                                     .frame(maxWidth: .infinity, alignment: .trailing)
                             }
-                            .foregroundColor(Color.mainBlue)
+                            .foregroundColor(Color(.mainBlue))
                             .padding(20)
                         )
                         .background(Color.white)

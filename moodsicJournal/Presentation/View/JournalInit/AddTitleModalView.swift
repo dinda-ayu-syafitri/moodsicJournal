@@ -27,7 +27,7 @@ struct AddTitleModalView: View {
             Text("Journal Title")
                 .font(.title)
                 .fontWeight(.semibold)
-                .foregroundStyle(Color.mainBlue)
+                .foregroundStyle(Color(.mainBlue))
             TextField("Journal Title", text: $journalInitVM.title)
                 .textFieldStyle(PlainTextFieldStyle())
                 .padding(16)
@@ -47,7 +47,7 @@ struct AddTitleModalView: View {
             }
             .padding(.horizontal, 40)
             .padding(.vertical, 10)
-            .background(journalInitVM.title.isEmpty ? Color.gray : Color.mainBlue)
+            .background(journalInitVM.title.isEmpty ? Color.gray : Color(.mainBlue))
             .foregroundStyle(Color.white)
             .clipShape(RoundedRectangle(cornerRadius: 25.0))
             .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.1), radius: 5)
@@ -62,8 +62,7 @@ struct AddTitleModalView: View {
 #Preview {
 //    AddTitleModalView(journalTitle: .constant("Test"))
     RouterView {
-        AddTitleModalView(currentView: .constant(.titleInput))            .environmentObject(JournalInitViewModel())
+        AddTitleModalView(currentView: .constant(.titleInput)).environmentObject(JournalInitViewModel(dashboardVM: DependencyInjection.shared.dashboardViewModel()))
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-
     }
 }

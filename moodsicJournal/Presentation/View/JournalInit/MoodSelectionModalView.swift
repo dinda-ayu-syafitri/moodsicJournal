@@ -27,7 +27,7 @@ struct MoodSelectionModalView: View {
             Text("How are you feeling today?")
                 .font(.title)
                 .fontWeight(.semibold)
-                .foregroundStyle(Color.mainBlue)
+                .foregroundStyle(Color(.mainBlue))
 
             HStack(alignment: .center, spacing: 32) {
                 Button(action: {
@@ -41,7 +41,7 @@ struct MoodSelectionModalView: View {
                             .overlay(content: {
                                 if journalInitVM.mood == .excited {
                                     Circle()
-                                        .stroke(.mainBlue, lineWidth: 7)
+                                        .stroke(Color(.mainBlue), lineWidth: 7)
                                         .overlay(content: {
                                             Image(systemName: "checkmark.circle.fill")
                                                 .resizable()
@@ -53,7 +53,7 @@ struct MoodSelectionModalView: View {
                         Text("Excited")
                             .fontWeight(.semibold)
                     }
-                    .foregroundStyle(.mainBlue)
+                    .foregroundStyle(Color(.mainBlue))
 
                 })
                 .buttonStyle(PlainButtonStyle())
@@ -69,7 +69,7 @@ struct MoodSelectionModalView: View {
                             .overlay(content: {
                                 if journalInitVM.mood == .happy {
                                     Circle()
-                                        .stroke(.mainBlue, lineWidth: 7)
+                                        .stroke(Color(.mainBlue), lineWidth: 7)
                                         .overlay(content: {
                                             Image(systemName: "checkmark.circle.fill")
                                                 .resizable()
@@ -81,7 +81,7 @@ struct MoodSelectionModalView: View {
                         Text("Happy")
                             .fontWeight(.semibold)
                     }
-                    .foregroundStyle(.mainBlue)
+                    .foregroundStyle(Color(.mainBlue))
 
                 })
                 .buttonStyle(PlainButtonStyle())
@@ -97,7 +97,7 @@ struct MoodSelectionModalView: View {
                             .overlay(content: {
                                 if journalInitVM.mood == .neutral {
                                     Circle()
-                                        .stroke(.mainBlue, lineWidth: 7)
+                                        .stroke(Color(.mainBlue), lineWidth: 7)
                                         .overlay(content: {
                                             Image(systemName: "checkmark.circle.fill")
                                                 .resizable()
@@ -109,7 +109,7 @@ struct MoodSelectionModalView: View {
                         Text("Neutral")
                             .fontWeight(.semibold)
                     }
-                    .foregroundStyle(.mainBlue)
+                    .foregroundStyle(Color(.mainBlue))
                 })
                 .buttonStyle(PlainButtonStyle())
 
@@ -124,7 +124,7 @@ struct MoodSelectionModalView: View {
                             .overlay(content: {
                                 if journalInitVM.mood == .sad {
                                     Circle()
-                                        .stroke(.mainBlue, lineWidth: 7)
+                                        .stroke(Color(.mainBlue), lineWidth: 7)
                                         .overlay(content: {
                                             Image(systemName: "checkmark.circle.fill")
                                                 .resizable()
@@ -136,7 +136,7 @@ struct MoodSelectionModalView: View {
                         Text("Sad")
                             .fontWeight(.semibold)
                     }
-                    .foregroundStyle(.mainBlue)
+                    .foregroundStyle(Color(.mainBlue))
                 })
                 .buttonStyle(PlainButtonStyle())
 
@@ -151,7 +151,7 @@ struct MoodSelectionModalView: View {
                             .overlay(content: {
                                 if journalInitVM.mood == .angry {
                                     Circle()
-                                        .stroke(.mainBlue, lineWidth: 7)
+                                        .stroke(Color(.mainBlue), lineWidth: 7)
                                         .overlay(content: {
                                             Image(systemName: "checkmark.circle.fill")
                                                 .resizable()
@@ -164,7 +164,7 @@ struct MoodSelectionModalView: View {
                         Text("Angry")
                             .fontWeight(.semibold)
                     }
-                    .foregroundStyle(.mainBlue)
+                    .foregroundStyle(Color(.mainBlue))
 
                 })
                 .buttonStyle(PlainButtonStyle())
@@ -177,7 +177,7 @@ struct MoodSelectionModalView: View {
             }
             .padding(.horizontal, 40)
             .padding(.vertical, 10)
-            .background(journalInitVM.mood == .none ? Color.gray : Color.mainBlue)
+            .background(journalInitVM.mood == .none ? Color.gray : Color(.mainBlue))
             .foregroundStyle(Color.white)
             .clipShape(RoundedRectangle(cornerRadius: 25.0))
             .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.1), radius: 5)
@@ -190,6 +190,6 @@ struct MoodSelectionModalView: View {
 
 #Preview {
     MoodSelectionModalView(currentView: .constant(.moodSelection))
-        .environmentObject(JournalInitViewModel())
+        .environmentObject(JournalInitViewModel(dashboardVM: DependencyInjection.shared.dashboardViewModel()))
 //    MoodSelectionModalView(selectedMood: .constant("Sad"), playlistId: .constant("..."))
 }

@@ -95,7 +95,7 @@ class JournalViewModel: ObservableObject {
 
             do {
                 print(newItem)
-//                try viewContext.save()
+                try viewContext.save()
 //                dismiss()
 //                isAddJournalOpen = false
 //                isSaved = true
