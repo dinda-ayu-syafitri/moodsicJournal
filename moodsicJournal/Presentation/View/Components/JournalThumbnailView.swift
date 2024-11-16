@@ -10,9 +10,10 @@ import SwiftUI
 
 struct JournalThumbnailView: View {
     @ObservedObject var viewModel: JournalViewModel
+    @ObservedObject var dashboardVM: DashboardViewModel
 
     var body: some View {
-        NavigationLink(destination: JournalView(viewModel: viewModel)) {
+        NavigationLink(destination: JournalView(viewModel: viewModel, dashboardVM: dashboardVM)) {
             VStack {
                 RoundedRectangle(cornerRadius: 20.0)
                     .fill(Color.clear)
@@ -59,7 +60,7 @@ struct JournalThumbnailView: View {
                         .multilineTextAlignment(.trailing)
                         .frame(maxWidth: .infinity, alignment: .trailing)
                 }
-                .foregroundColor(Color.mainBlue)
+                .foregroundColor(Color(.mainBlue))
                 .padding(.horizontal, 20)
                 .padding(.bottom, 20)
             }
@@ -71,13 +72,13 @@ struct JournalThumbnailView: View {
     }
 }
 
-#Preview {
-    JournalThumbnailView(viewModel: {
-        let viewModel = JournalViewModel()
-        viewModel.id = UUID()
-        viewModel.title = "Journal Title"
-        viewModel.mood = "Happy"
-        viewModel.songId = "12123"
-        return viewModel
-    }())
-}
+//#Preview {
+//    JournalThumbnailView(viewModel: {
+//        let viewModel = JournalViewModel()
+//        viewModel.id = UUID()
+//        viewModel.title = "Journal Title"
+//        viewModel.mood = "Happy"
+//        viewModel.songId = "12123"
+//        return viewModel
+//    }(), dashboardVM: DependencyInjection.shared.dashboardViewModel())
+//}

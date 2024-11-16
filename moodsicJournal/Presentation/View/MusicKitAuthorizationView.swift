@@ -21,17 +21,21 @@ struct MusicKitAuthorizationView: View {
                 .frame(width: 200)
             Text("Start your reinvented personal journaling experience")
                 .font(.title)
-                .padding(.bottom, 5)
-                .foregroundStyle(Color.mainBlue)
+                .foregroundStyle(Color(.mainBlue))
             Text("with Moodsic Journal by pressing this button")
                 .font(.title)
                 .padding(.bottom, 20)
-                .foregroundStyle(Color.mainBlue)
+                .foregroundStyle(Color(.mainBlue))
+
+//            Text("with Moodsic Journal by pressing this button")
+//                .font(.title)
+//                .padding(.bottom, 20)
+//                .foregroundStyle(Color(".mainBlue"))
 
             Text("Click Start to allow Moodsic Journal to Access your Apple Music Account")
-                .font(.system(size: 20, weight: .bold))
+                .font(.system(size: 20))
                 .padding(.bottom, 50)
-                .foregroundStyle(Color.mainOrange)
+                .foregroundStyle(Color(.mainOrange))
 
             if musicAuthorizationStatus == .notDetermined || musicAuthorizationStatus == .denied {
                 Button(action: { askForAuthorization() }, label: {
@@ -40,7 +44,7 @@ struct MusicKitAuthorizationView: View {
                 })
                 .padding(.horizontal, 50)
                 .padding(.vertical, 15)
-                .background(.mainBlue)
+                .background(Color(.mainBlue))
                 .foregroundStyle(Color.white)
                 .clipShape(RoundedRectangle(cornerRadius: 25.0))
                 .shadow(radius: 5)
@@ -51,7 +55,7 @@ struct MusicKitAuthorizationView: View {
                 })
                 .padding(.horizontal, 50)
                 .padding(.vertical, 15)
-                .background(.mainBlue)
+                .background(Color(.mainBlue))
                 .foregroundStyle(Color.white)
                 .clipShape(RoundedRectangle(cornerRadius: 25.0))
                 .shadow(radius: 5)
@@ -64,7 +68,12 @@ struct MusicKitAuthorizationView: View {
         case .notDetermined:
             Task {
                 let musicAuthorizationStatus = await MusicAuthorization.request()
-                await update(with: musicAuthorizationStatus)
+                update(with: musicAuthorizationStatus)
+            }
+        case .denied:
+            Task {
+                let musicAuthorizationStatus = await MusicAuthorization.request()
+                update(with: musicAuthorizationStatus)
             }
         default:
             isAuthViewShowed = false

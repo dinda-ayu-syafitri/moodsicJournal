@@ -93,13 +93,13 @@ extension JournalViewController: PKToolPickerObserver, PKCanvasViewDelegate {
 //    }
 // }
 
-//extension PKDrawing {
+// extension PKDrawing {
 //    /// Convert PKDrawing to UIImage with the given size
 //    func toImage(size: CGSize) -> UIImage {
 //        // Call the PKDrawing's built-in `image(from:scale:)` method directly
 //        return self.image(from: CGRect(origin: .zero, size: size), scale: UIScreen.main.scale)
 //    }
-//}
+// }
 
 extension PKDrawing {
     func toImage(size: CGSize) -> UIImage {

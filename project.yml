@@ -1,0 +1,39 @@
+name: moodsicJournal
+options:
+  bundleIdPrefix: n2
+
+targets:
+  moodsicJournal:
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: moodsicJournal
+    resources:
+      - path: moodsicJournal/Assets.xcassets
+    settings:
+      TARGETED_DEVICE_FAMILY = 2
+    info:
+      path: "Info.plist"
+      properties:
+        CFBundleName: "$(PRODUCT_NAME)"
+        CFBundleIdentifier: "$(PRODUCT_BUNDLE_IDENTIFIER)"
+        CFBundleInfoDictionaryVersion: "6.0"
+        NSAppleMusicUsageDescription: "MoodJournal uses Apple Music to give you broader music options"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        UIUserInterfaceStyle: "Light"
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: YES
+        CFBundleExecutable: "$(EXECUTABLE_NAME)"
+        UIDeviceFamily: 2
+        UISupportedInterfaceOrientations:
+          - "UIInterfaceOrientationPortrait"
+      CFBundleDisplayName: "Moodsic Journal"
+      UIIndirectInputEventsEnabled: YES
+      CFBundleOSType: "$(PRODUCT_BUNDLE_PACKAGE_TYPE)"
+      UILaunchStoryboardName: "LaunchScreen"
+      CFBundleDevelopmentRegion: "$(DEVELOPMENT_LANGUAGE)"
+      UISupportedInterfaceOrientations~ipad:
+        - "UIInterfaceOrientationPortrait"
+        - "UIInterfaceOrientationPortraitUpsideDown"
+      CFBundleShortVersionString: "$(MARKETING_VERSION)"

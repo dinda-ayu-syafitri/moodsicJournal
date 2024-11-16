@@ -7,164 +7,329 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2005EFF82CA84FBD00C992EF /* JournalThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2005EFF72CA84FBD00C992EF /* JournalThumbnailView.swift */; };
-		20D0A6282BFEE40E000417CC /* moodsicJournalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6272BFEE40E000417CC /* moodsicJournalApp.swift */; };
-		20D0A62C2BFEE40F000417CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20D0A62B2BFEE40F000417CC /* Assets.xcassets */; };
-		20D0A62F2BFEE40F000417CC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20D0A62E2BFEE40F000417CC /* Preview Assets.xcassets */; };
-		20D0A6312BFEE40F000417CC /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6302BFEE40F000417CC /* Persistence.swift */; };
-		20D0A6342BFEE40F000417CC /* moodsicJournal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6322BFEE40F000417CC /* moodsicJournal.xcdatamodeld */; };
-		20D0A63B2BFEE73D000417CC /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A63A2BFEE73D000417CC /* DashboardView.swift */; };
-		20D0A6402BFF3FFF000417CC /* JournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A63F2BFF3FFF000417CC /* JournalViewController.swift */; };
-		20D0A6442BFF40DB000417CC /* JournalCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6432BFF40DB000417CC /* JournalCanvasView.swift */; };
-		20D0A6462BFF44B0000417CC /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6452BFF44B0000417CC /* JournalView.swift */; };
-		20D0A6482BFF6FA2000417CC /* MoodSelectionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6472BFF6FA2000417CC /* MoodSelectionModalView.swift */; };
-		20D0A64A2C00AF87000417CC /* CustomModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6492C00AF87000417CC /* CustomModalView.swift */; };
-		20D0A64C2C00AFD8000417CC /* AddTitleModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A64B2C00AFD8000417CC /* AddTitleModalView.swift */; };
-		20D0A6502C00DFE8000417CC /* MusicKitAuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A64F2C00DFE8000417CC /* MusicKitAuthorizationView.swift */; };
-		20D0A6522C00F574000417CC /* MusicRecommendationModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6512C00F574000417CC /* MusicRecommendationModalView.swift */; };
-		20D0A6552C00F750000417CC /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6542C00F750000417CC /* Music.swift */; };
-		20D0A6582C01FE5B000417CC /* MusicPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6572C01FE5B000417CC /* MusicPlayerManager.swift */; };
-		20D0A65B2C01FE8F000417CC /* JournalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A65A2C01FE8F000417CC /* JournalViewModel.swift */; };
-		20D0A65D2C02532D000417CC /* JournalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A65C2C02532D000417CC /* JournalCardView.swift */; };
-		20D0A6622C041FC4000417CC /* MusicKitAuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0A6612C041FC4000417CC /* MusicKitAuthorizationViewModel.swift */; };
+		0B8EDE1BF64E3A279EC51D32 /* moodsicJournalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE398E5DF5686C47DAFE431 /* moodsicJournalApp.swift */; };
+		201BCE2E83961B3E603DDB0A /* MusicRecommendationModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61903113BC8F415471BD051C /* MusicRecommendationModalView.swift */; };
+		20521A132CE904C90020BE01 /* DeleteJournalByIdUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20521A122CE904C90020BE01 /* DeleteJournalByIdUseCase.swift */; };
+		25EEB11BFD1525217EFA0C1E /* GetAllJournalUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDB0234C516175B8704383B /* GetAllJournalUseCase.swift */; };
+		2766055B292999910D005F36 /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA631C1B9811AD053E906169 /* JournalView.swift */; };
+		307BA02C030B7918FDB03421 /* MusicPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE05F59E137833A984B590C /* MusicPlayerManager.swift */; };
+		37A5CBB88755A79CAC531E4C /* JournalLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DD3D758CDDE363B3396961 /* JournalLocalDataSource.swift */; };
+		3AF56F7157FE002BE7BF8AFA /* AddTitleModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81A94FC64378B68AE30FB41 /* AddTitleModalView.swift */; };
+		3E52EC5386EFA1C94650D0A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DD761AE6CB8B9DC1769610F /* Preview Assets.xcassets */; };
+		49A5034067D3F5FDC5D8BF95 /* JournalCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB4812D1B91352FF83F4072 /* JournalCanvasView.swift */; };
+		4DDC02DE11A9A49904E71FB6 /* JournalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389732B41E1B28421923BADD /* JournalRepository.swift */; };
+		50F1BA6600834E9089D670FB /* JournalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8602A9C878AA5DC5854F02A /* JournalCardView.swift */; };
+		5C5897ABBD4E870523BB77B8 /* JournalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D77B7123BD25033B25387E /* JournalViewModel.swift */; };
+		6043EE1FC1C39AAB17F1523F /* JournalInitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3EAE243E4E9021B9EAE523 /* JournalInitViewModel.swift */; };
+		6396509910F46D8B8B5AB8B1 /* LoadingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3424C93D3FD5A7564ECD368 /* LoadingIndicatorView.swift */; };
+		65A8746A78AA39B591EE5C6F /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79199B207E8CCDE53013955D /* DateFormatter.swift */; };
+		685E7D59B28F88AD43B57D13 /* MoodEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78E4AB77B2C5B0774D8CE45 /* MoodEnum.swift */; };
+		6C00AEDF04AD9665C3495D19 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C2D63662103DAA8066DEC4 /* DashboardViewModel.swift */; };
+		6C3D1F9E3F4EC5CABDC15D10 /* JournalThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E1A5D74B40DFB60E143A55 /* JournalThumbnailView.swift */; };
+		73C3EEB2668B245C1522326F /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C807862375EBE6DEE5491F4 /* DashboardView.swift */; };
+		800A4391B3E2387B4817BAF7 /* JournalRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C38005E94C2C9A14F29EB2B /* JournalRepositoryProtocol.swift */; };
+		88D364E2E93EFAE30A81370D /* MusicKitAuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C4E9A433D5D13EE3C8ED35 /* MusicKitAuthorizationView.swift */; };
+		8A47B2D6838A4355A215300E /* JournalInitModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19637DBDF0E61B6053F32D3 /* JournalInitModalView.swift */; };
+		9B30739B14A6CECE95F4927F /* RouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6167E9A82A64F9B7F0B3F /* RouterView.swift */; };
+		9F6E0C866054207815945C72 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B416B8F56A833977059A773 /* Router.swift */; };
+		A4C196F9A0E6C5E553CBD9F1 /* MoodSelectionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61043519B2AEDA582E775A0 /* MoodSelectionModalView.swift */; };
+		BB00B8837E25F29BF16A6C28 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB11C48DF7BCCFF3F956ED9A /* Persistence.swift */; };
+		C1E2DC379E23EFC1B406A6FB /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFE833C470C7DC5C7D22CA5 /* Music.swift */; };
+		D7F78A26D1CB371F1959BD01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78181CF62DBAF7D781065EB3 /* Assets.xcassets */; };
+		D820F8FDB500379608CC29B4 /* JournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928FA6C6306022C7585B1CD8 /* JournalViewController.swift */; };
+		DB3DBA12DD2BF0A545477224 /* MusicKitAuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C757E2471003578FDFCF832 /* MusicKitAuthorizationViewModel.swift */; };
+		E10BD4E420DABFE08CFBA105 /* moodsicJournal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02E7E8EB2DD6CDF7CAA32463 /* moodsicJournal.xcdatamodeld */; };
+		ECE4FDDC4A64625CDACDECEA /* CustomModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D653D219406B9B10DA3603 /* CustomModalView.swift */; };
+		EF4FCAAB1E71652A136FE49F /* JournalInitModalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7BDCA150BCF6E6512F1F53 /* JournalInitModalState.swift */; };
+		F10D17C00CB4E1964964CEA2 /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F3DB47408385A8E6DE92FB /* DependencyInjection.swift */; };
+		F7D73DBC9D945A37CCCD798E /* JournalLocalDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7ADFC6AA54DAFE96E13D27 /* JournalLocalDataSourceProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2005EFF72CA84FBD00C992EF /* JournalThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalThumbnailView.swift; sourceTree = "<group>"; };
-		20D0A6242BFEE40E000417CC /* moodsicJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moodsicJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		20D0A6272BFEE40E000417CC /* moodsicJournalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moodsicJournalApp.swift; sourceTree = "<group>"; };
-		20D0A62B2BFEE40F000417CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		20D0A62E2BFEE40F000417CC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		20D0A6302BFEE40F000417CC /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		20D0A6332BFEE40F000417CC /* moodsicJournal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = moodsicJournal.xcdatamodel; sourceTree = "<group>"; };
-		20D0A63A2BFEE73D000417CC /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
-		20D0A63F2BFF3FFF000417CC /* JournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewController.swift; sourceTree = "<group>"; };
-		20D0A6432BFF40DB000417CC /* JournalCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCanvasView.swift; sourceTree = "<group>"; };
-		20D0A6452BFF44B0000417CC /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
-		20D0A6472BFF6FA2000417CC /* MoodSelectionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSelectionModalView.swift; sourceTree = "<group>"; };
-		20D0A6492C00AF87000417CC /* CustomModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModalView.swift; sourceTree = "<group>"; };
-		20D0A64B2C00AFD8000417CC /* AddTitleModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTitleModalView.swift; sourceTree = "<group>"; };
-		20D0A64F2C00DFE8000417CC /* MusicKitAuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicKitAuthorizationView.swift; sourceTree = "<group>"; };
-		20D0A6512C00F574000417CC /* MusicRecommendationModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicRecommendationModalView.swift; sourceTree = "<group>"; };
-		20D0A6542C00F750000417CC /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
-		20D0A6572C01FE5B000417CC /* MusicPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerManager.swift; sourceTree = "<group>"; };
-		20D0A65A2C01FE8F000417CC /* JournalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewModel.swift; sourceTree = "<group>"; };
-		20D0A65C2C02532D000417CC /* JournalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCardView.swift; sourceTree = "<group>"; };
-		20D0A6612C041FC4000417CC /* MusicKitAuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicKitAuthorizationViewModel.swift; sourceTree = "<group>"; };
+		0D3EAE243E4E9021B9EAE523 /* JournalInitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalInitViewModel.swift; sourceTree = "<group>"; };
+		15C4E9A433D5D13EE3C8ED35 /* MusicKitAuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicKitAuthorizationView.swift; sourceTree = "<group>"; };
+		19E1A5D74B40DFB60E143A55 /* JournalThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalThumbnailView.swift; sourceTree = "<group>"; };
+		1BB4812D1B91352FF83F4072 /* JournalCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCanvasView.swift; sourceTree = "<group>"; };
+		1DDB0234C516175B8704383B /* GetAllJournalUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllJournalUseCase.swift; sourceTree = "<group>"; };
+		20521A122CE904C90020BE01 /* DeleteJournalByIdUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteJournalByIdUseCase.swift; sourceTree = "<group>"; };
+		20D77B7123BD25033B25387E /* JournalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewModel.swift; sourceTree = "<group>"; };
+		21D653D219406B9B10DA3603 /* CustomModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModalView.swift; sourceTree = "<group>"; };
+		2C38005E94C2C9A14F29EB2B /* JournalRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalRepositoryProtocol.swift; sourceTree = "<group>"; };
+		2C807862375EBE6DEE5491F4 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		2D7BDCA150BCF6E6512F1F53 /* JournalInitModalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalInitModalState.swift; sourceTree = "<group>"; };
+		2F7ADFC6AA54DAFE96E13D27 /* JournalLocalDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalLocalDataSourceProtocol.swift; sourceTree = "<group>"; };
+		389732B41E1B28421923BADD /* JournalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalRepository.swift; sourceTree = "<group>"; };
+		3DD761AE6CB8B9DC1769610F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		55EFC7AAD7AF7272E58B2CC4 /* moodsicJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moodsicJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		57DD3D758CDDE363B3396961 /* JournalLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalLocalDataSource.swift; sourceTree = "<group>"; };
+		61903113BC8F415471BD051C /* MusicRecommendationModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicRecommendationModalView.swift; sourceTree = "<group>"; };
+		69F3DB47408385A8E6DE92FB /* DependencyInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjection.swift; sourceTree = "<group>"; };
+		6B416B8F56A833977059A773 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		78181CF62DBAF7D781065EB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		79199B207E8CCDE53013955D /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		928FA6C6306022C7585B1CD8 /* JournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewController.swift; sourceTree = "<group>"; };
+		9C757E2471003578FDFCF832 /* MusicKitAuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicKitAuthorizationViewModel.swift; sourceTree = "<group>"; };
+		A3424C93D3FD5A7564ECD368 /* LoadingIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorView.swift; sourceTree = "<group>"; };
+		AA631C1B9811AD053E906169 /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
+		AB11C48DF7BCCFF3F956ED9A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		AFE05F59E137833A984B590C /* MusicPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerManager.swift; sourceTree = "<group>"; };
+		AFFE833C470C7DC5C7D22CA5 /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
+		B19637DBDF0E61B6053F32D3 /* JournalInitModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalInitModalView.swift; sourceTree = "<group>"; };
+		D8602A9C878AA5DC5854F02A /* JournalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCardView.swift; sourceTree = "<group>"; };
+		E61043519B2AEDA582E775A0 /* MoodSelectionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSelectionModalView.swift; sourceTree = "<group>"; };
+		E81A94FC64378B68AE30FB41 /* AddTitleModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTitleModalView.swift; sourceTree = "<group>"; };
+		EDB74990B8C708667AD9EC18 /* moodsicJournal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = moodsicJournal.xcdatamodel; sourceTree = "<group>"; };
+		EEE398E5DF5686C47DAFE431 /* moodsicJournalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moodsicJournalApp.swift; sourceTree = "<group>"; };
+		F2C6167E9A82A64F9B7F0B3F /* RouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterView.swift; sourceTree = "<group>"; };
+		F3C2D63662103DAA8066DEC4 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		F78E4AB77B2C5B0774D8CE45 /* MoodEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFrameworksBuildPhase section */
-		20D0A6212BFEE40E000417CC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
 /* Begin PBXGroup section */
-		20A6D26B2CA319AC00BD57C3 /* Journal */ = {
+		04A359A92AE5898CCEC25B15 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				20D0A63F2BFF3FFF000417CC /* JournalViewController.swift */,
-				20D0A6432BFF40DB000417CC /* JournalCanvasView.swift */,
-				20D0A6452BFF44B0000417CC /* JournalView.swift */,
-			);
-			path = Journal;
-			sourceTree = "<group>";
-		};
-		20A6D26C2CA319CF00BD57C3 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				20D0A65C2C02532D000417CC /* JournalCardView.swift */,
-				20D0A6492C00AF87000417CC /* CustomModalView.swift */,
-				2005EFF72CA84FBD00C992EF /* JournalThumbnailView.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		20D0A61B2BFEE40E000417CC = {
-			isa = PBXGroup;
-			children = (
-				20D0A6262BFEE40E000417CC /* moodsicJournal */,
-				20D0A6252BFEE40E000417CC /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		20D0A6252BFEE40E000417CC /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				20D0A6242BFEE40E000417CC /* moodsicJournal.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		20D0A6262BFEE40E000417CC /* moodsicJournal */ = {
-			isa = PBXGroup;
-			children = (
-				20D0A6592C01FE7A000417CC /* ViewModel */,
-				20D0A6532C00F690000417CC /* Model */,
-				20D0A63E2BFEFA02000417CC /* View */,
-				20D0A6272BFEE40E000417CC /* moodsicJournalApp.swift */,
-				20D0A62B2BFEE40F000417CC /* Assets.xcassets */,
-				20D0A6302BFEE40F000417CC /* Persistence.swift */,
-				20D0A6322BFEE40F000417CC /* moodsicJournal.xcdatamodeld */,
-				20D0A62D2BFEE40F000417CC /* Preview Content */,
-			);
-			path = moodsicJournal;
-			sourceTree = "<group>";
-		};
-		20D0A62D2BFEE40F000417CC /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				20D0A62E2BFEE40F000417CC /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		20D0A63E2BFEFA02000417CC /* View */ = {
-			isa = PBXGroup;
-			children = (
-				20A6D26C2CA319CF00BD57C3 /* Components */,
-				20A6D26B2CA319AC00BD57C3 /* Journal */,
-				20D0A63A2BFEE73D000417CC /* DashboardView.swift */,
-				20D0A6472BFF6FA2000417CC /* MoodSelectionModalView.swift */,
-				20D0A64B2C00AFD8000417CC /* AddTitleModalView.swift */,
-				20D0A64F2C00DFE8000417CC /* MusicKitAuthorizationView.swift */,
-				20D0A6512C00F574000417CC /* MusicRecommendationModalView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		20D0A6532C00F690000417CC /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				20D0A6542C00F750000417CC /* Music.swift */,
-				20D0A6572C01FE5B000417CC /* MusicPlayerManager.swift */,
+				AFFE833C470C7DC5C7D22CA5 /* Music.swift */,
+				AFE05F59E137833A984B590C /* MusicPlayerManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		20D0A6592C01FE7A000417CC /* ViewModel */ = {
+		0A46B4F587A38F6C99D2FCA1 /* moodsicJournal */ = {
 			isa = PBXGroup;
 			children = (
-				20D0A65A2C01FE8F000417CC /* JournalViewModel.swift */,
-				20D0A6612C041FC4000417CC /* MusicKitAuthorizationViewModel.swift */,
+				78181CF62DBAF7D781065EB3 /* Assets.xcassets */,
+				02E7E8EB2DD6CDF7CAA32463 /* moodsicJournal.xcdatamodeld */,
+				EEE398E5DF5686C47DAFE431 /* moodsicJournalApp.swift */,
+				AB11C48DF7BCCFF3F956ED9A /* Persistence.swift */,
+				D8A1550F779A0ED1417CC0FF /* Common */,
+				59E657A4B5323543C49DAFF0 /* Data */,
+				418EBE6950CCDCEB71AA851F /* Domain */,
+				6A07859CED965B71AD54454D /* Presentation */,
+				C42AF9DFC358C8E9FBF81562 /* Preview Content */,
+				370AF009FFF431324D28673B /* Shared */,
+			);
+			path = moodsicJournal;
+			sourceTree = "<group>";
+		};
+		3248783C00B2684DBA09E097 /* Journal */ = {
+			isa = PBXGroup;
+			children = (
+				1DDB0234C516175B8704383B /* GetAllJournalUseCase.swift */,
+				20521A122CE904C90020BE01 /* DeleteJournalByIdUseCase.swift */,
+			);
+			path = Journal;
+			sourceTree = "<group>";
+		};
+		3650EE99CF78C62ADD2298E0 /* JournalInit */ = {
+			isa = PBXGroup;
+			children = (
+				E81A94FC64378B68AE30FB41 /* AddTitleModalView.swift */,
+				B19637DBDF0E61B6053F32D3 /* JournalInitModalView.swift */,
+				E61043519B2AEDA582E775A0 /* MoodSelectionModalView.swift */,
+				61903113BC8F415471BD051C /* MusicRecommendationModalView.swift */,
+			);
+			path = JournalInit;
+			sourceTree = "<group>";
+		};
+		370AF009FFF431324D28673B /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				E49D5DB6D90A689F3C17000B /* Enum */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		418EBE6950CCDCEB71AA851F /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				F5957063C18D92F6C8347BC3 /* Entities */,
+				5C0A004E2F5DB2BD50A4D1C8 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		470B6283B9030C1354FDF032 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				69F3DB47408385A8E6DE92FB /* DependencyInjection.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		59E657A4B5323543C49DAFF0 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CA0AB0C178E773700035ADFC /* DataSource */,
+				61E7711252B3523A00884D27 /* Repository */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5C0A004E2F5DB2BD50A4D1C8 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				3248783C00B2684DBA09E097 /* Journal */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		61E7711252B3523A00884D27 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				389732B41E1B28421923BADD /* JournalRepository.swift */,
+				2C38005E94C2C9A14F29EB2B /* JournalRepositoryProtocol.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		6A07859CED965B71AD54454D /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				B0F012EB8C161A1410F00094 /* View */,
+				701DCA5C55E43247E78C3411 /* ViewModel */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		701DCA5C55E43247E78C3411 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F3C2D63662103DAA8066DEC4 /* DashboardViewModel.swift */,
+				0D3EAE243E4E9021B9EAE523 /* JournalInitViewModel.swift */,
+				20D77B7123BD25033B25387E /* JournalViewModel.swift */,
+				9C757E2471003578FDFCF832 /* MusicKitAuthorizationViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		78F3E775DF7581682F9F34DB = {
+			isa = PBXGroup;
+			children = (
+				0A46B4F587A38F6C99D2FCA1 /* moodsicJournal */,
+				ED9EDFB4A76832EA58108EFD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A1A1807435FCA1F4007DC4AC /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				57DD3D758CDDE363B3396961 /* JournalLocalDataSource.swift */,
+				2F7ADFC6AA54DAFE96E13D27 /* JournalLocalDataSourceProtocol.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		A31D229747C8450E63505039 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				6B416B8F56A833977059A773 /* Router.swift */,
+				F2C6167E9A82A64F9B7F0B3F /* RouterView.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B0F012EB8C161A1410F00094 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2C807862375EBE6DEE5491F4 /* DashboardView.swift */,
+				15C4E9A433D5D13EE3C8ED35 /* MusicKitAuthorizationView.swift */,
+				FE31D3067F5F9F52652CEBB7 /* Components */,
+				E7D820EC1148B1C15107287C /* Journal */,
+				3650EE99CF78C62ADD2298E0 /* JournalInit */,
+				A31D229747C8450E63505039 /* Router */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C42AF9DFC358C8E9FBF81562 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				3DD761AE6CB8B9DC1769610F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CA0AB0C178E773700035ADFC /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				A1A1807435FCA1F4007DC4AC /* Local */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		D8A1550F779A0ED1417CC0FF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E5663B1A965499988EC264FD /* Helper */,
+				470B6283B9030C1354FDF032 /* Utils */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E49D5DB6D90A689F3C17000B /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				2D7BDCA150BCF6E6512F1F53 /* JournalInitModalState.swift */,
+				F78E4AB77B2C5B0774D8CE45 /* MoodEnum.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		E5663B1A965499988EC264FD /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				79199B207E8CCDE53013955D /* DateFormatter.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		E7D820EC1148B1C15107287C /* Journal */ = {
+			isa = PBXGroup;
+			children = (
+				1BB4812D1B91352FF83F4072 /* JournalCanvasView.swift */,
+				AA631C1B9811AD053E906169 /* JournalView.swift */,
+				928FA6C6306022C7585B1CD8 /* JournalViewController.swift */,
+			);
+			path = Journal;
+			sourceTree = "<group>";
+		};
+		ED9EDFB4A76832EA58108EFD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				55EFC7AAD7AF7272E58B2CC4 /* moodsicJournal.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F5957063C18D92F6C8347BC3 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				04A359A92AE5898CCEC25B15 /* Model */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		FE31D3067F5F9F52652CEBB7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				21D653D219406B9B10DA3603 /* CustomModalView.swift */,
+				D8602A9C878AA5DC5854F02A /* JournalCardView.swift */,
+				19E1A5D74B40DFB60E143A55 /* JournalThumbnailView.swift */,
+				A3424C93D3FD5A7564ECD368 /* LoadingIndicatorView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		20D0A6232BFEE40E000417CC /* moodsicJournal */ = {
+		A09F2A090E23BE75FDF070D9 /* moodsicJournal */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 20D0A6372BFEE40F000417CC /* Build configuration list for PBXNativeTarget "moodsicJournal" */;
+			buildConfigurationList = FB6C0F3991A0912205759BF3 /* Build configuration list for PBXNativeTarget "moodsicJournal" */;
 			buildPhases = (
-				20D0A6202BFEE40E000417CC /* Sources */,
-				20D0A6212BFEE40E000417CC /* Frameworks */,
-				20D0A6222BFEE40E000417CC /* Resources */,
+				245C56567393E4B4BFD6CE93 /* Sources */,
+				836A61E31F95A2937AB51E31 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -172,91 +337,100 @@
 			);
 			name = moodsicJournal;
 			productName = moodsicJournal;
-			productReference = 20D0A6242BFEE40E000417CC /* moodsicJournal.app */;
+			productReference = 55EFC7AAD7AF7272E58B2CC4 /* moodsicJournal.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		20D0A61C2BFEE40E000417CC /* Project object */ = {
+		C16C578C3158636450047832 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1530;
-				LastUpgradeCheck = 1530;
-				TargetAttributes = {
-					20D0A6232BFEE40E000417CC = {
-						CreatedOnToolsVersion = 15.3;
-					};
-				};
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
 			};
-			buildConfigurationList = 20D0A61F2BFEE40E000417CC /* Build configuration list for PBXProject "moodsicJournal" */;
+			buildConfigurationList = 51829ADA61E9670DD9071EC9 /* Build configuration list for PBXProject "moodsicJournal" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
 			);
-			mainGroup = 20D0A61B2BFEE40E000417CC;
-			productRefGroup = 20D0A6252BFEE40E000417CC /* Products */;
+			mainGroup = 78F3E775DF7581682F9F34DB;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				20D0A6232BFEE40E000417CC /* moodsicJournal */,
+				A09F2A090E23BE75FDF070D9 /* moodsicJournal */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		20D0A6222BFEE40E000417CC /* Resources */ = {
+		836A61E31F95A2937AB51E31 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20D0A62F2BFEE40F000417CC /* Preview Assets.xcassets in Resources */,
-				20D0A62C2BFEE40F000417CC /* Assets.xcassets in Resources */,
+				D7F78A26D1CB371F1959BD01 /* Assets.xcassets in Resources */,
+				3E52EC5386EFA1C94650D0A5 /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		20D0A6202BFEE40E000417CC /* Sources */ = {
+		245C56567393E4B4BFD6CE93 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20D0A6342BFEE40F000417CC /* moodsicJournal.xcdatamodeld in Sources */,
-				20D0A6312BFEE40F000417CC /* Persistence.swift in Sources */,
-				20D0A6482BFF6FA2000417CC /* MoodSelectionModalView.swift in Sources */,
-				20D0A6622C041FC4000417CC /* MusicKitAuthorizationViewModel.swift in Sources */,
-				20D0A63B2BFEE73D000417CC /* DashboardView.swift in Sources */,
-				20D0A64A2C00AF87000417CC /* CustomModalView.swift in Sources */,
-				20D0A6502C00DFE8000417CC /* MusicKitAuthorizationView.swift in Sources */,
-				20D0A6522C00F574000417CC /* MusicRecommendationModalView.swift in Sources */,
-				20D0A6442BFF40DB000417CC /* JournalCanvasView.swift in Sources */,
-				20D0A65B2C01FE8F000417CC /* JournalViewModel.swift in Sources */,
-				20D0A6462BFF44B0000417CC /* JournalView.swift in Sources */,
-				20D0A64C2C00AFD8000417CC /* AddTitleModalView.swift in Sources */,
-				20D0A6552C00F750000417CC /* Music.swift in Sources */,
-				20D0A6282BFEE40E000417CC /* moodsicJournalApp.swift in Sources */,
-				2005EFF82CA84FBD00C992EF /* JournalThumbnailView.swift in Sources */,
-				20D0A65D2C02532D000417CC /* JournalCardView.swift in Sources */,
-				20D0A6582C01FE5B000417CC /* MusicPlayerManager.swift in Sources */,
-				20D0A6402BFF3FFF000417CC /* JournalViewController.swift in Sources */,
+				3AF56F7157FE002BE7BF8AFA /* AddTitleModalView.swift in Sources */,
+				ECE4FDDC4A64625CDACDECEA /* CustomModalView.swift in Sources */,
+				73C3EEB2668B245C1522326F /* DashboardView.swift in Sources */,
+				6C00AEDF04AD9665C3495D19 /* DashboardViewModel.swift in Sources */,
+				65A8746A78AA39B591EE5C6F /* DateFormatter.swift in Sources */,
+				F10D17C00CB4E1964964CEA2 /* DependencyInjection.swift in Sources */,
+				25EEB11BFD1525217EFA0C1E /* GetAllJournalUseCase.swift in Sources */,
+				49A5034067D3F5FDC5D8BF95 /* JournalCanvasView.swift in Sources */,
+				50F1BA6600834E9089D670FB /* JournalCardView.swift in Sources */,
+				EF4FCAAB1E71652A136FE49F /* JournalInitModalState.swift in Sources */,
+				8A47B2D6838A4355A215300E /* JournalInitModalView.swift in Sources */,
+				6043EE1FC1C39AAB17F1523F /* JournalInitViewModel.swift in Sources */,
+				37A5CBB88755A79CAC531E4C /* JournalLocalDataSource.swift in Sources */,
+				F7D73DBC9D945A37CCCD798E /* JournalLocalDataSourceProtocol.swift in Sources */,
+				4DDC02DE11A9A49904E71FB6 /* JournalRepository.swift in Sources */,
+				800A4391B3E2387B4817BAF7 /* JournalRepositoryProtocol.swift in Sources */,
+				20521A132CE904C90020BE01 /* DeleteJournalByIdUseCase.swift in Sources */,
+				6C3D1F9E3F4EC5CABDC15D10 /* JournalThumbnailView.swift in Sources */,
+				2766055B292999910D005F36 /* JournalView.swift in Sources */,
+				D820F8FDB500379608CC29B4 /* JournalViewController.swift in Sources */,
+				5C5897ABBD4E870523BB77B8 /* JournalViewModel.swift in Sources */,
+				6396509910F46D8B8B5AB8B1 /* LoadingIndicatorView.swift in Sources */,
+				685E7D59B28F88AD43B57D13 /* MoodEnum.swift in Sources */,
+				A4C196F9A0E6C5E553CBD9F1 /* MoodSelectionModalView.swift in Sources */,
+				C1E2DC379E23EFC1B406A6FB /* Music.swift in Sources */,
+				88D364E2E93EFAE30A81370D /* MusicKitAuthorizationView.swift in Sources */,
+				DB3DBA12DD2BF0A545477224 /* MusicKitAuthorizationViewModel.swift in Sources */,
+				307BA02C030B7918FDB03421 /* MusicPlayerManager.swift in Sources */,
+				201BCE2E83961B3E603DDB0A /* MusicRecommendationModalView.swift in Sources */,
+				BB00B8837E25F29BF16A6C28 /* Persistence.swift in Sources */,
+				9F6E0C866054207815945C72 /* Router.swift in Sources */,
+				9B30739B14A6CECE95F4927F /* RouterView.swift in Sources */,
+				E10BD4E420DABFE08CFBA105 /* moodsicJournal.xcdatamodeld in Sources */,
+				0B8EDE1BF64E3A279EC51D32 /* moodsicJournalApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		20D0A6352BFEE40F000417CC /* Debug */ = {
+		90F6D8EB966E2428EB7E05C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -286,14 +460,13 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
 					"$(inherited)",
+					"DEBUG=1",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -301,25 +474,25 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		20D0A6362BFEE40F000417CC /* Release */ = {
+		958C469EB2126DFD6D7BD17F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -349,8 +522,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -358,113 +530,91 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				VALIDATE_PRODUCT = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
-		20D0A6382BFEE40F000417CC /* Debug */ = {
+		BAB336C5B62A9BE4E4DA83F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"moodsicJournal/Preview Content\"";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CURRENT_PROJECT_VERSION[sdk=*]" = 1;
 				DEVELOPMENT_TEAM = 2RQ6LB993C;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Moodsic Journal";
-				INFOPLIST_KEY_NSAppleMusicUsageDescription = "MoodJournal uses Apple Music to give you broader music option";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = n2.moodsicJournal;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
-		20D0A6392BFEE40F000417CC /* Release */ = {
+		E614C295B418AEB15FF2CF86 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"moodsicJournal/Preview Content\"";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CURRENT_PROJECT_VERSION[sdk=*]" = 1;
 				DEVELOPMENT_TEAM = 2RQ6LB993C;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Moodsic Journal";
-				INFOPLIST_KEY_NSAppleMusicUsageDescription = "MoodJournal uses Apple Music to give you broader music option";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = n2.moodsicJournal;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		20D0A61F2BFEE40E000417CC /* Build configuration list for PBXProject "moodsicJournal" */ = {
+		51829ADA61E9670DD9071EC9 /* Build configuration list for PBXProject "moodsicJournal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				20D0A6352BFEE40F000417CC /* Debug */,
-				20D0A6362BFEE40F000417CC /* Release */,
+				90F6D8EB966E2428EB7E05C4 /* Debug */,
+				958C469EB2126DFD6D7BD17F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
-		20D0A6372BFEE40F000417CC /* Build configuration list for PBXNativeTarget "moodsicJournal" */ = {
+		FB6C0F3991A0912205759BF3 /* Build configuration list for PBXNativeTarget "moodsicJournal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				20D0A6382BFEE40F000417CC /* Debug */,
-				20D0A6392BFEE40F000417CC /* Release */,
+				BAB336C5B62A9BE4E4DA83F1 /* Debug */,
+				E614C295B418AEB15FF2CF86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		20D0A6322BFEE40F000417CC /* moodsicJournal.xcdatamodeld */ = {
+		02E7E8EB2DD6CDF7CAA32463 /* moodsicJournal.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				20D0A6332BFEE40F000417CC /* moodsicJournal.xcdatamodel */,
+				EDB74990B8C708667AD9EC18 /* moodsicJournal.xcdatamodel */,
 			);
-			currentVersion = 20D0A6332BFEE40F000417CC /* moodsicJournal.xcdatamodel */;
+			currentVersion = EDB74990B8C708667AD9EC18 /* moodsicJournal.xcdatamodel */;
 			path = moodsicJournal.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = 20D0A61C2BFEE40E000417CC /* Project object */;
+	rootObject = C16C578C3158636450047832 /* Project object */;
 }

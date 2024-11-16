@@ -29,10 +29,10 @@ struct CustomModalView: View {
 
             NavigationStack {
                 if !addTitleDone {
-                    AddTitleModalView(journalTitle: $journalTitle, addTitleDone: $addTitleDone)
+//                    AddTitleModalView(journalTitle: journalTitle)
 //                        .frame(width: .infinity, height: .infinity, alignment: .center)
-                        .frame(maxHeight: .infinity, alignment: .center)
-                        .padding(.horizontal, 50)
+//                        .frame(maxHeight: .infinity, alignment: .center)
+//                        .padding(.horizontal, 50)
 
                 } else if !moodSelected {
                     VStack {
@@ -45,14 +45,14 @@ struct CustomModalView: View {
                         .foregroundStyle(Color.gray)
                         .padding()
                         VStack(alignment: .center, spacing: 20) {
-                            MoodSelectionModalView(selectedMood: $mood, playlistId: $playlistId)
+//                            MoodSelectionModalView(selectedMood: $mood, playlistId: $playlistId)
                             Button(action: { moodSelected = true }, label: {
                                 Text("Next")
                                     .font(.system(size: 20))
                             })
                             .padding(.horizontal, 50)
                             .padding(.vertical, 15)
-                            .background(.mainBlue)
+                            .background(Color(.mainBlue))
                             .foregroundStyle(Color.white)
                             .clipShape(RoundedRectangle(cornerRadius: 25.0))
                             .shadow(radius: 5)
@@ -74,14 +74,14 @@ struct CustomModalView: View {
                         .padding()
 
                         VStack(alignment: .center, spacing: 20) {
-                            MusicRecommendationModalView(songs: $songs, selectedSongId: $selectedSongId)
+//                            MusicRecommendationModalView(songs: $songs, selectedSongId: $selectedSongId)
                             Button(action: { newJournal() }, label: {
                                 Text("Start Journaling !")
                                     .font(.system(size: 20))
                             })
                             .padding(.horizontal, 50)
                             .padding(.vertical, 15)
-                            .background(.mainBlue)
+                            .background(Color(.mainBlue))
                             .foregroundStyle(Color.white)
                             .clipShape(RoundedRectangle(cornerRadius: 25.0))
                             .shadow(radius: 5)
