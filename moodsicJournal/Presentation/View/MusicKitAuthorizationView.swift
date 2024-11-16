@@ -21,15 +21,19 @@ struct MusicKitAuthorizationView: View {
                 .frame(width: 200)
             Text("Start your reinvented personal journaling experience")
                 .font(.title)
-                .padding(.bottom, 5)
                 .foregroundStyle(Color(.mainBlue))
             Text("with Moodsic Journal by pressing this button")
                 .font(.title)
                 .padding(.bottom, 20)
-                .foregroundStyle(Color(".mainBlue"))
+                .foregroundStyle(Color(.mainBlue))
+
+//            Text("with Moodsic Journal by pressing this button")
+//                .font(.title)
+//                .padding(.bottom, 20)
+//                .foregroundStyle(Color(".mainBlue"))
 
             Text("Click Start to allow Moodsic Journal to Access your Apple Music Account")
-                .font(.system(size: 20, weight: .bold))
+                .font(.system(size: 20))
                 .padding(.bottom, 50)
                 .foregroundStyle(Color(.mainOrange))
 
@@ -62,6 +66,11 @@ struct MusicKitAuthorizationView: View {
     private func askForAuthorization() {
         switch musicAuthorizationStatus {
         case .notDetermined:
+            Task {
+                let musicAuthorizationStatus = await MusicAuthorization.request()
+                update(with: musicAuthorizationStatus)
+            }
+        case .denied:
             Task {
                 let musicAuthorizationStatus = await MusicAuthorization.request()
                 update(with: musicAuthorizationStatus)

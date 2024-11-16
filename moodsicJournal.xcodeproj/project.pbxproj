@@ -545,6 +545,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CURRENT_PROJECT_VERSION[sdk=*]" = 1;
 				DEVELOPMENT_TEAM = 2RQ6LB993C;
 				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -555,6 +556,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = n2.moodsicJournal;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -563,6 +565,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CURRENT_PROJECT_VERSION[sdk=*]" = 1;
 				DEVELOPMENT_TEAM = 2RQ6LB993C;
 				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -573,6 +576,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = n2.moodsicJournal;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
