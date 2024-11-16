@@ -12,10 +12,6 @@ struct JournalInitModalView: View {
     @State private var isAddJournalOpen = false
     @State private var currentView: ModalView = .titleInput
 
-    @State private var journalTitle = ""
-    @State private var MoodSelected = ""
-    @State private var playlistID = ""
-
     init(dashboardVM: DashboardViewModel) {
         _journalInitVM = StateObject(wrappedValue: JournalInitViewModel(dashboardVM: dashboardVM))
     }
@@ -47,6 +43,14 @@ struct JournalInitModalView: View {
                         MoodSelectionModalView(currentView: $currentView)
                     case .musicSelection:
                         MusicRecommendationModalView(currentView: $currentView)
+                }
+            }
+            .onChange(of: isAddJournalOpen) {
+                if !isAddJournalOpen {
+                    journalInitVM.title = ""
+                    journalInitVM.mood = .none
+                    journalInitVM.playlistID = ""
+                    currentView = .titleInput
                 }
             }
         }
