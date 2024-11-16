@@ -23,10 +23,15 @@ class DependencyInjection: ObservableObject {
     // MARK: IMPLEMENTATION USE CASE - JOURNAL
 
     lazy var getAllJournalUseCase = GetAllJournalUseCaseImpl(journalRepository: journalRepository)
+    lazy var deleteJournalByIdUseCase = DeleteJournalByIdUseCaseImpl(journalRepository: journalRepository)
 
     // MARK: VIEWMODEL
 
     func dashboardViewModel() -> DashboardViewModel {
         DashboardViewModel(getAllJournalUseCase: getAllJournalUseCase)
+    }
+
+    @MainActor func journalViewModel() -> JournalViewModel {
+        JournalViewModel(deleteJournalByIdUseCase: deleteJournalByIdUseCase)
     }
 }

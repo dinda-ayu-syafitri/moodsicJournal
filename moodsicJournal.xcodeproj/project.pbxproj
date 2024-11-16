@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0B8EDE1BF64E3A279EC51D32 /* moodsicJournalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE398E5DF5686C47DAFE431 /* moodsicJournalApp.swift */; };
 		201BCE2E83961B3E603DDB0A /* MusicRecommendationModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61903113BC8F415471BD051C /* MusicRecommendationModalView.swift */; };
+		20521A132CE904C90020BE01 /* DeleteJournalByIdUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20521A122CE904C90020BE01 /* DeleteJournalByIdUseCase.swift */; };
 		25EEB11BFD1525217EFA0C1E /* GetAllJournalUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDB0234C516175B8704383B /* GetAllJournalUseCase.swift */; };
 		2766055B292999910D005F36 /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA631C1B9811AD053E906169 /* JournalView.swift */; };
 		307BA02C030B7918FDB03421 /* MusicPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE05F59E137833A984B590C /* MusicPlayerManager.swift */; };
@@ -50,6 +51,7 @@
 		19E1A5D74B40DFB60E143A55 /* JournalThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalThumbnailView.swift; sourceTree = "<group>"; };
 		1BB4812D1B91352FF83F4072 /* JournalCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCanvasView.swift; sourceTree = "<group>"; };
 		1DDB0234C516175B8704383B /* GetAllJournalUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllJournalUseCase.swift; sourceTree = "<group>"; };
+		20521A122CE904C90020BE01 /* DeleteJournalByIdUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteJournalByIdUseCase.swift; sourceTree = "<group>"; };
 		20D77B7123BD25033B25387E /* JournalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewModel.swift; sourceTree = "<group>"; };
 		21D653D219406B9B10DA3603 /* CustomModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModalView.swift; sourceTree = "<group>"; };
 		2C38005E94C2C9A14F29EB2B /* JournalRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalRepositoryProtocol.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				1DDB0234C516175B8704383B /* GetAllJournalUseCase.swift */,
+				20521A122CE904C90020BE01 /* DeleteJournalByIdUseCase.swift */,
 			);
 			path = Journal;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				F7D73DBC9D945A37CCCD798E /* JournalLocalDataSourceProtocol.swift in Sources */,
 				4DDC02DE11A9A49904E71FB6 /* JournalRepository.swift in Sources */,
 				800A4391B3E2387B4817BAF7 /* JournalRepositoryProtocol.swift in Sources */,
+				20521A132CE904C90020BE01 /* DeleteJournalByIdUseCase.swift in Sources */,
 				6C3D1F9E3F4EC5CABDC15D10 /* JournalThumbnailView.swift in Sources */,
 				2766055B292999910D005F36 /* JournalView.swift in Sources */,
 				D820F8FDB500379608CC29B4 /* JournalViewController.swift in Sources */,

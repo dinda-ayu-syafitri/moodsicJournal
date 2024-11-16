@@ -71,7 +71,9 @@ struct JournalView: View {
 
                             Menu {
                                 Button("Delete Journal", action: {
-                                    viewModel.deleteJournal(in: viewContext)
+                                    Task {
+                                        await viewModel.deleteJournal()
+                                    }
                                     dismiss()
                                 })
                             } label: {

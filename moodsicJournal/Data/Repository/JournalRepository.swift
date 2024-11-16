@@ -23,5 +23,7 @@ class JournalRepository: JournalRepositoryProtocol {
 
     func updateJournal(journal: Journal) async throws {}
 
-    func deleteJournal(id: UUID) async throws {}
+    func deleteJournal(id: UUID) async throws {
+        try await journalLocalDataSource.deleteJournal(id: id)
+    }
 }

@@ -14,9 +14,6 @@ struct DashboardView: View {
 //    @StateObject var journalVM = JournalViewModel()
     @StateObject var dashboardVM = DependencyInjection.shared.dashboardViewModel()
 
-    @FetchRequest(entity: Journal.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Journal.createdDate, ascending: false)])
-    private var journals: FetchedResults<Journal>
-
     @State private var isAddJournalOpen = false
     @State var musicAuthorizationStatus: MusicAuthorization.Status
     @State var isAuthViewShowed: Bool
@@ -83,7 +80,7 @@ struct DashboardView: View {
                                     LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], alignment: .leading, spacing: 30) {
                                         ForEach(journals) { journal in
                                             JournalThumbnailView(viewModel: {
-                                                let viewModel = JournalViewModel()
+                                                let viewModel = DependencyInjection.shared.journalViewModel()
                                                 viewModel.id = journal.id
                                                 viewModel.data = journal.canvasData
                                                 viewModel.title = journal.title

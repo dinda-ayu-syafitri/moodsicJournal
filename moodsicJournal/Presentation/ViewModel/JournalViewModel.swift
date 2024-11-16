@@ -7,6 +7,7 @@
 
 import CoreData
 import MusicKit
+
 import SwiftUI
 
 @MainActor
@@ -21,8 +22,9 @@ class JournalViewModel: ObservableObject {
     @Published var songs = [Song]()
     @Published var songData: Song?
     @Published var createdDate: Date?
+    private let deleteJournalByIdUseCase: DeleteJournalByIdUseCase
 
-    init(id: UUID? = nil, data: Data? = nil, title: String? = nil, objectId: NSManagedObjectID? = nil, mood: String? = nil, songId: String? = nil, songs: [Song] = [Song](), songData: Song? = nil, createdDate: Date? = nil) {
+    init(id: UUID? = nil, data: Data? = nil, title: String? = nil, objectId: NSManagedObjectID? = nil, mood: String? = nil, songId: String? = nil, songs: [Song] = [Song](), songData: Song? = nil, createdDate: Date? = nil, deleteJournalByIdUseCase: DeleteJournalByIdUseCase) {
         self.id = id
         self.data = data
         self.title = title
@@ -32,6 +34,7 @@ class JournalViewModel: ObservableObject {
         self.songs = songs
         self.songData = songData
         self.createdDate = createdDate
+        self.deleteJournalByIdUseCase = deleteJournalByIdUseCase
     }
 
     func getData() -> Data {
@@ -106,19 +109,34 @@ class JournalViewModel: ObservableObject {
         }
     }
 
-    func deleteJournal(in context: NSManagedObjectContext) {
-        guard let objectId = objectId else {
-            print("No object ID available to delete")
-            return
-        }
-
+    @MainActor
+    func deleteJournal() async {
         do {
-            let object = try context.existingObject(with: objectId)
-            context.delete(object)
-            try context.save()
-            print("Object deleted successfully")
+            try await deleteJournalByIdUseCase.execute(id: id ?? UUID())
         } catch {
-            print("Failed to delete object with ID \(objectId): \(error)")
+            print("Failed to delete journal: \(error)")
         }
     }
+
+//    func deleteJournal(in context: NSManagedObjectContext) {
+//        guard let objectId = objectId else {
+//            print("No object ID available to delete")
+//            return
+//        }
+//
+//        do {
+//            let coordinator = context.persistentStoreCoordinator
+//            guard let correctContextObjectId = coordinator?.managedObjectID(forURIRepresentation: objectId.uriRepresentation()) else {
+//                print("Unable to retrieve valid object ID")
+//                return
+//            }
+//
+//            let object = try context.existingObject(with: correctContextObjectId)
+//            context.delete(object)
+//            try context.save()
+//            print("Object deleted successfully")
+//        } catch {
+//            print("Failed to delete object with ID \(objectId): \(error)")
+//        }
+//    }
 }

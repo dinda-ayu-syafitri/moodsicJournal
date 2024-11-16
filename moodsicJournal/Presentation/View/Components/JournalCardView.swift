@@ -68,13 +68,13 @@ struct JournalCardView: View {
 //    }
 }
 
-#Preview {
-    JournalCardView(viewModel: {
-        let viewModel = JournalViewModel()
-        viewModel.id = UUID()
-        viewModel.title = "Journal Title"
-        viewModel.mood = "Happy"
-        viewModel.songId = "12123"
-        return viewModel
-    }())
-}
+//#Preview {
+//    JournalCardView(viewModel: {
+//        let viewModel = JournalViewModel()
+//        viewModel.id = UUID()
+//        viewModel.title = "Journal Title"
+//        viewModel.mood = "Happy"
+//        viewModel.songId = "12123"
+//        return viewModel
+//    }())
+//}
