@@ -29,14 +29,17 @@ struct JournalCanvasView: UIViewControllerRepresentable {
             request.predicate = predicate
             do {
                 let result = try viewContext.fetch(request)
-                if let obj = result.first {
-                    obj.setValue(data, forKey: "canvasData")
-                    if viewContext.hasChanges {
-                        try viewContext.save()
-                    }
+                let obj = result.first
+                obj?.setValue(data, forKey: "canvasData")
+                do {
+                    try viewContext.save()
                 }
-            } catch {
-                print("Failed to save updated canvas data: \(error)")
+                catch {
+                    print(error)
+                }
+            }
+            catch {
+                print(error)
             }
         }
         return viewController

@@ -16,8 +16,7 @@ class JournalLocalDataSource: JournalLocalDataSourceProtocol {
 
     func getJournal() async throws -> [Journal] {
         let fetchRequest = NSFetchRequest<Journal>(entityName: "Journal")
-        fetchRequest.sortDescriptors = []
-
+        fetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Journal.createdDate, ascending: false)]
         do {
             let journals = try context.fetch(fetchRequest)
             return journals

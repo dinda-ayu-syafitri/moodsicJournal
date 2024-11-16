@@ -10,9 +10,10 @@ import SwiftUI
 
 struct JournalThumbnailView: View {
     @ObservedObject var viewModel: JournalViewModel
+    @ObservedObject var dashboardVM: DashboardViewModel
 
     var body: some View {
-        NavigationLink(destination: JournalView(viewModel: viewModel)) {
+        NavigationLink(destination: JournalView(viewModel: viewModel, dashboardVM: dashboardVM)) {
             VStack {
                 RoundedRectangle(cornerRadius: 20.0)
                     .fill(Color.clear)
@@ -79,5 +80,5 @@ struct JournalThumbnailView: View {
         viewModel.mood = "Happy"
         viewModel.songId = "12123"
         return viewModel
-    }())
+    }(), dashboardVM: DependencyInjection.shared.dashboardViewModel())
 }

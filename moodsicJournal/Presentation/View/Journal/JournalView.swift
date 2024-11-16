@@ -11,6 +11,7 @@ import SwiftUI
 
 struct JournalView: View {
     @ObservedObject var viewModel: JournalViewModel
+    @ObservedObject var dashboardVM: DashboardViewModel
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.dismiss) private var dismiss
 
@@ -98,6 +99,9 @@ struct JournalView: View {
                 }
                 .onDisappear {
                     viewModel.stopMusic()
+                    Task {
+                        await dashboardVM.getAllJournals()
+                    }
                 }
             }
             .navigationBarBackButtonHidden()
