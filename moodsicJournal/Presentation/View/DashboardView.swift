@@ -29,7 +29,8 @@ struct DashboardView: View {
                     VStack {
                         Image("bg-dashboard")
                             .resizable()
-                            .scaledToFit()
+                            .frame(maxWidth: .infinity)
+//                            .scaledToFit()
                         Spacer()
                     }
                     .edgesIgnoringSafeArea(.bottom)
