@@ -5,8 +5,8 @@
 //  Created by Dinda Ayu Syafitri on 25/05/24.
 //
 
-import SwiftUI
 import MusicKit
+import SwiftUI
 
 class MusicPlayerManager: ObservableObject {
     static let shared = MusicPlayerManager()
@@ -25,6 +25,7 @@ class MusicPlayerManager: ObservableObject {
                 try await player.play()
                 isPlaying = true
                 currentSongId = song.id.rawValue
+                player.state.repeatMode = .one
             } catch {
                 print(error)
             }
@@ -37,5 +38,3 @@ class MusicPlayerManager: ObservableObject {
         currentSongId = nil
     }
 }
-
-
